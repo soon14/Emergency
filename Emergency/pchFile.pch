@@ -1,0 +1,77 @@
+//
+//  pchFile.pch
+//  slyjg
+//
+//  Created by 王小腊 on 16/2/29.
+//  Copyright © 2016年 王小腊. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+//16进制RGB值转换到UIColor
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define NAVIGATION_COLOR [UIColor colorWithRed:19/255.0 green:133/255.0 blue:53/255.0 alpha:1]
+#define BODER_COLOR [UIColor colorWithRed:223/255.0 green:224/255.0 blue:225/255.0 alpha:1]
+
+// 循环引用
+#define MDStrongify(object) __strong typeof(object) object = weak##object;
+// 隐藏录音功能
+#define HIDE_RECORDING NO
+/**
+ 缓存的有效期  单位是s
+ */
+#define kYBCache_Expire_Time (3600*24)
+/**
+ 弱引用
+ */
+#define YJWeakSelf __weak typeof(self) weakSelf = self;
+
+//像素转大小
+#define pointFromPixel(px) px*1.15/3*(MainScreenW/414.0f) //px to pt
+#define fontFromPixel(px) px/2*(72/96.f) // font for px
+
+/**
+ *  沙盒Cache路径
+ */
+#define kCachePath ([NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject])
+
+#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+// 找widow
+#define APPDELEGATE     [[UIApplication sharedApplication] delegate]
+// 屏幕
+#define _SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define _SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+/**   **/
+#define IMAGE_URL @""
+#define HOME_BUTTONCLICK @"home_buttonClick_notification"
+
+
+// DEBUG LOG
+#ifdef DEBUG
+#define MMLog( s, ... ) NSLog( @"< %@ > ( 第%d行 ) %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define MMLog( s, ... )
+#endif
+
+#ifdef __OBJC__
+
+#import "ZKUtil.h"
+#import "ZKPostHttp.h"
+#import "HUD.h"
+#import "MJUpdateUI.h"
+#import "MJExtension.h"
+#import "Masonry.h"
+#import "NSDictionary+FixedParams.h"
+#import "UIView+MJAlertView.h"
+#import "PublicDefine.h"
+
+#endif

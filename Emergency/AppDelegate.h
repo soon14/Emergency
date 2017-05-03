@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainTabBarController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (retain, nonatomic) MainTabBarController *tabBarController;
+/**
+ 创建主题
+ */
+- (void)createTabBarController;
 
 @end
 

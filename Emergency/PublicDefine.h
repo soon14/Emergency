@@ -1,0 +1,18 @@
+
+
+#ifndef _PUBLICDEFINE_
+#define _PUBLICDEFINE_
+
+FOUNDATION_EXPORT NSString *const APPNAME;
+
+FOUNDATION_EXPORT NSString *const FullName;
+
+FOUNDATION_EXPORT NSString *const ProvinceCode;
+
+FOUNDATION_EXPORT NSString *const USER_PASSWORD;
+
+FOUNDATION_EXPORT NSString *const POST_REPORTED;
+
+FOUNDATION_EXPORT NSString *const TELECOM_ID;
+
+#endif
