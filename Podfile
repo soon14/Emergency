@@ -6,10 +6,10 @@ target 'Emergency' do
 pod 'Masonry'
 pod 'AFNetworking'
 pod 'MJExtension'
-pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
 pod 'IQKeyboardManager'
 pod 'iCarousel'
 pod 'SAMKeychain'
+pod 'SDWebImage'
 end
