@@ -7,8 +7,14 @@
 //
 
 #import "ZKHomeViewController.h"
+#import "ZKHomeBannerView.h"
+#import "ZKHomeContentView.h"
 
-@interface ZKHomeViewController ()
+@interface ZKHomeViewController ()<ZKHomeContentViewDelegate>
+// 横幅
+@property (nonatomic, strong) ZKHomeBannerView *bannerView;
+// 九宫格视图
+@property (nonatomic, strong) ZKHomeContentView *contentView;
 
 @end
 
@@ -16,9 +22,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self createViews];
 }
+#pragma mark  ---- 创建视图----
+- (void)createViews
+{
+    //解决在nav 遮挡的时候 还会透明的显示问题;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.bannerView = [[ZKHomeBannerView alloc] init];
+    self.bannerView.controller = self;
+    [self.view addSubview:self.bannerView];
+    
+    self.contentView = [[ZKHomeContentView alloc] init];
+    self.contentView.delegate = self;
+    [self.view addSubview:self.contentView];
+    YJWeakSelf
+    [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(weakSelf.view);
+        make.height.equalTo(@0.1);
+    }];
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(weakSelf.view);
+        make.top.equalTo(weakSelf.bannerView.mas_bottom);
+    }];
+    
+    self.navigationItem.title = APPNAME;
+}
+#pragma mark  ----ZKHomeContentViewDelegate----
 
+/**
+ cell点击
+ 
+ @param dictionary 字典
+ */
+- (void)homeContentCellClickData:(NSDictionary *)dictionary;
+{
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

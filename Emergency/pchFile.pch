@@ -12,6 +12,11 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
+//判断是否为iPhone5
+#define IS_IPHONE_5_SCREEN [[UIScreen mainScreen] bounds].size.height >= 568.0f && [[UIScreen mainScreen] bounds].size.height < 1024.0f
+
+//颜色
+#define CYBColorGreen [UIColor colorWithRed:19/255.0 green:133/255.0 blue:53/255.0 alpha:1]
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 //16进制RGB值转换到UIColor
@@ -54,6 +59,7 @@
 #define IMAGE_URL @""
 #define HOME_BUTTONCLICK @"home_buttonClick_notification"
 
+#define IS_ADMIN @"isAdmin"// 编辑权限
 
 // DEBUG LOG
 #ifdef DEBUG

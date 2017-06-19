@@ -11,6 +11,7 @@
 #import "ZKPersonalCenterViewController.h"
 #import "ZKHomeViewController.h"
 #import "ZKNavigationController.h"
+#import "ZKStartAnimationViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
 
@@ -28,9 +29,10 @@
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setUpLib];
     [self checkVersion];
-    [self  createTabBarController];
+    // 开启动画页面
+    ZKStartAnimationViewController *animationViewController = [[ZKStartAnimationViewController alloc] init];
+    self.window.rootViewController = animationViewController;
     
-    hudConfig();
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -89,7 +91,6 @@
 - (void)setUpLib
 {
     hudConfig();
-    
     // 设置键盘监听管理
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager];
     [keyboardManager setEnable:YES];

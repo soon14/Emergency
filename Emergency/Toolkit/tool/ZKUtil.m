@@ -29,25 +29,24 @@
     [imageView sd_setImageWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:duImage]];
 }
 
-+ (void)cacheUserValue:(NSString *)value key:(NSString *)key;
++ (void)cacheUserValue:(id )value key:(NSString *)key;
 {
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:value forKey:key];
     [defaults synchronize];
 }
-+ (NSString *)getUserDataForKey:(NSString *)key;
++ (id )getUserDataForKey:(NSString *)key;
 {
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     if (key)
     {
         
-        NSString *phone=[defaults objectForKey:key];
-        return phone;
+        id data = [defaults objectForKey:key];
+        return data;
     }else{
         
-        return @"";
+        return nil;
     }
-    
 }
 + (void)cacheForData:(NSData *)data fileName:(NSString *)fileName
 {
@@ -140,6 +139,7 @@
 + (void)saveBoolForKey:(NSString *)key valueBool:(BOOL)value;
 {
     [[NSUserDefaults standardUserDefaults] setBool:value forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

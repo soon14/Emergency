@@ -136,7 +136,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 {
     AFHTTPSessionManager *sessionManager = [self sessionManager];
     
-    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_REPORTED,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_URL,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //缓存数据的文件名 data
     ZKCache *cache = [self getCache:cacheType url:url params:params success:success];
@@ -172,7 +172,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 {
     AFHTTPSessionManager *sessionManager = [self sessionManager];
     
-    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_REPORTED,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_URL,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //缓存数据的文件名 data
     ZKCache *cache = [self getCache:cacheType url:url params:params success:success];
     NSString *fileName = cache.fileName;
@@ -203,7 +203,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 + (void)post:(NSString *)url params:(NSMutableDictionary *)params success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 {
     AFHTTPSessionManager *manager = [self sessionManager];
-    NSString *httpStr = [[NSString stringWithFormat:@"%@",POST_REPORTED] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *httpStr = [[NSString stringWithFormat:@"%@",POST_URL] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     MMLog(@"\n\n%@\n%@\n\n",httpStr,params);
     [manager POST:httpStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -225,7 +225,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer =[AFHTTPResponseSerializer serializer];
     
-    [manager POST:[NSString stringWithFormat:@"%@",POST_REPORTED] parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:[NSString stringWithFormat:@"%@",POST_URL] parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         //添加要上传的文件，此处为图片
         [formData appendPartWithFileData:imag name:@"Filedata" fileName:@".png" mimeType:@"image/jpeg）"];
