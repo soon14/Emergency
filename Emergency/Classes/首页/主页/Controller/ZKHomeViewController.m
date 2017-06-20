@@ -27,9 +27,6 @@
 #pragma mark  ---- 创建视图----
 - (void)createViews
 {
-    //解决在nav 遮挡的时候 还会透明的显示问题;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     self.bannerView = [[ZKHomeBannerView alloc] init];
     self.bannerView.controller = self;
     [self.view addSubview:self.bannerView];

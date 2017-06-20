@@ -23,7 +23,7 @@
     
     if (_cycleScrollView == nil) {
         
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:[UIImage imageNamed:@"banner"]];
         _cycleScrollView.autoScrollTimeInterval = 4;
         _cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
         _cycleScrollView.backgroundColor = [UIColor whiteColor];
@@ -95,9 +95,8 @@
         [self.cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(weakSelf);
         }];
-        
-        
-        float imageHeghit = 308*_SCREEN_WIDTH/720;
+
+        float imageHeghit = 308 * _SCREEN_WIDTH / 720;
         
         [UIView animateWithDuration:0.3 animations:^{
             

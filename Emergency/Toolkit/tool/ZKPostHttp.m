@@ -94,11 +94,16 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 
 + (ZKCache *)getCache:(ZKCacheType)cacheType url:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSDictionary *))success
 {
+    ZKCache *cache = [[ZKCache alloc] init];
+    
+    if ([ZKUtil obtainBoolForKey:OnlineCache])
+    {
+        return cache;
+    }
     //缓存数据的文件名
     NSString *fileName = [self fileName:url params:params];
     NSData *data = [ZKUtil getCacheFileName:fileName];
     
-    ZKCache *cache = [[ZKCache alloc] init];
     cache.fileName = fileName;
     
     if (data.length)

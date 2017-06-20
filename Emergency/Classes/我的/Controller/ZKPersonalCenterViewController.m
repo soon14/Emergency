@@ -8,6 +8,7 @@
 
 #import "ZKPersonalCenterViewController.h"
 #import "ZKPersonalCenterTableViewCell.h"
+#import "TBMoreReminderView.h"
 
 static NSString *const ZKPersonalCenterTableViewCellID = @"ZKPersonalCenterTableViewCellID";
 
@@ -31,8 +32,6 @@ static NSString *const ZKPersonalCenterTableViewCellID = @"ZKPersonalCenterTable
  */
 -(void)initView
 {
-    //解决在nav 遮挡的时候 还会透明的显示问题;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(10, 20, self.view.frame.size.width-20, 2*55)];
@@ -51,7 +50,7 @@ static NSString *const ZKPersonalCenterTableViewCellID = @"ZKPersonalCenterTable
     
     UIButton *secedeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     secedeButton.frame = CGRectMake(10, self.tableView.frame.size.height+20+40, self.view.frame.size.width-20, 48);
-    secedeButton.backgroundColor =CYBColorGreen;
+    secedeButton.backgroundColor = CYBColorGreen;
     secedeButton.layer.cornerRadius = 6;
     [secedeButton setTitle:@"退出系统" forState:UIControlStateNormal];
     [secedeButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -79,19 +78,36 @@ static NSString *const ZKPersonalCenterTableViewCellID = @"ZKPersonalCenterTable
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     return 55.0f;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.row == 0)
+    {
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKSystemSetUpViewController") new] animated:YES];
+    }
+    else
+    {
+        // 清除缓存
+        [ZKUtil clearCache];
+    }
 }
 
 #pragma mark  ----按钮点击事件----
 - (void)secedeClick
 {
-    
+    TBMoreReminderView *moreView = [[TBMoreReminderView alloc] initShowPrompt:@"亲！是否退出应用?"];
+    [moreView showHandler:^{
+        
+        UIWindow *window = APPDELEGATE.window;
+        [UIView animateWithDuration:0.4f animations:^{
+            window.frame = CGRectMake(_SCREEN_WIDTH/2,_SCREEN_HEIGHT/2, 0, 0);
+        } completion:^(BOOL finished) {
+            exit(0);
+        }];
+
+    }];
 }
 - (void)didReceiveMemoryWarning
 {

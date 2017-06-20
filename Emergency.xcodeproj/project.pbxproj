@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */; };
 		3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0DC1EE6B360001155E4 /* ZKRegisteredViewController.m */; };
+		3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */; };
+		3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */; };
 		3B64217E1EF778F900D5FBBF /* ZKEmergencyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64217D1EF778F900D5FBBF /* ZKEmergencyAlertView.m */; };
 		3B6421801EF7790900D5FBBF /* ZKEmergencyAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B64217F1EF7790900D5FBBF /* ZKEmergencyAlertView.xib */; };
 		3B6421851EF7B18600D5FBBF /* ZKHomeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6421841EF7B18600D5FBBF /* ZKHomeBannerView.m */; };
@@ -148,6 +150,9 @@
 		3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKStartAnimationViewController.m; sourceTree = "<group>"; };
 		3B20A0DB1EE6B360001155E4 /* ZKRegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegisteredViewController.h; sourceTree = "<group>"; };
 		3B20A0DC1EE6B360001155E4 /* ZKRegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegisteredViewController.m; sourceTree = "<group>"; };
+		3B4FDEA91EF91B3100AE5D12 /* ZKSystemSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSystemSetUpViewController.h; sourceTree = "<group>"; };
+		3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSystemSetUpViewController.m; sourceTree = "<group>"; };
+		3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKSystemSetUpViewController.xib; sourceTree = "<group>"; };
 		3B64217C1EF778F900D5FBBF /* ZKEmergencyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKEmergencyAlertView.h; sourceTree = "<group>"; };
 		3B64217D1EF778F900D5FBBF /* ZKEmergencyAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKEmergencyAlertView.m; sourceTree = "<group>"; };
 		3B64217F1EF7790900D5FBBF /* ZKEmergencyAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKEmergencyAlertView.xib; sourceTree = "<group>"; };
@@ -492,6 +497,9 @@
 			children = (
 				3BDB56291EB9C643000C7CD2 /* ZKPersonalCenterViewController.h */,
 				3BDB562A1EB9C643000C7CD2 /* ZKPersonalCenterViewController.m */,
+				3B4FDEA91EF91B3100AE5D12 /* ZKSystemSetUpViewController.h */,
+				3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */,
+				3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1189,6 +1197,7 @@
 				3BDB57BB1EB9C856000C7CD2 /* Clickon_dims@2x.png in Resources */,
 				3BDB57C41EB9C856000C7CD2 /* duty_show@3x.png in Resources */,
 				3BDB57CD1EB9C856000C7CD2 /* noData@3x.png in Resources */,
+				3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */,
 				3BDB57BF1EB9C856000C7CD2 /* duty_Packup@2x.png in Resources */,
 				3BDB57C61EB9C856000C7CD2 /* duy_add@3x.png in Resources */,
 				3BDB57701EB9C69A000C7CD2 /* Default@2x.png in Resources */,
@@ -1352,6 +1361,7 @@
 				3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */,
 				3B6421941EF7BB3B00D5FBBF /* ZKHomeImagesData.m in Sources */,
 				3BDB56B21EB9C64D000C7CD2 /* UIScrollView+EmptyDataSet.m in Sources */,
+				3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */,
 				3BDB56C71EB9C64D000C7CD2 /* SDCycleScrollView.m in Sources */,
 				3B6421981EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.m in Sources */,
 				3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */,

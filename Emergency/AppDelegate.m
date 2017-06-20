@@ -13,6 +13,7 @@
 #import "ZKNavigationController.h"
 #import "ZKStartAnimationViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
+#import "UIImageView+WebCache.h"
 
 
 @interface AppDelegate ()
@@ -115,11 +116,25 @@
 }
 
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+/**
+ 程序退出执行
+
+ @param application application
+ */
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    if ([ZKUtil obtainBoolForKey:ExitEmptyData])
+    {
+        [ZKUtil clearCache];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+            
+        }];
+        [[SDImageCache sharedImageCache] clearMemory];//可有可无
+    }
 }
-
+#import "UIImageView+WebCache.h"
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -134,6 +149,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 #pragma mark -UITabBarControllerDelegate--
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController

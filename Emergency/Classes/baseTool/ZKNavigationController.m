@@ -45,7 +45,7 @@
 {
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem setRitWithTitel:@"返回" itemWithIcon:@"nav_back" target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem setRitWithTitel:@"" itemWithIcon:@"backimage" target:self action:@selector(back)];
     }
 
     [super pushViewController:viewController animated:animated];

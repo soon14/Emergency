@@ -60,6 +60,9 @@
 #define HOME_BUTTONCLICK @"home_buttonClick_notification"
 
 #define IS_ADMIN @"isAdmin"// 编辑权限
+#define ExitEmptyData @"ExitEmptyData"//  退出清空缓存
+#define OnlineCache   @"OnlineCache"// 使用在线数据
+
 
 // DEBUG LOG
 #ifdef DEBUG
