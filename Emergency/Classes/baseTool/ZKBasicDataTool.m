@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, DictType) {
 @implementation ZKBasicDataTool
 {
     NSArray *_onlineArray;//slevelstr等级名称
-    NSArray *_slevelstrArray;//slevelstr等级名称
+    NSArray *_levelstrArray;//levelstr等级名称
     NSArray *_guideArray;//导游
     NSArray *_htypeArray;//酒店
     NSArray *_typetravelArray;//旅行社类型
@@ -68,11 +68,11 @@ typedef NS_ENUM(NSInteger, DictType) {
  
  @param array
  */
-- (void)obtainSlevelstrArray:(void(^)(NSArray *slevelstrArray))array;
+- (void)obtainLevelstrArray:(void(^)(NSArray *levelstrArray))array;
 {
-    [self postDataType:DictTypeViewType_0 success:^(NSArray *data) {
-        
-        _slevelstrArray = data;
+    [self postDataType:DictTypeViewType_0 success:^(NSArray *data)
+    {
+        _levelstrArray = data;
         array(data);
     }];
 }
@@ -208,7 +208,7 @@ typedef NS_ENUM(NSInteger, DictType) {
             url = @"pkey=travelLevel_0";
             break;
         case DictTypeViewType_0:
-            contenArray = _slevelstrArray;
+            contenArray = _levelstrArray;
             url = @"pkey=viewType_0";
             break;
             

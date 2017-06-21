@@ -204,7 +204,7 @@
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
     paragraph.alignment = NSTextAlignmentCenter;
     
-    text = @"暂无数据可加载。重新加载";
+    text = @"暂无数据可加载 重新加载";
     font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17.75];
     textColor = [UIColor grayColor];
     paragraph.lineSpacing = 3.0;
@@ -215,8 +215,9 @@
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
     
-    [attributedString addAttribute:NSForegroundColorAttributeName value:NAVIGATION_COLOR range:[attributedString.string rangeOfString:@"重新加载"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:[attributedString.string rangeOfString:@"重新加载"]];
     
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:[attributedString.string rangeOfString:@"重新加载"]];
     return attributedString;
 }
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView
@@ -226,11 +227,11 @@
 // 返回可点击按钮的 image
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
 {
-    return [UIImage imageNamed:@"sure_placeholder_error"];
+    return [UIImage imageNamed:@"noData"];
 }
 - (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
 {
-    NSString *imageName = @"sure_placeholder_error";
+    NSString *imageName = @"noData";
     
     if (state == UIControlStateNormal) imageName = [imageName stringByAppendingString:@"_normal"];
     if (state == UIControlStateHighlighted) imageName = [imageName stringByAppendingString:@"_highlight"];

@@ -70,7 +70,7 @@
 #else
 
 #endif
-        
+    [self.navigationController pushViewController:[NSClassFromString(@"ZKMonitoringViewController") new] animated:YES];
         
     }else if ([className isEqualToString:@"运营商"]||[className isEqualToString:@"汇总大数据"]){
         /*  运营商  */

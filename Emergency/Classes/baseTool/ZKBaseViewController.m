@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //解决在nav 遮挡的时候 还会透明的显示问题;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     

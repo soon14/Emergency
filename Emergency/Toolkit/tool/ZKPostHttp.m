@@ -141,7 +141,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 {
     AFHTTPSessionManager *sessionManager = [self sessionManager];
     
-    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_URL,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *httpStr = [[NSString stringWithFormat:@"%@",url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //缓存数据的文件名 data
     ZKCache *cache = [self getCache:cacheType url:url params:params success:success];
@@ -154,7 +154,15 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
         
         if (success)
         {
-            success(responseObject);
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
         
         if (success && cacheType != ZKCacheTypeReloadIgnoringLocalCacheData&&responseObject!=nil)
@@ -188,15 +196,21 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-       id response = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         if (success)
         {
-            success(response);
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
-        if (success && cacheType != ZKCacheTypeReloadIgnoringLocalCacheData&&response!=nil) {
+        if (success && cacheType != ZKCacheTypeReloadIgnoringLocalCacheData&&responseObject!=nil) {
             //缓存数据
-            NSData *data = [NSJSONSerialization dataWithJSONObject:response options:NSJSONWritingPrettyPrinted error:nil];
-            [ZKUtil cacheForData:data fileName:fileName];
+            [ZKUtil cacheForData:responseObject fileName:fileName];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -208,13 +222,21 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 + (void)post:(NSString *)url params:(NSMutableDictionary *)params success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 {
     AFHTTPSessionManager *manager = [self sessionManager];
-    NSString *httpStr = [[NSString stringWithFormat:@"%@",POST_URL] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *httpStr = [[NSString stringWithFormat:@"%@%@",POST_URL,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     MMLog(@"\n\n%@\n%@\n\n",httpStr,params);
     [manager POST:httpStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (success) {
-            id response = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-            success(response);
+        if (success)
+        {
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
@@ -241,7 +263,15 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
         
         if (success) {
             
-            success(responseObject);
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
@@ -268,7 +298,15 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
-            success(responseObject);
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
@@ -386,7 +424,15 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
     [sessionManager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
 
-            success(responseObject);
+            if ([responseObject isKindOfClass:[NSDictionary class]])
+            {
+                success(responseObject);
+            }
+            else
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                success(dic);
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

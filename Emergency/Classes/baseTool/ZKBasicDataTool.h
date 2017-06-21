@@ -28,7 +28,7 @@
 
  @param array 数据
  */
-- (void)obtainSlevelstrArray:(void(^)(NSArray *slevelstrArray))array;
+- (void)obtainLevelstrArray:(void(^)(NSArray *levelstrArray))array;
 
 /**
  导游

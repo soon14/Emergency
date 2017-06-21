@@ -156,7 +156,7 @@
 {
     self.cancel = cancel;
 }
--(void)showHandler:(determine)change;
+- (void)showHandler:(determine)change;
 {
     self.alpha = 1;
     self.determine = change;
@@ -173,7 +173,7 @@
         }];
     }];
 }
--(void)hideView{
+- (void)hideView{
     
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 0;
