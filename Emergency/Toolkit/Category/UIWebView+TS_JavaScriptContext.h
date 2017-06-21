@@ -13,7 +13,7 @@
 
 @optional
 
-- (void)webView:(UIWebView *)webView didCreateJavaScriptContext:(JSContext*) ctx;
+- (void)webView:(UIWebView *)webView didCreateJavaScriptContext:(JSContext*)ctx;
 
 @end
 

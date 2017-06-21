@@ -7,6 +7,7 @@
 //
 
 #import "ZKHomeViewController.h"
+#import "ZKBaseWebViewController.h"
 #import "ZKHomeBannerView.h"
 #import "ZKHomeContentView.h"
 
@@ -44,7 +45,7 @@
         make.top.equalTo(weakSelf.bannerView.mas_bottom);
     }];
     
-    self.navigationItem.title = APPNAME;
+    self.navigationItem.title = FullName;
 }
 #pragma mark  ----ZKHomeContentViewDelegate----
 
@@ -55,8 +56,108 @@
  */
 - (void)homeContentCellClickData:(NSDictionary *)dictionary;
 {
+    NSString *className = [dictionary valueForKey:@"name"];
+    
+    if ([className isEqualToString:@"实时人数"]) {
+        /**景区实时人数*/
+        [self pushViewBundleUrl:@"realnumber" htmlType:nil];
+        
+    }else if ([className isEqualToString:@"实时监控"]){
+        /*  实时监控  */
+        
+#if LeShan
+
+#else
+
+#endif
+        
+        
+    }else if ([className isEqualToString:@"运营商"]||[className isEqualToString:@"汇总大数据"]){
+        /*  运营商  */
+        [self pushViewBundleUrl:@"Operator" htmlType:nil];
+        
+    }else if ([className isEqualToString:@"景区"]){
+        /*  景点  */
+        [self pushViewBundleUrl:@"resourceStatInfo" htmlType:@"type=3"];
+        
+    }else if ([className isEqualToString:@"酒店"]){
+        /* 酒店   */
+        [self pushViewBundleUrl:@"resourceStatInfo" htmlType:@"type=1"];
+        
+    }else if ([className isEqualToString:@"旅行社"]){
+        /* 旅行社   */
+        [self pushViewBundleUrl:@"resourceStatInfo" htmlType:@"type=2"];
+    }else if ([className isEqualToString:@"旅游团队"]){
+        
+        /* 旅游团队   */
+
+        
+    }else if ([className isEqualToString:@"旅游大巴"]){
+        /* 旅游大巴   */
+        
+
+        
+    }else if ([className isEqualToString:@"导游"]){
+        /* 导游   */
+        [self pushViewBundleUrl:@"resourceStatInfo" htmlType:@"type=4"];
+    }else if ([className isEqualToString:@"电子地图"]){
+        /*  电子地图  */
+
+
+        
+    }else if ([className isEqualToString:@"信息采集"]){
+        /*  信息采集  */
+
+        
+    }else if ([className isEqualToString:@"气象数据"]){
+        /* 气象数据   */
+        
+
+        
+    }else if ([className isEqualToString:@"环保数据"]){
+        /* 环保数据   */
+        
+        [self pushViewBundleUrl:@"ProtectInfo" htmlType:nil];
+        
+    }else if ([className isEqualToString:@"实时数据上报"])
+    {
+        UIStoryboard *board = [UIStoryboard storyboardWithName:@"reported" bundle:nil];
+        [self.navigationController pushViewController:board.instantiateInitialViewController animated:YES];
+    }
+    else if ([className isEqualToString:@"值班信息"])
+    {
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKAttendantInformationViewController") new] animated:YES];
+        
+    }
 
 }
+#pragma mark  ----html----
+
+/**
+ web网页
+
+ @param url 链接字段
+ @param type 类型
+ */
+- (void)pushViewBundleUrl:(NSString*)url htmlType:(NSString*)type;
+{
+    NSString *path = [NSString stringWithFormat:@"assets/web/%@", url];
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:path withExtension:@"html"];
+    if (type.length > 0)
+    {
+        // 重新拼接url
+        NSString *str = [URL absoluteString];
+        str = [NSString stringWithFormat:@"%@?%@",str,type];
+        str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        URL = [NSURL URLWithString:str];
+    }
+
+    ZKBaseWebViewController *htmlController = [[ZKBaseWebViewController alloc] init];
+    htmlController.pathUrl = URL;
+    [self.navigationController pushViewController:htmlController animated:YES];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

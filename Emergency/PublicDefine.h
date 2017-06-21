@@ -3,7 +3,7 @@
 #ifndef _PUBLICDEFINE_
 #define _PUBLICDEFINE_
 /*****工程配置区*****/
-// 名称
+//  名称
 FOUNDATION_EXPORT NSString *const APPNAME;
 //  首页显示的全名
 FOUNDATION_EXPORT NSString *const FullName;
