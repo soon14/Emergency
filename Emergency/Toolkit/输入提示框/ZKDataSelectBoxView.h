@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZKDataSelectBoxViewDelegate <NSObject>
+
+
+
+@end
 @interface ZKDataSelectBoxView : UIView
 
 /**
@@ -30,5 +35,10 @@
  消失
  */
 - (void)disappear;
+
+/**
+ 选择代理
+ */
+@property (nonatomic, assign) id<ZKDataSelectBoxViewDelegate>delegate;
 
 @end
