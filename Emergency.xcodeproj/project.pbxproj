@@ -39,7 +39,6 @@
 		3B4D0D3C1EFA252900F7846D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4D0D3B1EFA252900F7846D /* libz.tbd */; };
 		3B4D0D3E1EFA254000F7846D /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4D0D3D1EFA254000F7846D /* VideoToolbox.framework */; };
 		3B4D0D4E1EFA441200F7846D /* ZKBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D4B1EFA441200F7846D /* ZKBaseWebViewController.m */; };
-		3B4D0D4F1EFA441200F7846D /* ZKChooseBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D4D1EFA441200F7846D /* ZKChooseBaseViewController.m */; };
 		3B4D0D521EFA44BB00F7846D /* ZKMonitoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D511EFA44BB00F7846D /* ZKMonitoringViewController.m */; };
 		3B4D0D561EFA590600F7846D /* ZKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D551EFA590600F7846D /* ZKTextField.m */; };
 		3B4D0D591EFA607200F7846D /* ZKTimeMonitoringMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D581EFA607200F7846D /* ZKTimeMonitoringMode.m */; };
@@ -59,6 +58,10 @@
 		3B6421991EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6421971EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.xib */; };
 		3B64219D1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64219B1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m */; };
 		3B64219E1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B64219C1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.xib */; };
+		3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */; };
+		3B69D3D21EFBB2FC0090D8CE /* ZKResourceChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3D11EFBB2FC0090D8CE /* ZKResourceChooseView.m */; };
+		3B69D3D41EFBB3C60090D8CE /* ZKResourceChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */; };
+		3B69D3DA1EFBC4C00090D8CE /* TBTaskSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3D91EFBC4C00090D8CE /* TBTaskSearchView.m */; };
 		3B77D6ED1EB32BB10099EA0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B77D6EC1EB32BB10099EA0E /* main.m */; };
 		3B77D6F01EB32BB10099EA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B77D6EF1EB32BB10099EA0E /* AppDelegate.m */; };
 		3B77D6F81EB32BB10099EA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B77D6F71EB32BB10099EA0E /* Assets.xcassets */; };
@@ -330,8 +333,6 @@
 		3B4D0D3D1EFA254000F7846D /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		3B4D0D4A1EFA441200F7846D /* ZKBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseWebViewController.h; sourceTree = "<group>"; };
 		3B4D0D4B1EFA441200F7846D /* ZKBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseWebViewController.m; sourceTree = "<group>"; };
-		3B4D0D4C1EFA441200F7846D /* ZKChooseBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKChooseBaseViewController.h; sourceTree = "<group>"; };
-		3B4D0D4D1EFA441200F7846D /* ZKChooseBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKChooseBaseViewController.m; sourceTree = "<group>"; };
 		3B4D0D501EFA44BB00F7846D /* ZKMonitoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMonitoringViewController.h; sourceTree = "<group>"; };
 		3B4D0D511EFA44BB00F7846D /* ZKMonitoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMonitoringViewController.m; sourceTree = "<group>"; };
 		3B4D0D541EFA590600F7846D /* ZKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKTextField.h; sourceTree = "<group>"; };
@@ -366,6 +367,13 @@
 		3B64219A1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKPersonalCenterTableViewCell.h; sourceTree = "<group>"; };
 		3B64219B1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKPersonalCenterTableViewCell.m; sourceTree = "<group>"; };
 		3B64219C1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKPersonalCenterTableViewCell.xib; sourceTree = "<group>"; };
+		3B69D3CD1EFBAD540090D8CE /* ZKResourceStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKResourceStatViewController.h; sourceTree = "<group>"; };
+		3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKResourceStatViewController.m; sourceTree = "<group>"; };
+		3B69D3D01EFBB2FC0090D8CE /* ZKResourceChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKResourceChooseView.h; sourceTree = "<group>"; };
+		3B69D3D11EFBB2FC0090D8CE /* ZKResourceChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKResourceChooseView.m; sourceTree = "<group>"; };
+		3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKResourceChooseView.xib; sourceTree = "<group>"; };
+		3B69D3D81EFBC4C00090D8CE /* TBTaskSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTaskSearchView.h; sourceTree = "<group>"; };
+		3B69D3D91EFBC4C00090D8CE /* TBTaskSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTaskSearchView.m; sourceTree = "<group>"; };
 		3B77D6E81EB32BB10099EA0E /* Emergency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emergency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B77D6EC1EB32BB10099EA0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B77D6EE1EB32BB10099EA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -835,8 +843,8 @@
 			children = (
 				3B4D0D4A1EFA441200F7846D /* ZKBaseWebViewController.h */,
 				3B4D0D4B1EFA441200F7846D /* ZKBaseWebViewController.m */,
-				3B4D0D4C1EFA441200F7846D /* ZKChooseBaseViewController.h */,
-				3B4D0D4D1EFA441200F7846D /* ZKChooseBaseViewController.m */,
+				3B69D3CD1EFBAD540090D8CE /* ZKResourceStatViewController.h */,
+				3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -867,6 +875,9 @@
 		3B4D0D491EFA43F700F7846D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3B69D3D01EFBB2FC0090D8CE /* ZKResourceChooseView.h */,
+				3B69D3D11EFBB2FC0090D8CE /* ZKResourceChooseView.m */,
+				3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1355,6 +1366,8 @@
 				3BDB56661EB9C64D000C7CD2 /* UIWebView+TS_JavaScriptContext.m */,
 				3B4D0D541EFA590600F7846D /* ZKTextField.h */,
 				3B4D0D551EFA590600F7846D /* ZKTextField.m */,
+				3B69D3D81EFBC4C00090D8CE /* TBTaskSearchView.h */,
+				3B69D3D91EFBC4C00090D8CE /* TBTaskSearchView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1704,6 +1717,7 @@
 				3BDB57C31EB9C856000C7CD2 /* duty_show@2x.png in Resources */,
 				3BDB57BA1EB9C856000C7CD2 /* Clickfold_show@3x.png in Resources */,
 				3BDB576F1EB9C69A000C7CD2 /* Default.png in Resources */,
+				3B69D3D41EFBB3C60090D8CE /* ZKResourceChooseView.xib in Resources */,
 				3BDB57CF1EB9C856000C7CD2 /* personnel_duty@3x.png in Resources */,
 				3BDB57A71EB9C856000C7CD2 /* banner_1@2x.png in Resources */,
 				3BDB57C71EB9C856000C7CD2 /* epartment on_duty@2x.png in Resources */,
@@ -1867,7 +1881,6 @@
 				3BDB56581EB9C643000C7CD2 /* ZKHomeViewController.m in Sources */,
 				3BDB56CA1EB9C64D000C7CD2 /* ZKPostHttp.m in Sources */,
 				3BDB56AC1EB9C64D000C7CD2 /* NSDictionary+FixedParams.m in Sources */,
-				3B4D0D4F1EFA441200F7846D /* ZKChooseBaseViewController.m in Sources */,
 				3BDB56CF1EB9C64D000C7CD2 /* TBSaveSuccessTipsView.m in Sources */,
 				3BDB56BD1EB9C64D000C7CD2 /* MJPhotoProgressView.m in Sources */,
 				3B4D0D1D1EFA22E800F7846D /* WMLightView.m in Sources */,
@@ -1875,8 +1888,10 @@
 				3B64219D1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m in Sources */,
 				3B4D0D4E1EFA441200F7846D /* ZKBaseWebViewController.m in Sources */,
 				3BDB56B91EB9C64D000C7CD2 /* MJPhoto.m in Sources */,
+				3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */,
 				3BDB56C41EB9C64D000C7CD2 /* TADotView.m in Sources */,
 				3BDB56C21EB9C64D000C7CD2 /* TAAbstractDotView.m in Sources */,
+				3B69D3D21EFBB2FC0090D8CE /* ZKResourceChooseView.m in Sources */,
 				3BDB56B51EB9C64D000C7CD2 /* UIView+MJAlertView.m in Sources */,
 				3B6421851EF7B18600D5FBBF /* ZKHomeBannerView.m in Sources */,
 				3BDB56C61EB9C64D000C7CD2 /* SDCollectionViewCell.m in Sources */,
@@ -1893,6 +1908,7 @@
 				3B4D0D361EFA24A600F7846D /* LDGProgressHUD.m in Sources */,
 				3BDB56B01EB9C64D000C7CD2 /* UIImage+Thumbnail.m in Sources */,
 				3BDB56D51EB9C670000C7CD2 /* PublicDefine.m in Sources */,
+				3B69D3DA1EFBC4C00090D8CE /* TBTaskSearchView.m in Sources */,
 				3BDB56C11EB9C64D000C7CD2 /* UIImageView+MJWebCache.m in Sources */,
 				3B4D0D2C1EFA248300F7846D /* KxAudioManager.m in Sources */,
 				3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */,

@@ -52,6 +52,8 @@
     [window addSubview:self];
     
     self.phoneTextField.delegate = self;
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
     [self.cover mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(window);
     }];

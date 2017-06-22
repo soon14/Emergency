@@ -7,6 +7,7 @@
 //
 
 #import "ZKBaseWebViewController.h"
+#import "ZKResourceStatViewController.h"
 #import "UIBarButtonItem+Custom.h"
 #import "UIWebView+TS_JavaScriptContext.h"
 
@@ -380,34 +381,24 @@
     NSArray *array =[classpackage componentsSeparatedByString:@"?"];
     
     NSString *lef = [array[1] componentsSeparatedByString:@"&"][0];
-    NSString *rit = [array[1] componentsSeparatedByString:@"&"][1];
+    NSString *center = [array[1] componentsSeparatedByString:@"&"][1];
+    NSString *right = [array[1] componentsSeparatedByString:@"&"][2];
     
     
-    NSInteger type = [[rit componentsSeparatedByString:@"="] objectAtIndex:1].integerValue;
+    NSInteger type = [[center componentsSeparatedByString:@"="] objectAtIndex:1].integerValue;
     
     NSString *level = [[lef componentsSeparatedByString:@"="] objectAtIndex:1];
-    
+    NSString *identifying = [[right componentsSeparatedByString:@"="] objectAtIndex:1];
+    NSLog(@"\nlevel= %@ identifying= %@",level,identifying);
     //    1酒店   2旅行社   3景区   4领队   5导游
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
-        if (type ==1) {
-            
-            
-        }else if (type ==2){
-            
-            
-            
-        }else if (type ==3){
-            
-            
-        }else if (type ==5){
-            
-            
-        }else if (type ==4){
-            
-            
-        }
+        ZKResourceStatViewController *statView = [[ZKResourceStatViewController alloc] init];
+        statView.resourceLevel = level;
+        statView.resourceViewType = identifying;
+        statView.resourceStatType = type;
+        [self.navigationController pushViewController:statView animated:YES];
         
     }];
     
