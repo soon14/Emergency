@@ -79,14 +79,14 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 @implementation KxAudioManagerImpl
 
 - (id)init
-{    
+{
     self = [super init];
-	if (self) {
+    if (self) {
         
         _outData = (float *)calloc(MAX_FRAME_SIZE*MAX_CHAN, sizeof(float));
-        _outputVolume = 0.5;        
-	}	
-	return self;
+        _outputVolume = 0.5;
+    }
+    return self;
 }
 
 - (void)dealloc
@@ -104,30 +104,30 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 
 #define dumpAudioSamples(prefix, dataBuffer, samplePrintFormat, sampleCount, channelCount) \
 { \
-    NSMutableString *dump = [NSMutableString stringWithFormat:prefix]; \
-    for (int i = 0; i < MIN(MAX_SAMPLE_DUMPED, sampleCount); i++) \
-    { \
-        for (int j = 0; j < channelCount; j++) \
-        { \
-            [dump appendFormat:samplePrintFormat, dataBuffer[j + i * channelCount]]; \
-        } \
-        [dump appendFormat:@"\n"]; \
-    } \
-    LoggerAudio(3, @"%@", dump); \
+NSMutableString *dump = [NSMutableString stringWithFormat:prefix]; \
+for (int i = 0; i < MIN(MAX_SAMPLE_DUMPED, sampleCount); i++) \
+{ \
+for (int j = 0; j < channelCount; j++) \
+{ \
+[dump appendFormat:samplePrintFormat, dataBuffer[j + i * channelCount]]; \
+} \
+[dump appendFormat:@"\n"]; \
+} \
+LoggerAudio(3, @"%@", dump); \
 }
 
 #define dumpAudioSamplesNonInterleaved(prefix, dataBuffer, samplePrintFormat, sampleCount, channelCount) \
 { \
-    NSMutableString *dump = [NSMutableString stringWithFormat:prefix]; \
-    for (int i = 0; i < MIN(MAX_SAMPLE_DUMPED, sampleCount); i++) \
-    { \
-        for (int j = 0; j < channelCount; j++) \
-        { \
-            [dump appendFormat:samplePrintFormat, dataBuffer[j][i]]; \
-        } \
-        [dump appendFormat:@"\n"]; \
-    } \
-    LoggerAudio(3, @"%@", dump); \
+NSMutableString *dump = [NSMutableString stringWithFormat:prefix]; \
+for (int i = 0; i < MIN(MAX_SAMPLE_DUMPED, sampleCount); i++) \
+{ \
+for (int j = 0; j < channelCount; j++) \
+{ \
+[dump appendFormat:samplePrintFormat, dataBuffer[j][i]]; \
+} \
+[dump appendFormat:@"\n"]; \
+} \
+LoggerAudio(3, @"%@", dump); \
 }
 
 - (BOOL) checkAudioRoute
@@ -135,11 +135,18 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     // Check what the audio route is.
     UInt32 propertySize = sizeof(CFStringRef);
     CFStringRef route;
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    
     if (checkError(AudioSessionGetProperty(kAudioSessionProperty_AudioRoute,
                                            &propertySize,
                                            &route),
                    "Couldn't check the audio route"))
         return NO;
+#pragma clang diagnostic pop
+    
+    
     
     //_audioRoute = CFBridgingRelease(route);
     LoggerAudio(1, @"AudioRoute: %@", _audioRoute);
@@ -149,8 +156,11 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 - (BOOL) setupAudio
 {
     // --- Audio Session Setup ---
-        
+    
     UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    
     //UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
     if (checkError(AudioSessionSetProperty(kAudioSessionProperty_AudioCategory,
                                            sizeof(sessionCategory),
@@ -181,24 +191,27 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 #if !TARGET_IPHONE_SIMULATOR
     Float32 preferredBufferSize = 0.0232;
     if (checkError(AudioSessionSetProperty(kAudioSessionProperty_PreferredHardwareIOBufferDuration,
-                                            sizeof(preferredBufferSize),
-                                            &preferredBufferSize),
-                    "Couldn't set the preferred buffer duration")) {
+                                           sizeof(preferredBufferSize),
+                                           &preferredBufferSize),
+                   "Couldn't set the preferred buffer duration")) {
         
         // just warning
     }
 #endif
-        
+    
     if (checkError(AudioSessionSetActive(YES),
                    "Couldn't activate the audio session"))
         return NO;
+    
+#pragma clang diagnostic pop
+    
     
     [self checkSessionProperties];
     
     // ----- Audio Unit Setup -----
     
     // Describe the output unit.
-
+    
     AudioComponentDescription description = {0};
     description.componentType = kAudioUnitType_Output;
     description.componentSubType = kAudioUnitSubType_RemoteIO;
@@ -211,10 +224,10 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         return NO;
     
     UInt32 size;
-	
-	// Check the output stream format
-	size = sizeof(AudioStreamBasicDescription);
-	if (checkError(AudioUnitGetProperty(_audioUnit,
+    
+    // Check the output stream format
+    size = sizeof(AudioStreamBasicDescription);
+    if (checkError(AudioUnitGetProperty(_audioUnit,
                                         kAudioUnitProperty_StreamFormat,
                                         kAudioUnitScope_Input,
                                         0,
@@ -235,13 +248,13 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         
         // just warning
     }
-
+    
     _numBytesPerSample = _outputFormat.mBitsPerChannel / 8;
     _numOutputChannels = _outputFormat.mChannelsPerFrame;
     
     LoggerAudio(2, @"Current output bytes per sample: %u", (unsigned int)_numBytesPerSample);
     LoggerAudio(2, @"Current output num channels: %u", (unsigned int)_numOutputChannels);
-            
+    
     // Slap a render callback on the unit
     AURenderCallbackStruct callbackStruct;
     callbackStruct.inputProc = renderCallback;
@@ -256,7 +269,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
                    "Couldn't set the render callback on the audio unit"))
         return NO;
     
-	if (checkError(AudioUnitInitialize(_audioUnit),
+    if (checkError(AudioUnitInitialize(_audioUnit),
                    "Couldn't initialize the audio unit"))
         return NO;
     
@@ -270,6 +283,10 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     // Check the number of output channels.
     UInt32 newNumChannels;
     UInt32 size = sizeof(newNumChannels);
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    
     if (checkError(AudioSessionGetProperty(kAudioSessionProperty_CurrentHardwareOutputNumberChannels,
                                            &size,
                                            &newNumChannels),
@@ -298,7 +315,10 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     
     LoggerAudio(1, @"Current output volume: %f", _outputVolume);
     
-    return YES;	
+#pragma clang diagnostic pop
+    
+    
+    return YES;
 }
 
 - (BOOL) renderFrames: (UInt32) numFrames
@@ -309,7 +329,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     }
     
     if (_playing && _outputBlock ) {
-    
+        
         // Collect data to render from the callbacks
         _outputBlock(_outData, numFrames, _numOutputChannels);
         
@@ -329,17 +349,17 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         }
         else if (_numBytesPerSample == 2) // then we need to convert SInt16 -> Float (and also scale)
         {
-//            dumpAudioSamples(@"Audio frames decoded by FFmpeg:\n",
-//                             _outData, @"% 12.4f ", numFrames, _numOutputChannels);
-
+            //            dumpAudioSamples(@"Audio frames decoded by FFmpeg:\n",
+            //                             _outData, @"% 12.4f ", numFrames, _numOutputChannels);
+            
             float scale = (float)INT16_MAX;
             vDSP_vsmul(_outData, 1, &scale, _outData, 1, numFrames*_numOutputChannels);
             
 #ifdef DUMP_AUDIO_DATA
             LoggerAudio(2, @"Buffer %u - Output Channels %u - Samples %u",
-                          (uint)ioData->mNumberBuffers, (uint)ioData->mBuffers[0].mNumberChannels, (uint)numFrames);
+                        (uint)ioData->mNumberBuffers, (uint)ioData->mBuffers[0].mNumberChannels, (uint)numFrames);
 #endif
-
+            
             for (int iBuffer=0; iBuffer < ioData->mNumberBuffers; ++iBuffer) {
                 
                 int thisNumChannels = ioData->mBuffers[iBuffer].mNumberChannels;
@@ -354,9 +374,9 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 #endif
             }
             
-        }        
+        }
     }
-
+    
     return noErr;
 }
 
@@ -364,6 +384,9 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
 
 - (BOOL) activateAudioSession
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    
     if (!_activated) {
         
         if (!_initialized) {
@@ -385,35 +408,39 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         }
     }
     
+#pragma clang diagnostic pop
+    
     return _activated;
 }
 
 - (void) deactivateAudioSession
 {
     if (_activated) {
-     
+        
         [self pause];
-                
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        
         checkError(AudioUnitUninitialize(_audioUnit),
                    "Couldn't uninitialize the audio unit");
         
         /*
-        fails with error (-10851) ? 
+         fails with error (-10851) ?
          
-        checkError(AudioUnitSetProperty(_audioUnit,
-                                        kAudioUnitProperty_SetRenderCallback,
-                                        kAudioUnitScope_Input,
-                                        0,
-                                        NULL,
-                                        0),
-                   "Couldn't clear the render callback on the audio unit");
-        */
-                
+         checkError(AudioUnitSetProperty(_audioUnit,
+         kAudioUnitProperty_SetRenderCallback,
+         kAudioUnitScope_Input,
+         0,
+         NULL,
+         0),
+         "Couldn't clear the render callback on the audio unit");
+         */
+        
         checkError(AudioComponentInstanceDispose(_audioUnit),
                    "Couldn't dispose the output audio unit");
-                
+        
         checkError(AudioSessionSetActive(NO),
-                   "Couldn't deactivate the audio session");        
+                   "Couldn't deactivate the audio session");
         
         checkError(AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_AudioRouteChange,
                                                                   sessionPropertyListener,
@@ -425,21 +452,23 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
                                                                   (__bridge void *)(self)),
                    "Couldn't remove audio session property listener");
         
+#pragma clang diagnostic pop
+        
         _activated = NO;
     }
 }
 
 - (void) pause
-{	
-	if (_playing) {
+{
+    if (_playing) {
         
         _playing = checkError(AudioOutputUnitStop(_audioUnit),
-                             "Couldn't stop the output unit");
-	}
+                              "Couldn't stop the output unit");
+    }
 }
 
 - (BOOL) play
-{    
+{
     if (!_playing) {
         
         if ([self activateAudioSession]) {
@@ -447,7 +476,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
             _playing = !checkError(AudioOutputUnitStart(_audioUnit),
                                    "Couldn't start the output unit");
         }
-	}
+    }
     
     return _playing;
 }
@@ -463,7 +492,7 @@ static void sessionPropertyListener(void *                  inClientData,
 {
     KxAudioManagerImpl *sm = (__bridge KxAudioManagerImpl *)inClientData;
     
-	if (inID == kAudioSessionProperty_AudioRouteChange) {
+    if (inID == kAudioSessionProperty_AudioRouteChange) {
         
         if ([sm checkAudioRoute]) {
             [sm checkSessionProperties];
@@ -472,30 +501,30 @@ static void sessionPropertyListener(void *                  inClientData,
     } else if (inID == kAudioSessionProperty_CurrentHardwareOutputVolume) {
         
         if (inData && inDataSize == 4) {
-
+            
             sm.outputVolume = *(float *)inData;
         }
     }
 }
 
 static void sessionInterruptionListener(void *inClientData, UInt32 inInterruption)
-{    
+{
     KxAudioManagerImpl *sm = (__bridge KxAudioManagerImpl *)inClientData;
     
-	if (inInterruption == kAudioSessionBeginInterruption) {
+    if (inInterruption == kAudioSessionBeginInterruption) {
         
-		LoggerAudio(2, @"Begin interuption");
+        LoggerAudio(2, @"Begin interuption");
         sm.playAfterSessionEndInterruption = sm.playing;
         [sm pause];
-                
-	} else if (inInterruption == kAudioSessionEndInterruption) {
-		
+        
+    } else if (inInterruption == kAudioSessionEndInterruption) {
+        
         LoggerAudio(2, @"End interuption");
         if (sm.playAfterSessionEndInterruption) {
             sm.playAfterSessionEndInterruption = NO;
             [sm play];
         }
-	}
+    }
 }
 
 static OSStatus renderCallback (void						*inRefCon,
@@ -505,28 +534,28 @@ static OSStatus renderCallback (void						*inRefCon,
                                 UInt32						inNumberFrames,
                                 AudioBufferList				* ioData)
 {
-	KxAudioManagerImpl *sm = (__bridge KxAudioManagerImpl *)inRefCon;
+    KxAudioManagerImpl *sm = (__bridge KxAudioManagerImpl *)inRefCon;
     return [sm renderFrames:inNumberFrames ioData:ioData];
 }
 
 static BOOL checkError(OSStatus error, const char *operation)
 {
-	if (error == noErr)
+    if (error == noErr)
         return NO;
-	
-	char str[20] = {0};
-	// see if it appears to be a 4-char-code
-	*(UInt32 *)(str + 1) = CFSwapInt32HostToBig(error);
-	if (isprint(str[1]) && isprint(str[2]) && isprint(str[3]) && isprint(str[4])) {
-		str[0] = str[5] = '\'';
-		str[6] = '\0';
-	} else
-		// no, format it as an integer
-		sprintf(str, "%d", (int)error);
     
-	LoggerStream(0, @"Error: %s (%s)\n", operation, str);
+    char str[20] = {0};
+    // see if it appears to be a 4-char-code
+    *(UInt32 *)(str + 1) = CFSwapInt32HostToBig(error);
+    if (isprint(str[1]) && isprint(str[2]) && isprint(str[3]) && isprint(str[4])) {
+        str[0] = str[5] = '\'';
+        str[6] = '\0';
+    } else
+        // no, format it as an integer
+        sprintf(str, "%d", (int)error);
     
-	//exit(1);
+    LoggerStream(0, @"Error: %s (%s)\n", operation, str);
+    
+    //exit(1);
     
     return YES;
 }

@@ -171,13 +171,10 @@ static NSMutableDictionary * gHistory;
 - (void) dealloc
 {
     [self pause];
-    
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    if (_dispatchQueue) {
-        // Not needed as of ARC.
-//        dispatch_release(_dispatchQueue);
+    if (_dispatchQueue)
+    {
         _dispatchQueue = NULL;
     }
     
@@ -186,7 +183,6 @@ static NSMutableDictionary * gHistory;
 
 - (void)loadView
 {
-    // LoggerStream(1, @"loadView");
     CGRect bounds = [[UIScreen mainScreen] applicationFrame];
     
     self.view = [[UIView alloc] initWithFrame:bounds];
@@ -203,10 +199,9 @@ static NSMutableDictionary * gHistory;
     
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.mas_equalTo(15);
-        make.height.mas_equalTo(30);
-        make.top.equalTo(self.view).with.offset(10);
-        make.width.mas_equalTo(30);
+        make.right.mas_equalTo(-40);
+        make.top.equalTo(self.view).with.offset(40);
+        make.width.height.mas_equalTo(36);
         
         
     }];

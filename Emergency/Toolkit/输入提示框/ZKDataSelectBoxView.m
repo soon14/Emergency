@@ -80,6 +80,7 @@
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.dataSource = self;
     _tableView.delegate   = self;
+    _tableView.tableFooterView = [[UIView alloc] init];
     _tableView.allowsMultipleSelectionDuringEditing = YES;
     [_contentView addSubview:_tableView];
     
@@ -163,7 +164,10 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
         cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
-    cell.textLabel.text = [[_data objectAtIndex:indexPath.row] valueForKey:_key];
+    if (_data.count > indexPath.row)
+    {
+        cell.textLabel.text = [[_data objectAtIndex:indexPath.row] valueForKey:_key];
+    }
     return cell;
 }
 //选中
@@ -200,20 +204,31 @@
             
             _dictionary = obj;
             _selectTag = idx;
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
-            [_tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+            
+            NSIndexPath *ip=[NSIndexPath indexPathForRow:idx inSection:0];
+            [_tableView selectRowAtIndexPath:ip animated:YES scrollPosition:UITableViewScrollPositionTop];
         }
     }];
 }
 #pragma mark  ----事件----
 - (void)determineClick
 {
+    if (_dictionary == nil || _dictionary.count == 0)
+    {
+        [UIView addMJNotifierWithText:@"未选中类型!" dismissAutomatically:YES];
+    }
+    else
+    {
+        if ([self.delegate respondsToSelector:@selector(boxViewSelectedData:)]) {
+            [self.delegate boxViewSelectedData:_dictionary];
+            [self disappear];
+        }
+    }
     
 }
 - (void)show;
 {
     self.alpha = 1;
-    [self loadTheSuccess];
     [[APPDELEGATE window] addSubview:self];
     _contentView.transform = CGAffineTransformMakeScale(0, 0);
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -223,6 +238,7 @@
             _contentView.transform = CGAffineTransformMakeScale(1, 1);
         } completion:^(BOOL finished) {
             [_tableView reloadData];
+            [self loadTheSuccess];
         }];
     }];
 }

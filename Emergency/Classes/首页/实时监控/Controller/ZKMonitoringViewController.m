@@ -6,6 +6,17 @@
 //  Copyright © 2017年 王小腊. All rights reserved.
 //
 
+/**
+ 按钮点击类型
+ 
+ - SelectedButtonTypeCity: 城市按钮
+ - SelectedButtonTypeLevel: 景区等级按钮
+ */
+typedef NS_ENUM(NSInteger,SelectedButtonType) {
+    
+    SelectedButtonTypeCity = 0,
+    SelectedButtonTypeLevel
+};
 #import "ZKMonitoringViewController.h"
 #import "KxMovieViewController.h"
 #import "ZKTimeMonitoringMode.h"
@@ -15,17 +26,21 @@
 #import "ZKDataSelectBoxView.h"
 #import "ZKBasicDataTool.h"
 #import "ZKTextField.h"
-@interface ZKMonitoringViewController ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface ZKMonitoringViewController ()<UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate,ZKDataSelectBoxViewDelegate>
 // 城市选择数据
-@property (nonatomic, strong) NSArray *cityChooseArray;
+@property (nonatomic, strong) NSMutableArray *cityChooseArray;
 // 等级选择数据
-@property (nonatomic, strong) NSArray *levelChooseArray;
+@property (nonatomic, strong) NSMutableArray *levelChooseArray;
 // 城市字段
 @property (nonatomic, strong) NSString *cityChoosekey;
 // 等级字段
 @property (nonatomic, strong) NSString *levelChooseKey;
 @property (nonatomic, strong) UIButton *cityChooseButton;
 @property (nonatomic, strong) UIButton *levelChooseButton;
+// 选择按钮的类型记录
+@property (nonatomic) SelectedButtonType selectedType;
+// 是否添加城市列表数据
+@property (nonatomic, assign) BOOL isAddCityList;
 @property (nonatomic, strong) ZKTextField *searchTextField;
 @property (nonatomic, strong) NSMutableArray <ZKTimeMonitoringMode *>* modeArray;
 @property (nonatomic, strong) NSMutableDictionary *parameter;
@@ -34,7 +49,22 @@
 @end
 
 @implementation ZKMonitoringViewController
-
+- (NSMutableArray *)cityChooseArray
+{
+    if (!_cityChooseArray)
+    {
+        _cityChooseArray = [NSMutableArray array];
+    }
+    return _cityChooseArray;
+}
+- (NSMutableArray *)levelChooseArray
+{
+    if (!_levelChooseArray)
+    {
+        _levelChooseArray = [NSMutableArray array];
+    }
+    return _levelChooseArray;
+}
 - (NSMutableArray<ZKTimeMonitoringMode *> *)modeArray
 {
     if (!_modeArray)
@@ -94,7 +124,7 @@
 #pragma mark  ----数据请求----
 - (void)reloadData
 {
-    hudShowLoading(@"数据加载中...");
+    hudShowLoading(@"加载中...");
     [self.parameter setObject:self.cityChoosekey forKey:@"region"];
     [self.parameter setObject:self.levelChooseKey forKey:@"levels"];
     [self.parameter setObject:self.searchTextField.text forKey:@"name"];
@@ -105,19 +135,16 @@
         NSString *state = [responseObj valueForKey:@"state"];
         NSString *message = [responseObj valueForKey:@"message"];
         [weakSelf.collectionView.mj_header endRefreshing];
+        hudDismiss();
+        [UIView addMJNotifierWithText:message dismissAutomatically:YES];
         if ([state isEqualToString:@"success"])
         {
-            hudShowSuccess(message);
             [weakSelf responseData:responseObj];
-        }
-        else
-        {
-            hudShowError(message);
         }
         
     } failure:^(NSError *error) {
         
-         [weakSelf.collectionView.mj_header endRefreshing];
+        [weakSelf.collectionView.mj_header endRefreshing];
         hudShowError(@"网络异常！");
     }];
 }
@@ -126,7 +153,15 @@
 {
     [self.modeArray removeAllObjects];
     
-    NSString *total = [obj valueForKey:@"total"];
+    // 第一次添加城市数据
+    if (self.isAddCityList == NO)
+    {
+        NSString *totalString = [NSString stringWithFormat:@"不限（%@个）",[obj valueForKey:@"total"]];
+        [self.cityChooseButton setTitle:totalString forState:UIControlStateNormal];
+        [self.cityChooseArray insertObject:@{@"name":totalString,@"region":@""} atIndex:0];
+        self.isAddCityList = YES;
+    }
+    
     NSArray *data   = [obj valueForKey:@"data"];
     [data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -248,33 +283,42 @@
     YJWeakSelf
     [tool obtainCityTwo:^(NSArray *cityTwo)
      {
-         weakSelf.cityChooseArray = cityTwo;
-         NSLog(@" cityTwo %@",cityTwo);
+         [weakSelf.cityChooseArray addObjectsFromArray:cityTwo];
          
      }];
     //    加载等级数据
     [tool obtainLevelstrArray:^(NSArray *levelstrArray)
      {
-         weakSelf.levelChooseArray = levelstrArray;
-         NSLog(@"slevelstrArray %@",levelstrArray);
+         [weakSelf.levelChooseArray addObject:@{@"slevel":@"不限",@"type":@""}];
+         [weakSelf.levelChooseArray addObjectsFromArray:levelstrArray];
      }];
 }
 #pragma mark  ----按钮点击----
 - (void)cityChooseClick:(UIButton *)sender
 {
-    ZKDataSelectBoxView *boxview = [[ZKDataSelectBoxView alloc] initShowPrompt:@"按区域选择" data:self.cityChooseArray cellNameKey:@"name" selectName:self.cityChooseButton.titleLabel.text ];
-    [boxview show];
+    if (self.cityChooseArray.count == 0)
+    {
+        [UIView addMJNotifierWithText:@"城市数据还在加载中" dismissAutomatically:YES];
+        return;
+    }
     [self selectChooseButtonIsCityButton:YES];
+    [self shoBoxViewDataType:YES];
 }
 - (void)levelChooseClick:(UIButton *)sender
 {
+    if (self.levelChooseArray.count == 0)
+    {
+        [UIView addMJNotifierWithText:@"景区等级数据还在加载中" dismissAutomatically:YES];
+        return;
+    }
     [self selectChooseButtonIsCityButton:NO];
+    [self shoBoxViewDataType:NO];
 }
 // 搜索按钮点击
 - (void)searchRequest
 {
-  [self reloadData];
-  [self.searchTextField resignFirstResponder];
+    [self reloadData];
+    [self.searchTextField resignFirstResponder];
 }
 #pragma mark  ----UICollectionViewDelegate----
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -391,6 +435,26 @@
 {
     [self.searchTextField resignFirstResponder];
 }
+#pragma mark  ----ZKDataSelectBoxViewDelegate----
+/**
+ 弹出框选中的数据
+ 
+ @param data 数据
+ */
+- (void)boxViewSelectedData:(NSDictionary *)data;
+{
+    if (self.selectedType == SelectedButtonTypeCity)
+    {
+        self.cityChoosekey = [data valueForKey:@"region"];
+        [self.cityChooseButton setTitle:[data valueForKey:@"name"] forState:UIControlStateNormal];
+    }
+    else if (self.selectedType == SelectedButtonTypeLevel)
+    {
+        self.levelChooseKey = [data valueForKey:@"type"];
+        [self.levelChooseButton setTitle:[data valueForKey:@"slevel"] forState:UIControlStateNormal];
+    }
+    [self reloadData];
+}
 #pragma mark ---DZNEmptyDataSetSource--
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
@@ -457,11 +521,26 @@
 #pragma mark  ----UITextFieldDelegate----
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 {
-   [self.searchTextField resignFirstResponder];
+    [self.searchTextField resignFirstResponder];
     [self reloadData];
     return YES;
 }
 #pragma mark  ----其它逻辑----
+
+/**
+ 弹出选择框
+ 
+ @param type 弹出类型
+ */
+- (void)shoBoxViewDataType:(BOOL)type
+{
+    ZKDataSelectBoxView *boxview = [[ZKDataSelectBoxView alloc] initShowPrompt:type == YES?@"按区域选择":@"按景区等级选择" data:type == YES?self.cityChooseArray:self.levelChooseArray cellNameKey:type == YES?@"name":@"slevel" selectName:type == YES?self.cityChooseButton.titleLabel.text:self.levelChooseButton.titleLabel.text ];
+    boxview.delegate = self;
+    [boxview show];
+    
+    self.selectedType = type == YES?SelectedButtonTypeCity:SelectedButtonTypeLevel;
+    
+}
 /**
  选择按钮点击
  
@@ -474,13 +553,13 @@
     UIControlState buttonNormalState = type?UIControlStateNormal:UIControlStateHighlighted;
     UIControlState buttonHighlightedState = type?UIControlStateHighlighted:UIControlStateNormal;
     
-     // 根据状态显示图片和字体颜色
+    // 根据状态显示图片和字体颜色
     [self.cityChooseButton setBackgroundImage:[UIImage imageNamed:@"Selectbutton_0"] forState:buttonNormalState];
     [self.cityChooseButton setBackgroundImage:[UIImage imageNamed:@"Selectbutton_1"] forState:buttonHighlightedState];
     [self.cityChooseButton.titleLabel sizeToFit];
     [self.cityChooseButton setTitleColor:[UIColor whiteColor] forState:buttonNormalState];
     [self.cityChooseButton setTitleColor:CYBColorGreen forState:buttonHighlightedState];
-
+    
     [self.levelChooseButton setBackgroundImage:[UIImage imageNamed:@"Selectbutton_2"] forState:buttonHighlightedState];
     [self.levelChooseButton setBackgroundImage:[UIImage imageNamed:@"Selectbutton_3"] forState:buttonNormalState];
     [self.levelChooseButton.titleLabel sizeToFit];

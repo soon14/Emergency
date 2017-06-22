@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @protocol ZKDataSelectBoxViewDelegate <NSObject>
+/**
+ 弹出框选中的数据
 
-
+ @param data 数据
+ */
+- (void)boxViewSelectedData:(NSDictionary *)data;
 
 @end
 @interface ZKDataSelectBoxView : UIView
