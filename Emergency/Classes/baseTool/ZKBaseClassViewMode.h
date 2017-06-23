@@ -45,6 +45,9 @@
  */
 - (void)postDataParameter:(NSMutableDictionary *)parameter;
 
+// 请求后缀
+@property (nonatomic, strong) NSString *url;
+
 @property (nonatomic, assign) id<ZKBaseClassViewModeDelegate>delegate;
 
 @end

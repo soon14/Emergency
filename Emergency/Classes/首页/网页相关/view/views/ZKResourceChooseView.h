@@ -69,9 +69,11 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
 /**
  配置数据
 
- @param type 搜索数据类型
+ @param type 资源类型
+ @param leftTitle 左name
+ @param rightTitle 右name
  */
-- (void)configurationDataSearchType:(ResourceDataType)type;
+- (void)configurationDataSearchType:(ResourceDataType)type leftTitle:(NSString *)leftTitle rightTitle:(NSString *)rightTitle;
 
 @property (nonatomic, assign) id<ZKResourceChooseViewDelegate>delegate;
 

@@ -35,16 +35,14 @@ typedef NS_ENUM(NSInteger,ResourceStatType) {
 @interface ZKResourceStatViewController : ZKTableBaseViewController
 
 /**
- 资源等级展示字符
+ 配置数据
+ 
+ @param type 资源类型
+ @param defaultData 按钮默认值 @{@"left":@"-",@"region":@"-", @"right":@"-",@"level":@"-"}
+  @param isMap 是否地图跳转过来的
  */
-@property (nonatomic, strong) NSString *resourceLevel;
-
-/**
- 资源等级搜索类型
- */
-@property (nonatomic, strong) NSString *resourceViewType;
+- (void)configurationDataSearchType:(ResourceStatType)type buttonDefaultData:(NSDictionary *)defaultData isMap:(BOOL)isMap;
 
 
-@property (nonatomic) ResourceStatType resourceStatType;
 
 @end

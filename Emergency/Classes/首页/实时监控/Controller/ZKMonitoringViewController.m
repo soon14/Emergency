@@ -302,7 +302,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
         return;
     }
     [self selectChooseButtonIsCityButton:YES];
-    [self shoBoxViewDataType:YES];
+    [self showBoxViewDataType:YES];
 }
 - (void)levelChooseClick:(UIButton *)sender
 {
@@ -312,7 +312,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
         return;
     }
     [self selectChooseButtonIsCityButton:NO];
-    [self shoBoxViewDataType:NO];
+    [self showBoxViewDataType:NO];
 }
 // 搜索按钮点击
 - (void)searchRequest
@@ -532,7 +532,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
  
  @param type 弹出类型
  */
-- (void)shoBoxViewDataType:(BOOL)type
+- (void)showBoxViewDataType:(BOOL)type
 {
     ZKDataSelectBoxView *boxview = [[ZKDataSelectBoxView alloc] initShowPrompt:type == YES?@"按区域选择":@"按景区等级选择" data:type == YES?self.cityChooseArray:self.levelChooseArray cellNameKey:type == YES?@"name":@"slevel" selectName:type == YES?self.cityChooseButton.titleLabel.text:self.levelChooseButton.titleLabel.text ];
     boxview.delegate = self;

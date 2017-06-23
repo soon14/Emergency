@@ -395,9 +395,7 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
         ZKResourceStatViewController *statView = [[ZKResourceStatViewController alloc] init];
-        statView.resourceLevel = level;
-        statView.resourceViewType = identifying;
-        statView.resourceStatType = type;
+        [statView configurationDataSearchType:type buttonDefaultData:@{@"left":@"不限",@"region":@"", @"right":level,@"level":identifying} isMap:NO];
         [self.navigationController pushViewController:statView animated:YES];
         
     }];

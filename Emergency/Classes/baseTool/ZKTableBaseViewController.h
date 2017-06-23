@@ -9,6 +9,8 @@
 #import "ZKBaseViewController.h"
 
 @interface ZKTableBaseViewController : ZKBaseViewController
+// 请求后缀
+@property (nonatomic, strong) NSString *postUrl;
 
 @property (nonatomic, strong) UITableView *tableView;
 

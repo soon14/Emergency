@@ -40,16 +40,17 @@
 - (void)postDataParameter:(NSMutableDictionary *)parameter;
 {
     YJWeakSelf
-    [ZKPostHttp post:@"" params:parameter cacheType:ZKCacheTypeReloadIgnoringLocalCacheData success:^(NSDictionary *obj) {
+    [ZKPostHttp post:self.url params:parameter cacheType:ZKCacheTypeReloadIgnoringLocalCacheData success:^(NSDictionary *obj) {
         
-        NSString *errcode = [obj valueForKey:@"errcode"];
-        if ([errcode isEqualToString:@"00000"])
+        NSLog(@"\n\n 结果 == \n%@", obj);
+        NSString *state = [obj valueForKey:@"state"];
+        if ([state isEqualToString:@"success"])
         {
             if (_delegateFlags.original)
             {
                 [weakSelf.delegate originalData:obj];
             }
-            NSDictionary *data = [obj valueForKey:@"data"];
+            NSArray *data = [obj valueForKey:@"data"];
             [weakSelf dataCard:data];
             
         }
@@ -69,24 +70,20 @@
         }
     }];
 }
-- (void)dataCard:(NSDictionary *)obj
+- (void)dataCard:(NSArray *)obj
 {
-    NSArray *root = [obj valueForKey:@"root"];
+    NSArray *root = obj;
     
-    if (root.count<20)
+    if (_delegateFlags.postEnd)
     {
-        if (_delegateFlags.postEnd)
-        {
-            [self.delegate postDataEnd:root];
-        }
+        [self.delegate postDataEnd:root];
     }
-    else
+    if (root.count < 20)
     {
         if (_delegateFlags.noMore)
         {
             [self.delegate noMoreData];
         }
-        
     }
     
 }
