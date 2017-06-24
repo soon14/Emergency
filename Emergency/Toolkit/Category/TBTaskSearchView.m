@@ -14,12 +14,24 @@
 
 @end
 @implementation TBTaskSearchView
-
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [self createView];
+    }
+    return self;
+}
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    
+    [self createView];
+
+}
+- (void)createView
+{
     UIView *backView = [[UIView alloc] init];
     backView.backgroundColor = [UIColor whiteColor];
     backView.layer.masksToBounds = YES;
@@ -50,15 +62,6 @@
     }];
 
 }
-- (instancetype)init;
-{
-    if (self)
-    {
-        self = [super init];
-    }
-    return self;
-}
-
 #pragma mark UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;

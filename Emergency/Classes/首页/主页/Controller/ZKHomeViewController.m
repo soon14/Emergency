@@ -8,6 +8,7 @@
 
 #import "ZKHomeViewController.h"
 #import "ZKBaseWebViewController.h"
+#import "ZKTourismDataViewController.h"
 #import "ZKHomeBannerView.h"
 #import "ZKHomeContentView.h"
 
@@ -90,12 +91,15 @@
     }else if ([className isEqualToString:@"旅游团队"]){
         
         /* 旅游团队   */
-
+        ZKTourismDataViewController *vc = [[ZKTourismDataViewController alloc] init];
+        vc.tourismDataType = TourismDataTypeTeam;
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([className isEqualToString:@"旅游大巴"]){
         /* 旅游大巴   */
-        
-
+        ZKTourismDataViewController *vc = [[ZKTourismDataViewController alloc] init];
+        vc.tourismDataType = TourismDataTypeBusShowMapBuuton;
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([className isEqualToString:@"导游"]){
         /* 导游   */

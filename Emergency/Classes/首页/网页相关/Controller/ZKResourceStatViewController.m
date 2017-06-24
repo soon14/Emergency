@@ -57,7 +57,10 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
     }
     return cell;
 }
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
 #pragma mark  ----数据配置----
 /**
  配置数据

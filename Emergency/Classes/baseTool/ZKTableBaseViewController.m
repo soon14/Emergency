@@ -265,6 +265,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.postUrl = @"";
     [self initData];
     [self setUpView];
     
