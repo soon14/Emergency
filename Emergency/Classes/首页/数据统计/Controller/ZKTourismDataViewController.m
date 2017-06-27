@@ -10,6 +10,7 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
 
 #import "ZKTourismDataViewController.h"
 #import "ZKElectronicLtineraryViewController.h"
+#import "ZKBusTrajectoryViewController.h"
 #import "TBTaskSearchView.h"
 #import "ZKTourismDataTeamCell.h"
 #import "ZKTourismDataBusCell.h"
@@ -59,7 +60,6 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
     
     [_timer invalidate];
     _timer = nil;
-    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,7 +94,9 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
     }
     else
     {
-
+        ZKBusTrajectoryViewController *vc = [[ZKBusTrajectoryViewController alloc] init];
+        vc.busMode = [self.roots objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 
 }
@@ -144,11 +146,11 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
         total = [total isKindOfClass:[NSNumber class]]?total:[NSNumber numberWithInt:0];
         if (self.tourismDataType == TourismDataTypeTeam)
         {
-            self.headerNameLanel.text =[NSString stringWithFormat:@"%@正在运行的旅游团队:%@个",APPNAME,total];
+            self.headerNameLanel.text =[NSString stringWithFormat:@"%@正在运行的旅游团队：%@个",APPNAME,total];
         }
         else
         {
-            self.headerNameLanel.text =[NSString stringWithFormat:@"%@正在运行旅游大巴总数:%@辆",APPNAME,total];
+            self.headerNameLanel.text =[NSString stringWithFormat:@"%@正在运行旅游大巴总数：%@辆",APPNAME,total];
         }
         self.noNewAddData = YES;
     }
@@ -182,7 +184,7 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
     self.headerNameLanel.layer.masksToBounds = YES;
     self.headerNameLanel.layer.cornerRadius = 17;
     self.headerNameLanel.textAlignment = NSTextAlignmentCenter;
-    self.headerNameLanel.font = [UIFont systemFontOfSize:18 weight:0.2];
+    self.headerNameLanel.font = [UIFont systemFontOfSize:16 weight:0.2];
     self.headerNameLanel.text = @"数据未加载...";
     [headerconterView addSubview:self.headerNameLanel];
     

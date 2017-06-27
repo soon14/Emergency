@@ -16,75 +16,75 @@
             <rect key="frame" x="0.0" y="0.0" width="333" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="333" height="136"/>
+                <rect key="frame" x="0.0" y="0.0" width="333" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-b0-iC9">
-                        <rect key="frame" x="8" y="8" width="106" height="120"/>
+                        <rect key="frame" x="8" y="8" width="94" height="120"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="106" id="dWV-NX-oTA"/>
+                            <constraint firstAttribute="width" constant="94" id="dWV-NX-oTA"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiY-sb-WLZ">
-                        <rect key="frame" x="122" y="10" width="40" height="20"/>
+                        <rect key="frame" x="110" y="10" width="40" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-35-Qah">
-                        <rect key="frame" x="162" y="10" width="40" height="20"/>
+                        <rect key="frame" x="150" y="10" width="40" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.06098368019" green="0.60554713010000005" blue="0.18594145770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzj-5O-7dM">
-                        <rect key="frame" x="122" y="38" width="84" height="17"/>
+                        <rect key="frame" x="110" y="38" width="84" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title=" 导游证号：" image="certificate">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPT-33-oA8">
-                        <rect key="frame" x="122" y="61" width="86" height="17"/>
+                        <rect key="frame" x="110" y="61" width="86" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title=" 联系电话：" image="call">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-Sg-BXY">
-                        <rect key="frame" x="122" y="84" width="86" height="17"/>
+                        <rect key="frame" x="110" y="84" width="86" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title=" 所属公司：" image="syndicate">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQl-j8-Kxx">
-                        <rect key="frame" x="122" y="107" width="85" height="17"/>
+                        <rect key="frame" x="110" y="107" width="85" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title=" 当前团队：" image="colony">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-gy-C5e">
-                        <rect key="frame" x="206" y="38" width="36" height="17"/>
+                        <rect key="frame" x="194" y="38" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcL-qV-d9x">
-                        <rect key="frame" x="208" y="84" width="36" height="17"/>
+                        <rect key="frame" x="196" y="84" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-NM-suT">
-                        <rect key="frame" x="207" y="107" width="36" height="17"/>
+                        <rect key="frame" x="195" y="107" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3E-Xt-Vaa">
-                        <rect key="frame" x="208" y="61" width="36" height="17"/>
+                        <rect key="frame" x="196" y="61" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>

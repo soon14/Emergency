@@ -9,6 +9,7 @@
 #import "ZKHomeViewController.h"
 #import "ZKBaseWebViewController.h"
 #import "ZKTourismDataViewController.h"
+#import "ZKElectronicMapViewController.h"
 #import "ZKHomeBannerView.h"
 #import "ZKHomeContentView.h"
 
@@ -47,6 +48,13 @@
     }];
     
     self.navigationItem.title = FullName;
+    [ZKPostHttp postPath:@"https://appapi.daqsoft.com/groupCQ/tdgl/rest/law?method=login&username=lifeng&password=123456" params:nil success:^(id responseObj) {
+        
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 #pragma mark  ----ZKHomeContentViewDelegate----
 
@@ -106,9 +114,10 @@
         [self pushViewBundleUrl:@"resourceStatInfo" htmlType:@"type=4"];
     }else if ([className isEqualToString:@"电子地图"]){
         /*  电子地图  */
+        ZKElectronicMapViewController *mavViewController = [[ZKElectronicMapViewController alloc] init];
+        [mavViewController mapConfigurationType:ElectronicMapTypeNone dataDefaultData:nil];
+        [self.navigationController pushViewController:mavViewController animated:YES];
 
-
-        
     }else if ([className isEqualToString:@"信息采集"]){
         /*  信息采集  */
 

@@ -7,9 +7,12 @@
 //
 
 
-
 #import "ZKBaseViewController.h"
 @class ZKTourismDataTeamMode;
+
+/**
+ 电子行程单
+ */
 @interface ZKElectronicLtineraryViewController : ZKBaseViewController
 
 @property (nonatomic,strong) ZKTourismDataTeamMode *list;

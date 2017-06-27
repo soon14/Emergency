@@ -59,22 +59,20 @@
 -(void)postData
 {
     hudShowLoading(@"数据加载中...");
-    NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:self.list.ID forKey:@"tid"];
     
     [ZKPostHttp post:@"appTours/toursDetailList" params:dic success:^(id responseObj) {
         hudDismiss();
-        NSArray *array =[responseObj valueForKey:@"data"];
-        
+        NSArray *array = [responseObj valueForKey:@"data"];
         if (array.count>0)
         {
             dataArray = [ZKElectronicLtineraryMode mj_objectArrayWithKeyValuesArray:array];
-            /**
-             *  更新数据
-             */
             [self updataView];
             
-        }else{
+        }
+        else
+        {
             
             [UIView addMJNotifierWithText:@"该团队暂没有行程信息!" dismissAutomatically:YES];
         }
@@ -86,6 +84,9 @@
 }
 
 #pragma mark 数据更新
+/**
+ *  更新数据
+ */
 -(void)updataView
 {
     [self.tableView reloadData];
