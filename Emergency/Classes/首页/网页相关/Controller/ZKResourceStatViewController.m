@@ -10,6 +10,7 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
 
 #import "ZKResourceStatViewController.h"
 #import "ZKResourceChooseView.h"
+#import "ZKElectronicMapViewController.h"
 
 #import "ZKHotelResourceStatMode.h"
 #import "ZKTravelResourceStatMode.h"
@@ -169,7 +170,9 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
 #pragma mark  ----按钮点击事件----
 - (void)goMap
 {
-    
+    ZKElectronicMapViewController *mapViewController = [[ZKElectronicMapViewController alloc] init];
+    [mapViewController mapConfigurationType:(NSInteger)self.resourceStatType dataDefaultData:@{@"left":self.regionName,@"region":self.region, @"right":self.levelName,@"level":self.level}];
+    [self.navigationController pushViewController:mapViewController animated:YES];
 }
 #pragma mark  ----ZKResourceChooseViewDelegate----
 /**

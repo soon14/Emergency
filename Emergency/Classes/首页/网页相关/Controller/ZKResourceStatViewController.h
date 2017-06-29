@@ -43,6 +43,4 @@ typedef NS_ENUM(NSInteger,ResourceStatType) {
  */
 - (void)configurationDataSearchType:(ResourceStatType)type buttonDefaultData:(NSDictionary *)defaultData isMap:(BOOL)isMap;
 
-
-
 @end

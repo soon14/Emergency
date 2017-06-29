@@ -48,13 +48,6 @@
     }];
     
     self.navigationItem.title = FullName;
-    [ZKPostHttp postPath:@"https://appapi.daqsoft.com/groupCQ/tdgl/rest/law?method=login&username=lifeng&password=123456" params:nil success:^(id responseObj) {
-        
-        
-        
-    } failure:^(NSError *error) {
-        
-    }];
 }
 #pragma mark  ----ZKHomeContentViewDelegate----
 

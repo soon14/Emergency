@@ -14,7 +14,7 @@
  - ElectronicMapTypeHotel: 酒店
  - ElectronicMapTypeTravel: 旅行社
  - ElectronicMapTypeScenic: 景区
- - ElectronicMapTypeGuide: 导游
+ - ElectronicMapTypeBus: 大巴
  */
 typedef NS_ENUM(NSInteger, ElectronicMapType) {
 
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, ElectronicMapType) {
     ElectronicMapTypeHotel  = 1,
     ElectronicMapTypeTravel = 2,
     ElectronicMapTypeScenic = 3,
-    ElectronicMapTypeGuide  = 4,
+    ElectronicMapTypeBus  = 4,
 };
 #import "ZKBaseViewController.h"
 

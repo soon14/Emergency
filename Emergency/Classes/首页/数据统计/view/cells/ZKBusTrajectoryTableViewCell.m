@@ -20,7 +20,7 @@
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
 }
 
 - (void)cellAssignmentData:(ZKBusTrajectoryMode *)list;

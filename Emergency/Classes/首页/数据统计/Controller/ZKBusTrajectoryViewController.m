@@ -143,7 +143,7 @@ static NSString *const busCellIdentifier = @"busCellIdentifier";
  */
 - (void)addMapAnnotationView
 {
-    [self.recordArray removeAllObjects];
+    [self removeAnnotations];
     if (self.trajectoryArray.count <= 10)
     {
         [self.recordArray addObjectsFromArray:self.trajectoryArray];
@@ -178,7 +178,7 @@ static NSString *const busCellIdentifier = @"busCellIdentifier";
     }];
     
     // 拿到第一个数据 选中他
-    TBBusAnnotation *annotation = self.mapView.annotations.lastObject;
+    TBBusAnnotation *annotation = self.mapView.annotations.firstObject;
     
     [self.mapView selectAnnotation:annotation animated:NO];
     [self.mapView setCenterCoordinate:annotation.coordinate animated:YES];
@@ -206,6 +206,18 @@ static NSString *const busCellIdentifier = @"busCellIdentifier";
     [self.mapView addOverlay:line];
     [self.mapView setNeedsDisplay];
 
+}
+/**
+ 清除气泡
+ */
+- (void)removeAnnotations
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView setNeedsDisplay];
+    if (self.mapView.annotations.count != 0)
+    {
+        [self removeAnnotations];
+    }
 }
 #pragma mark  ----TMapViewDelegate----
 /**
@@ -239,8 +251,8 @@ static NSString *const busCellIdentifier = @"busCellIdentifier";
         // 数据源
         TBBusAnnotation *mode = (TBBusAnnotation *)annotation;
         
-        static NSString *CellIdentifier = @"busline";
-        ZKBusTAnnotationView *annotationView = [[ZKBusTAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:CellIdentifier];
+        static NSString *cellIdentifier = @"cellIdentifier";
+        ZKBusTAnnotationView *annotationView = [[ZKBusTAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:cellIdentifier];
         annotationView.image = [UIImage imageNamed:@"guijiMapQQ"];
         annotationView.selectImage = [UIImage imageNamed:@"guijiMapAdd"];
         annotationView.canShowCallout = TRUE;

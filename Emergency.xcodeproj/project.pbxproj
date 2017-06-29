@@ -47,6 +47,13 @@
 		3B4D0D621EFA702400F7846D /* ZKDataSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D611EFA702400F7846D /* ZKDataSelectBoxView.m */; };
 		3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */; };
 		3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */; };
+		3B6355F21F03427F005A36CB /* ZKMapRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355F11F03427F005A36CB /* ZKMapRollingView.m */; };
+		3B6355F51F034BF0005A36CB /* ZKMapChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355F41F034BF0005A36CB /* ZKMapChooseView.m */; };
+		3B6355F71F034C04005A36CB /* ZKMapChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6355F61F034C04005A36CB /* ZKMapChooseView.xib */; };
+		3B6355FA1F035345005A36CB /* ZKTypeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355F91F035345005A36CB /* ZKTypeSelectionView.m */; };
+		3B6355FD1F039185005A36CB /* ZKElectronicMapViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355FC1F039185005A36CB /* ZKElectronicMapViewMode.m */; };
+		3B6356001F0394AD005A36CB /* ZKElectronicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355FF1F0394AD005A36CB /* ZKElectronicMapAnnotation.m */; };
+		3B6356031F0396C4005A36CB /* ZKMapTAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6356021F0396C4005A36CB /* ZKMapTAnnotationView.m */; };
 		3B64217E1EF778F900D5FBBF /* ZKEmergencyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64217D1EF778F900D5FBBF /* ZKEmergencyAlertView.m */; };
 		3B6421801EF7790900D5FBBF /* ZKEmergencyAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B64217F1EF7790900D5FBBF /* ZKEmergencyAlertView.xib */; };
 		3B6421851EF7B18600D5FBBF /* ZKHomeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6421841EF7B18600D5FBBF /* ZKHomeBannerView.m */; };
@@ -81,6 +88,15 @@
 		3BA0BBF41EFD073C00BD4503 /* ZKScenicResourceStatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0BBF21EFD073C00BD4503 /* ZKScenicResourceStatCell.m */; };
 		3BA0BBF51EFD073C00BD4503 /* ZKScenicResourceStatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA0BBF31EFD073C00BD4503 /* ZKScenicResourceStatCell.xib */; };
 		3BA0BBF81EFD085C00BD4503 /* ZKResourceStatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0BBF71EFD085C00BD4503 /* ZKResourceStatBaseCell.m */; };
+		3BAA48061F04FAE1004AAB76 /* ZKICarouselBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA48051F04FAE1004AAB76 /* ZKICarouselBaseView.m */; };
+		3BAA48091F04FB30004AAB76 /* ZKICarouselHotelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA48081F04FB30004AAB76 /* ZKICarouselHotelView.m */; };
+		3BAA480C1F04FB46004AAB76 /* ZKICarouselTravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA480B1F04FB46004AAB76 /* ZKICarouselTravelView.m */; };
+		3BAA480F1F04FBB2004AAB76 /* ZKICarouselScenicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA480E1F04FBB2004AAB76 /* ZKICarouselScenicView.m */; };
+		3BAA48121F04FBC5004AAB76 /* ZKICarouselBusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA48111F04FBC5004AAB76 /* ZKICarouselBusView.m */; };
+		3BAA48141F04FBDE004AAB76 /* ZKICarouselHotelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAA48131F04FBDE004AAB76 /* ZKICarouselHotelView.xib */; };
+		3BAA48161F04FBEA004AAB76 /* ZKICarouselTravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAA48151F04FBEA004AAB76 /* ZKICarouselTravelView.xib */; };
+		3BAA48181F04FBF7004AAB76 /* ZKICarouselScenicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAA48171F04FBF7004AAB76 /* ZKICarouselScenicView.xib */; };
+		3BAA481A1F04FC02004AAB76 /* ZKICarouselBusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAA48191F04FC02004AAB76 /* ZKICarouselBusView.xib */; };
 		3BAAEC421F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAAEC401F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.m */; };
 		3BAAEC431F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BAAEC411F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.xib */; };
 		3BAAEC521F0260D700B6F9B9 /* ZKElectronicMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAAEC511F0260D700B6F9B9 /* ZKElectronicMapViewController.m */; };
@@ -386,6 +402,19 @@
 		3B4FDEA91EF91B3100AE5D12 /* ZKSystemSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSystemSetUpViewController.h; sourceTree = "<group>"; };
 		3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSystemSetUpViewController.m; sourceTree = "<group>"; };
 		3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKSystemSetUpViewController.xib; sourceTree = "<group>"; };
+		3B6355F01F03427F005A36CB /* ZKMapRollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMapRollingView.h; sourceTree = "<group>"; };
+		3B6355F11F03427F005A36CB /* ZKMapRollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMapRollingView.m; sourceTree = "<group>"; };
+		3B6355F31F034BF0005A36CB /* ZKMapChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMapChooseView.h; sourceTree = "<group>"; };
+		3B6355F41F034BF0005A36CB /* ZKMapChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMapChooseView.m; sourceTree = "<group>"; };
+		3B6355F61F034C04005A36CB /* ZKMapChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMapChooseView.xib; sourceTree = "<group>"; };
+		3B6355F81F035345005A36CB /* ZKTypeSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKTypeSelectionView.h; sourceTree = "<group>"; };
+		3B6355F91F035345005A36CB /* ZKTypeSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKTypeSelectionView.m; sourceTree = "<group>"; };
+		3B6355FB1F039185005A36CB /* ZKElectronicMapViewMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKElectronicMapViewMode.h; sourceTree = "<group>"; };
+		3B6355FC1F039185005A36CB /* ZKElectronicMapViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKElectronicMapViewMode.m; sourceTree = "<group>"; };
+		3B6355FE1F0394AD005A36CB /* ZKElectronicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKElectronicMapAnnotation.h; sourceTree = "<group>"; };
+		3B6355FF1F0394AD005A36CB /* ZKElectronicMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKElectronicMapAnnotation.m; sourceTree = "<group>"; };
+		3B6356011F0396C4005A36CB /* ZKMapTAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMapTAnnotationView.h; sourceTree = "<group>"; };
+		3B6356021F0396C4005A36CB /* ZKMapTAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMapTAnnotationView.m; sourceTree = "<group>"; };
 		3B64217C1EF778F900D5FBBF /* ZKEmergencyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKEmergencyAlertView.h; sourceTree = "<group>"; };
 		3B64217D1EF778F900D5FBBF /* ZKEmergencyAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKEmergencyAlertView.m; sourceTree = "<group>"; };
 		3B64217F1EF7790900D5FBBF /* ZKEmergencyAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKEmergencyAlertView.xib; sourceTree = "<group>"; };
@@ -447,6 +476,20 @@
 		3BA0BBF31EFD073C00BD4503 /* ZKScenicResourceStatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKScenicResourceStatCell.xib; sourceTree = "<group>"; };
 		3BA0BBF61EFD085C00BD4503 /* ZKResourceStatBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKResourceStatBaseCell.h; sourceTree = "<group>"; };
 		3BA0BBF71EFD085C00BD4503 /* ZKResourceStatBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKResourceStatBaseCell.m; sourceTree = "<group>"; };
+		3BAA48041F04FAE1004AAB76 /* ZKICarouselBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKICarouselBaseView.h; sourceTree = "<group>"; };
+		3BAA48051F04FAE1004AAB76 /* ZKICarouselBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKICarouselBaseView.m; sourceTree = "<group>"; };
+		3BAA48071F04FB30004AAB76 /* ZKICarouselHotelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKICarouselHotelView.h; sourceTree = "<group>"; };
+		3BAA48081F04FB30004AAB76 /* ZKICarouselHotelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKICarouselHotelView.m; sourceTree = "<group>"; };
+		3BAA480A1F04FB46004AAB76 /* ZKICarouselTravelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKICarouselTravelView.h; sourceTree = "<group>"; };
+		3BAA480B1F04FB46004AAB76 /* ZKICarouselTravelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKICarouselTravelView.m; sourceTree = "<group>"; };
+		3BAA480D1F04FBB2004AAB76 /* ZKICarouselScenicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKICarouselScenicView.h; sourceTree = "<group>"; };
+		3BAA480E1F04FBB2004AAB76 /* ZKICarouselScenicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKICarouselScenicView.m; sourceTree = "<group>"; };
+		3BAA48101F04FBC5004AAB76 /* ZKICarouselBusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKICarouselBusView.h; sourceTree = "<group>"; };
+		3BAA48111F04FBC5004AAB76 /* ZKICarouselBusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKICarouselBusView.m; sourceTree = "<group>"; };
+		3BAA48131F04FBDE004AAB76 /* ZKICarouselHotelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKICarouselHotelView.xib; sourceTree = "<group>"; };
+		3BAA48151F04FBEA004AAB76 /* ZKICarouselTravelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKICarouselTravelView.xib; sourceTree = "<group>"; };
+		3BAA48171F04FBF7004AAB76 /* ZKICarouselScenicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKICarouselScenicView.xib; sourceTree = "<group>"; };
+		3BAA48191F04FC02004AAB76 /* ZKICarouselBusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKICarouselBusView.xib; sourceTree = "<group>"; };
 		3BAAEC3F1F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBusTrajectoryTableViewCell.h; sourceTree = "<group>"; };
 		3BAAEC401F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBusTrajectoryTableViewCell.m; sourceTree = "<group>"; };
 		3BAAEC411F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKBusTrajectoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -1128,6 +1171,10 @@
 		3BAAEC4C1F0260C200B6F9B9 /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				3B6355FB1F039185005A36CB /* ZKElectronicMapViewMode.h */,
+				3B6355FC1F039185005A36CB /* ZKElectronicMapViewMode.m */,
+				3B6355FE1F0394AD005A36CB /* ZKElectronicMapAnnotation.h */,
+				3B6355FF1F0394AD005A36CB /* ZKElectronicMapAnnotation.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -1151,6 +1198,29 @@
 		3BAAEC4F1F0260C200B6F9B9 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3B6355F01F03427F005A36CB /* ZKMapRollingView.h */,
+				3B6355F11F03427F005A36CB /* ZKMapRollingView.m */,
+				3B6355F31F034BF0005A36CB /* ZKMapChooseView.h */,
+				3B6355F41F034BF0005A36CB /* ZKMapChooseView.m */,
+				3B6355F61F034C04005A36CB /* ZKMapChooseView.xib */,
+				3B6355F81F035345005A36CB /* ZKTypeSelectionView.h */,
+				3B6355F91F035345005A36CB /* ZKTypeSelectionView.m */,
+				3B6356011F0396C4005A36CB /* ZKMapTAnnotationView.h */,
+				3B6356021F0396C4005A36CB /* ZKMapTAnnotationView.m */,
+				3BAA48041F04FAE1004AAB76 /* ZKICarouselBaseView.h */,
+				3BAA48051F04FAE1004AAB76 /* ZKICarouselBaseView.m */,
+				3BAA48071F04FB30004AAB76 /* ZKICarouselHotelView.h */,
+				3BAA48081F04FB30004AAB76 /* ZKICarouselHotelView.m */,
+				3BAA48131F04FBDE004AAB76 /* ZKICarouselHotelView.xib */,
+				3BAA480A1F04FB46004AAB76 /* ZKICarouselTravelView.h */,
+				3BAA480B1F04FB46004AAB76 /* ZKICarouselTravelView.m */,
+				3BAA48151F04FBEA004AAB76 /* ZKICarouselTravelView.xib */,
+				3BAA480D1F04FBB2004AAB76 /* ZKICarouselScenicView.h */,
+				3BAA480E1F04FBB2004AAB76 /* ZKICarouselScenicView.m */,
+				3BAA48171F04FBF7004AAB76 /* ZKICarouselScenicView.xib */,
+				3BAA48101F04FBC5004AAB76 /* ZKICarouselBusView.h */,
+				3BAA48111F04FBC5004AAB76 /* ZKICarouselBusView.m */,
+				3BAA48191F04FC02004AAB76 /* ZKICarouselBusView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1939,6 +2009,7 @@
 			files = (
 				3B4D0D2D1EFA248300F7846D /* kxmovie.bundle in Resources */,
 				3BA0BBE61EFCF25300BD4503 /* ZKGuideResourceStatCell.xib in Resources */,
+				3B6355F71F034C04005A36CB /* ZKMapChooseView.xib in Resources */,
 				3BDB57B51EB9C856000C7CD2 /* cellErr@2x.png in Resources */,
 				3B77D6FB1EB32BB10099EA0E /* LaunchScreen.storyboard in Resources */,
 				3BDB57C01EB9C856000C7CD2 /* duty_Packup@3x.png in Resources */,
@@ -1955,10 +2026,13 @@
 				3BDB57B91EB9C856000C7CD2 /* Clickfold_show@2x.png in Resources */,
 				3BDB57BB1EB9C856000C7CD2 /* Clickon_dims@2x.png in Resources */,
 				3BDB57C41EB9C856000C7CD2 /* duty_show@3x.png in Resources */,
+				3BAA48181F04FBF7004AAB76 /* ZKICarouselScenicView.xib in Resources */,
 				3BDB57CD1EB9C856000C7CD2 /* noData@3x.png in Resources */,
 				3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */,
 				3BDB57BF1EB9C856000C7CD2 /* duty_Packup@2x.png in Resources */,
 				3BDB57C61EB9C856000C7CD2 /* duy_add@3x.png in Resources */,
+				3BAA481A1F04FC02004AAB76 /* ZKICarouselBusView.xib in Resources */,
+				3BAA48161F04FBEA004AAB76 /* ZKICarouselTravelView.xib in Resources */,
 				3BDB57701EB9C69A000C7CD2 /* Default@2x.png in Resources */,
 				3B4D0D1C1EFA22E800F7846D /* FastForwardView.xib in Resources */,
 				3B6421801EF7790900D5FBBF /* ZKEmergencyAlertView.xib in Resources */,
@@ -1968,6 +2042,7 @@
 				3BED98121F01F28600C08B0A /* ZKElectronicLtineraryViewController.xib in Resources */,
 				3BDB56B71EB9C64D000C7CD2 /* MBProgressHUD.bundle in Resources */,
 				3BDB57AF1EB9C856000C7CD2 /* banner_5@2x.png in Resources */,
+				3BAA48141F04FBDE004AAB76 /* ZKICarouselHotelView.xib in Resources */,
 				3BDB57B71EB9C856000C7CD2 /* Clickfold_dims@2x.png in Resources */,
 				3BDB57CA1EB9C856000C7CD2 /* icon@2x.png in Resources */,
 				3BDB57B31EB9C856000C7CD2 /* banner_7@2x.png in Resources */,
@@ -2085,6 +2160,7 @@
 			files = (
 				3B4D0D591EFA607200F7846D /* ZKTimeMonitoringMode.m in Sources */,
 				3B64217E1EF778F900D5FBBF /* ZKEmergencyAlertView.m in Sources */,
+				3BAA48121F04FBC5004AAB76 /* ZKICarouselBusView.m in Sources */,
 				3BDB56541EB9C643000C7CD2 /* ZKBaseViewController.m in Sources */,
 				3BDB56B61EB9C64D000C7CD2 /* MBProgressHUD+Add.m in Sources */,
 				3B4D0D5C1EFA61B200F7846D /* ZKMonitoringCollectionViewCell.m in Sources */,
@@ -2115,8 +2191,12 @@
 				3BED98151F01F28600C08B0A /* ZKElectronicLtineraryMode.m in Sources */,
 				3B6421881EF7B1FF00D5FBBF /* ZKHomeBaseData.m in Sources */,
 				3BDB56C91EB9C64D000C7CD2 /* HUD.m in Sources */,
+				3B6356001F0394AD005A36CB /* ZKElectronicMapAnnotation.m in Sources */,
 				3BED98111F01F28600C08B0A /* ZKElectronicLtineraryViewController.m in Sources */,
 				3BA0BBDB1EFCF23100BD4503 /* ZKTravelResourceStatCell.m in Sources */,
+				3BAA48061F04FAE1004AAB76 /* ZKICarouselBaseView.m in Sources */,
+				3BAA480C1F04FB46004AAB76 /* ZKICarouselTravelView.m in Sources */,
+				3BAA48091F04FB30004AAB76 /* ZKICarouselHotelView.m in Sources */,
 				3BDB56AE1EB9C64D000C7CD2 /* UIButton+ImageTitleStyle.m in Sources */,
 				3BDB56AD1EB9C64D000C7CD2 /* UIBarButtonItem+Custom.m in Sources */,
 				3BA0BBF81EFD085C00BD4503 /* ZKResourceStatBaseCell.m in Sources */,
@@ -2130,12 +2210,14 @@
 				3BAAEC521F0260D700B6F9B9 /* ZKElectronicMapViewController.m in Sources */,
 				3BDB56CF1EB9C64D000C7CD2 /* TBSaveSuccessTipsView.m in Sources */,
 				3BDB56BD1EB9C64D000C7CD2 /* MJPhotoProgressView.m in Sources */,
+				3BAA480F1F04FBB2004AAB76 /* ZKICarouselScenicView.m in Sources */,
 				3B4D0D1D1EFA22E800F7846D /* WMLightView.m in Sources */,
 				3B4D0D5F1EFA620900F7846D /* ZKTimeMonitoringReusableView.m in Sources */,
 				3BA0BBEF1EFD063900BD4503 /* ZKHotelResourceStatCell.m in Sources */,
 				3B64219D1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m in Sources */,
 				3B4D0D4E1EFA441200F7846D /* ZKBaseWebViewController.m in Sources */,
 				3BDB56B91EB9C64D000C7CD2 /* MJPhoto.m in Sources */,
+				3B6355F51F034BF0005A36CB /* ZKMapChooseView.m in Sources */,
 				3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */,
 				3BED98131F01F28600C08B0A /* ZKTourismDataViewController.m in Sources */,
 				3BED981A1F01F28600C08B0A /* ZKTourismDataBusCell.m in Sources */,
@@ -2152,6 +2234,7 @@
 				3BED98141F01F28600C08B0A /* ZKBusTrajectoryMode.m in Sources */,
 				3BDB56B81EB9C64D000C7CD2 /* MBProgressHUD.m in Sources */,
 				3B4D0D2F1EFA248300F7846D /* KxMovieGLView.m in Sources */,
+				3B6356031F0396C4005A36CB /* ZKMapTAnnotationView.m in Sources */,
 				3BDB56C81EB9C64D000C7CD2 /* UIView+SDExtension.m in Sources */,
 				3B64218B1EF7B31200D5FBBF /* ZKHomeContentView.m in Sources */,
 				3B64218E1EF7B94C00D5FBBF /* ZKHomeBannerData.m in Sources */,
@@ -2170,6 +2253,7 @@
 				3BED98171F01F28600C08B0A /* ZKTourismDataBusMode.m in Sources */,
 				3B6421941EF7BB3B00D5FBBF /* ZKHomeImagesData.m in Sources */,
 				3BED981F1F01F28600C08B0A /* ZKCustomCalloutView.m in Sources */,
+				3B6355FA1F035345005A36CB /* ZKTypeSelectionView.m in Sources */,
 				3BED98181F01F28600C08B0A /* ZKTourismDataTeamMode.m in Sources */,
 				3BED98191F01F28600C08B0A /* ZKElectronicLtineraryCell.m in Sources */,
 				3BDB56B21EB9C64D000C7CD2 /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -2181,6 +2265,8 @@
 				3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */,
 				3BED98101F01F28600C08B0A /* ZKBusTrajectoryViewController.m in Sources */,
 				3B4D0C941EFA020A00F7846D /* SBJSON.m in Sources */,
+				3B6355FD1F039185005A36CB /* ZKElectronicMapViewMode.m in Sources */,
+				3B6355F21F03427F005A36CB /* ZKMapRollingView.m in Sources */,
 				3B4D0C861EF9FFE000F7846D /* ZKBasicDataTool.m in Sources */,
 				3B77D6ED1EB32BB10099EA0E /* main.m in Sources */,
 				3BDB56B11EB9C64D000C7CD2 /* UIWebView+TS_JavaScriptContext.m in Sources */,

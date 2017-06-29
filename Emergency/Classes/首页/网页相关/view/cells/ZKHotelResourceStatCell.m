@@ -58,8 +58,8 @@
     
     nameLabel.text  = list.name;
     levelLabel.text = [NSString stringWithFormat:@" %@ ",type];
-    phoneLabel.text = list.phone;
-    adderssLabel.text = list.address;
+    phoneLabel.text = [NSString stringWithFormat:@"联系电话：%@",list.phone];
+    adderssLabel.text = [NSString stringWithFormat:@"联系地址：%@",list.address];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
