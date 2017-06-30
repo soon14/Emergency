@@ -114,7 +114,7 @@
     }else if ([className isEqualToString:@"信息采集"]){
         /*  信息采集  */
 
-        
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKInformationCollectionViewController") new] animated:YES];
     }else if ([className isEqualToString:@"气象数据"]){
         /* 气象数据   */
         

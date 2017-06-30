@@ -142,7 +142,6 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-
 + (BOOL)isMobileNumber:(NSString *)mobileNum;
 {
     /**
