@@ -10,6 +10,7 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
 
 #import "ZKTourismDataViewController.h"
 #import "ZKElectronicLtineraryViewController.h"
+#import "ZKElectronicMapViewController.h"
 #import "ZKBusTrajectoryViewController.h"
 #import "TBTaskSearchView.h"
 #import "ZKTourismDataTeamCell.h"
@@ -250,9 +251,15 @@ NSString *const tourismCellIIdentifier = @"tourismCellIIdentifier";
     double number = [[self.formatter stringFromDate:now] doubleValue]/60;
     self.progressView.progress = number;
 }
+
+/**
+ 跳转地图页面
+ */
 - (void)goMap
 {
-    
+    ZKElectronicMapViewController *mapViewController = [[ZKElectronicMapViewController alloc] init];
+    [mapViewController mapConfigurationType:ElectronicMapTypeBus dataDefaultData:nil];
+    [self.navigationController pushViewController:mapViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

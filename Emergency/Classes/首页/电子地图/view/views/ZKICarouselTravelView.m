@@ -9,6 +9,9 @@
 #import "ZKICarouselTravelView.h"
 
 @interface ZKICarouselTravelView ()
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *travelLevelsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *travelContactorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *travelPhoneLabel;
@@ -17,7 +20,12 @@
 
 @end
 @implementation ZKICarouselTravelView
-
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.tagLabel.layer.masksToBounds = YES;
+    self.tagLabel.layer.cornerRadius = 8;
+}
 /**
  赋值
  
@@ -27,15 +35,15 @@
  RollingViewTypeScenic = 3,
  RollingViewTypeBus    = 4,
  
- @param show 是否显示列表按钮
  */
-- (void)assignmentData:(ZKElectronicMapViewMode *)list  showListButton:(BOOL)show;
+- (void)assignmentData:(ZKElectronicMapViewMode *)list;
 {
     self.travelLevelsLabel.layer.cornerRadius = 8;
     self.travelLevelsLabel.layer.borderWidth = 0.5;
     self.travelLevelsLabel.layer.borderColor = [UIColor orangeColor].CGColor;
     
-//    self.nameLabel.text      = list.name;
+    self.tagLabel.text = [NSString stringWithFormat:@"%ld",(long)list.tag];
+    self.nameLabel.text      = list.name;
     self.travelLevelsLabel.text    = [NSString stringWithFormat:@"  %@  ",list.levels];
     self.travelContactorLabel.text = list.contactor;
     self.travelPhoneLabel.text     = list.phone;

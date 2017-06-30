@@ -32,6 +32,7 @@
  */
 - (void)createLabelName:(NSInteger)tag;
 {
+    self.annotationTag = tag;
     if (self.titleLabel == nil)
     {
         self.titleLabel = [[UILabel alloc] init];

@@ -10,6 +10,9 @@
 
 @interface ZKICarouselBusView ()
 
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *busGunameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *busGuphoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *busTnameLabel;
@@ -17,7 +20,12 @@
 
 @end
 @implementation ZKICarouselBusView
-
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.tagLabel.layer.masksToBounds = YES;
+    self.tagLabel.layer.cornerRadius = 8;
+}
 /**
  赋值
  
@@ -27,11 +35,11 @@
  RollingViewTypeScenic = 3,
  RollingViewTypeBus    = 4,
  
- @param show 是否显示列表按钮
  */
-- (void)assignmentData:(ZKElectronicMapViewMode *)list  showListButton:(BOOL)show;
+- (void)assignmentData:(ZKElectronicMapViewMode *)list;
 {
-//    self.nameLabel.text = list.busnum;
+    self.tagLabel.text = [NSString stringWithFormat:@"%ld",(long)list.tag];
+    self.nameLabel.text = list.busnum;
     self.busGunameLabel.text = list.guname;
     self.busGuphoneLabel.text = list.guphone;
     self.busTnameLabel.text  = list.tname;

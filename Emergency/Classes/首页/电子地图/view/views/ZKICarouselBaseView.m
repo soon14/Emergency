@@ -20,19 +20,19 @@
 {
     ZKICarouselBaseView *view = [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].lastObject;
     
-    if (!show) {
+    if (show) {
         
         UIButton *listButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [listButton setTitle:@"列表模式" forState:UIControlStateNormal];
         [listButton setImage:[UIImage imageNamed:@"map_liebiao"] forState:UIControlStateNormal];
         [listButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        listButton.titleLabel.font = [UIFont systemFontOfSize:12];
-        [listButton addTarget:self action:@selector(listClick:) forControlEvents:UIControlEventTouchUpInside];
+        listButton.titleLabel.font = [UIFont systemFontOfSize:11];
+        [listButton addTarget:view action:@selector(listViewClick) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:listButton];
         
         [listButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(view.mas_right).offset(-5);
-            make.top.equalTo(view.mas_top).offset(20);
+            make.right.equalTo(view.mas_right).offset(0);
+            make.top.equalTo(view.mas_top).offset(15);
         }];
        [listButton setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:2];
     }
@@ -47,13 +47,12 @@
  RollingViewTypeScenic = 3,
  RollingViewTypeBus    = 4,
  
- @param show 是否显示列表按钮
  */
-- (void)assignmentData:(ZKElectronicMapViewMode *)list  showListButton:(BOOL)show;
+- (void)assignmentData:(ZKElectronicMapViewMode *)list;
 {
 
 }
-- (void)listClick:(id)sender
+- (void)listViewClick
 {
     if ([self.delegate respondsToSelector:@selector(jumpToListViewControllerData:)]) {
         [self.delegate jumpToListViewControllerData:self.mapList];

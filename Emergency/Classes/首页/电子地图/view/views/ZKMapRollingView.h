@@ -26,6 +26,24 @@ typedef NS_ENUM(NSInteger, RollingViewType) {
 
 #import <UIKit/UIKit.h>
 
+@protocol ZKMapRollingViewDelegate <NSObject>
+@optional
+/**
+  滚动视图
+
+ @param index 结束后的第几个
+ @param type 数据类型
+ */
+- (void)rollingDidEndScrollingCurrentItemIndex:(NSInteger)index dataType:(RollingViewType)type;
+
+/**
+ 列表按钮点击
+
+ @param type 类型
+ */
+- (void)rollingListButtonClickType:(RollingViewType)type;
+
+@end
 @interface ZKMapRollingView : UIView
 
 /**
@@ -37,7 +55,17 @@ typedef NS_ENUM(NSInteger, RollingViewType) {
 - (void)updataData:(NSMutableArray *)array dataType:(RollingViewType)type;
 
 /**
+ 选中谁
+
+ @param index 参数
+ */
+- (void)selectedCurrentItemIndex:(NSInteger)index;
+
+/**
  是否显示列表按钮
  */
 @property (nonatomic, assign) BOOL showListbutton;
+
+@property (nonatomic, assign) id<ZKMapRollingViewDelegate>delegate;
+
 @end

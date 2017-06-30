@@ -18,7 +18,8 @@
 @interface ZKMapRollingView () <iCarouselDelegate,iCarouselDataSource,ZKICarouselBaseViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray <ZKElectronicMapViewMode *> *dataSource;
-
+// 选中第几个
+@property (nonatomic, assign) NSInteger carouselPag;
 @property (nonatomic, strong) iCarousel *carouselView;
 @property (nonatomic, strong) NSString *className;
 @property (nonatomic) RollingViewType viewType;
@@ -40,8 +41,10 @@
     if (self = [super init])
     {
         self.userInteractionEnabled = YES;
+        self.carouselPag = 0;
+        
         self.iCarouselWidth = _SCREEN_WIDTH - 60;
-        self.iCarouselHeight = 120;
+        self.iCarouselHeight = 100;
         self.carouselView = [[iCarousel alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.iCarouselHeight)];
         //设置代理
         self.carouselView.delegate = self;
@@ -60,6 +63,7 @@
         self.carouselView.decelerationRate = 0.95;
         [self addSubview:self.carouselView];
         [self.carouselView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(100);
             make.edges.equalTo(self);
         }];
     }
@@ -73,20 +77,29 @@
  */
 - (void)updataData:(NSMutableArray *)array dataType:(RollingViewType)type;
 {
+    // 根据类型修改参数
     if (type == RollingViewTypeNone || type == RollingViewTypeScenic) {
         self.className = @"ZKICarouselScenicView";
+        self.iCarouselHeight = 110;
+        self.viewType = RollingViewTypeScenic;
     }
     else if (type == RollingViewTypeHotel)
     {
         self.className = @"ZKICarouselHotelView";
+        self.iCarouselHeight = 120;
+        self.viewType = RollingViewTypeHotel;
     }
     else if (type == RollingViewTypeTravel)
     {
-    self.className = @"ZKICarouselTravelView";
+        self.className = @"ZKICarouselTravelView";
+        self.iCarouselHeight = 160;
+        self.viewType = RollingViewTypeTravel;
     }
     else if (type == RollingViewTypeBus)
     {
         self.className = @"ZKICarouselBusView";
+        self.iCarouselHeight = 130;
+        self.viewType = RollingViewTypeBus;
     }
     else
     {
@@ -97,14 +110,31 @@
     if (array.count > 0 || array != nil)
     {
         [self.dataSource addObjectsFromArray:array];
-        self.viewType = type;
+        [self.carouselView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(self.iCarouselHeight);
+        }];
     }
+    
     [self.carouselView reloadData];
+}
+/**
+ 选中谁
+ 
+ @param index 参数
+ */
+- (void)selectedCurrentItemIndex:(NSInteger)index;
+{
+    if (index < self.dataSource.count && index > -1)
+    {
+        [self.carouselView scrollToItemAtIndex:index animated:YES];
+    }
 }
 #pragma mark  ----ZKiCarouselContenViewDelegate----
 - (void)jumpToListViewControllerData:(ZKElectronicMapViewMode *)mode;
 {
-    NSLog(@" ------ ");
+    if ([self.delegate respondsToSelector:@selector(rollingListButtonClickType:)]) {
+        [self.delegate rollingListButtonClickType:self.viewType];
+    }
 }
 #pragma mark -
 #pragma mark ----iCarousel methods---
@@ -123,8 +153,11 @@
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.iCarouselWidth, self.iCarouselHeight)];
         view.backgroundColor = [UIColor whiteColor];
         contenView = [ZKICarouselBaseView accessViewClassName:self.className showListButton:self.showListbutton];
-        contenView.delegate = self;
-        contenView.tag = 1;
+        if (self.showListbutton)
+        {
+            contenView.delegate = self;
+        }
+        contenView.tag = 1000;
         [view addSubview:contenView];
         [contenView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(view);
@@ -132,13 +165,14 @@
     }
     else
     {
-        contenView = (ZKICarouselBaseView *)[view viewWithTag:1];
+        contenView = (ZKICarouselBaseView *)[view viewWithTag:1000];
     }
     
     if (self.dataSource.count > index)
     {
         ZKElectronicMapViewMode *mode = [self.dataSource objectAtIndex:index];
-        [contenView assignmentData:mode showListButton:self.showListbutton];
+        mode.tag = index + 1;
+        [contenView assignmentData:mode];
     }
     
     return view;
@@ -160,7 +194,7 @@
         view.backgroundColor = [UIColor whiteColor];
         contenView = [ZKICarouselBaseView accessViewClassName:self.className showListButton:self.showListbutton];
         contenView.delegate = self;
-        contenView.tag = 1;
+        contenView.tag = 1000;
         [view addSubview:contenView];
         [contenView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(view);
@@ -168,7 +202,7 @@
     }
     else
     {
-        contenView = (ZKICarouselBaseView *)[view viewWithTag:1];
+        contenView = (ZKICarouselBaseView *)[view viewWithTag:1000];
     }
     
     return view;
@@ -229,6 +263,20 @@
 {
     
 }
-
+/**
+ *  滚动结束
+ *
+ *  @param carousel -
+ */
+- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel;
+{
+    NSInteger index = carousel.currentItemIndex;
+    
+    if ([self.delegate respondsToSelector:@selector(rollingDidEndScrollingCurrentItemIndex:dataType:)] && self.carouselPag != index)
+    {
+        self.carouselPag = index;// 记录标记 防止循环调用
+        [self.delegate rollingDidEndScrollingCurrentItemIndex:index dataType:self.viewType];
+    }
+}
 
 @end

@@ -11,7 +11,8 @@
 @interface ZKMapTAnnotationView : TAnnotationView
 
 @property (nonatomic, strong) UILabel *titleLabel;
-
+// 标记
+@property (nonatomic, assign) NSInteger annotationTag;
 /**
  创建label 并赋值
 

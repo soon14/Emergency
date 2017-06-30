@@ -16,6 +16,10 @@
  */
 @property (nonatomic, copy) void(^searchResult)(NSString *key);
 
+/**
+ 清空
+ */
+- (void)empty;
 - (instancetype)init;
 
 @end

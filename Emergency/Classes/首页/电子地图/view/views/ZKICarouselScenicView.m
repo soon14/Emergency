@@ -10,10 +10,19 @@
 
 @interface ZKICarouselScenicView ()
 
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *scenicLevelsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scenicAddressLabel;
 @end
 @implementation ZKICarouselScenicView
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.tagLabel.layer.masksToBounds = YES;
+    self.tagLabel.layer.cornerRadius = 8;
+}
 /**
  赋值
  
@@ -23,15 +32,15 @@
  RollingViewTypeScenic = 3,
  RollingViewTypeBus    = 4,
  
- @param show 是否显示列表按钮
  */
-- (void)assignmentData:(ZKElectronicMapViewMode *)list  showListButton:(BOOL)show;
+- (void)assignmentData:(ZKElectronicMapViewMode *)list;
 {
     self.scenicLevelsLabel.layer.cornerRadius = 8;
     self.scenicLevelsLabel.layer.borderColor = CYBColorGreen.CGColor;
     self.scenicLevelsLabel.layer.borderWidth = 0.5;
     
-//    self.nameLabel.text    = list.name;
+    self.tagLabel.text = [NSString stringWithFormat:@"%ld",(long)list.tag];
+    self.nameLabel.text    = list.name;
     self.scenicLevelsLabel.text   = [NSString stringWithFormat:@"  %@  ",list.levels];
     self.scenicAddressLabel.text = list.address;
     NSLog(@"%@",self);

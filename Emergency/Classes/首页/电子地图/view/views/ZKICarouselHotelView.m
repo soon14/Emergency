@@ -9,6 +9,8 @@
 #import "ZKICarouselHotelView.h"
 
 @interface ZKICarouselHotelView ()
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *hotelPhoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hotelAddresslabel;
@@ -17,6 +19,12 @@
 @end
 @implementation ZKICarouselHotelView
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.tagLabel.layer.masksToBounds = YES;
+    self.tagLabel.layer.cornerRadius = 8;
+}
 /**
  赋值
  
@@ -26,9 +34,8 @@
  RollingViewTypeScenic = 3,
  RollingViewTypeBus    = 4,
  
- @param show 是否显示列表按钮
  */
-- (void)assignmentData:(ZKElectronicMapViewMode *)list  showListButton:(BOOL)show;
+- (void)assignmentData:(ZKElectronicMapViewMode *)list;
 {
     self.hotelLevelLabel.layer.cornerRadius = 8;
     self.hotelLevelLabel.layer.borderWidth = 0.5;
@@ -59,8 +66,8 @@
     {
         type = @"未知级酒店";
     }
-    
-//    self.nameLabel.text  = mode.name;
+    self.tagLabel.text = [NSString stringWithFormat:@"%ld",(long)list.tag];
+    self.nameLabel.text  = list.name;
     self.hotelLevelLabel.text = [NSString stringWithFormat:@"  %@  ",type];
     self.hotelPhoneLabel.text = [NSString stringWithFormat:@"%@",list.phone];
     self.hotelAddresslabel.text = [NSString stringWithFormat:@"%@",list.address];

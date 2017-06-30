@@ -76,6 +76,13 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
  */
 - (void)configurationDataType:(ResourceDataType)type leftTitle:(NSString *)leftTitle rightTitle:(NSString *)rightTitle;
 
+/**
+ 重置参数
+
+ @param type 类型
+ */
+- (void)resetDataType:(ResourceDataType)type;
+
 @property (nonatomic, assign) id<ZKMapChooseViewDelegate>delegate;
 
 @end

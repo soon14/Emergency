@@ -32,5 +32,5 @@
 @property (nonatomic, strong) NSString *speed;//速度
 @property (nonatomic, strong) NSString *tname;//团队名称
 @property (nonatomic, strong) NSString *tournum;//团队编号
-
+@property (nonatomic, assign) NSInteger tag;
 @end

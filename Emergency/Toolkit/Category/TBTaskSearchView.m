@@ -62,6 +62,13 @@
     }];
 
 }
+/**
+ 清空
+ */
+- (void)empty;
+{
+    self.searchBar.text = @"";
+}
 #pragma mark UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;

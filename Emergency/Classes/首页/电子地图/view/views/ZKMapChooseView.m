@@ -66,18 +66,32 @@
     [self setButtonTitelLeftName:leftTitle rightName:rightTitle];
     
 }
+/**
+ 重置参数
+ 
+ @param type 类型
+ */
+- (void)resetDataType:(ResourceDataType)type;
+{
+    self.resourceDataType = type;
+    [self requestChooseDataType:type];
+    [self setButtonTitelLeftName:@"不限" rightName:@"不限"];
+}
 #pragma mark  ----选择条件数据加载----
 - (void)requestChooseDataType:(ResourceDataType)type
 {
     ZKBasicDataTool *tool = [ZKBasicDataTool sharedManager];
-    [self.leftArray removeAllObjects];
     [self.rightArray removeAllObjects];
     YJWeakSelf
-    [tool obtainCityOne:^(NSArray *cityOne) {
-        
-        [weakSelf.leftArray addObject:@{@"cityname":@"不限",@"region":@""}];
-        [weakSelf.leftArray addObjectsFromArray:cityOne];
-    }];
+    if (self.leftArray.count == 0)
+    {
+        [tool obtainCityOne:^(NSArray *cityOne) {
+            
+            [weakSelf.leftArray addObject:@{@"cityname":@"不限",@"region":@""}];
+            [weakSelf.leftArray addObjectsFromArray:cityOne];
+        }];    
+    }
+
     if (type == ResourceDataTypeHotel)
     {
         [tool obtainHtypeArray:^(NSArray *htypeArray) {
