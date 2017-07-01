@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */; };
 		3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0DC1EE6B360001155E4 /* ZKRegisteredViewController.m */; };
+		3B492E9D1F077FE800F10391 /* ZKInformationReportedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B492E9C1F077FE800F10391 /* ZKInformationReportedView.xib */; };
+		3B492EA01F078A5500F10391 /* ZKInformationUploadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B492E9F1F078A5500F10391 /* ZKInformationUploadTool.m */; };
+		3B492EA41F07924B00F10391 /* TBChoosePhotosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B492EA31F07924B00F10391 /* TBChoosePhotosTool.m */; };
+		3B492EA71F07976900F10391 /* ZKInformationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B492EA61F07976900F10391 /* ZKInformationCollectionViewCell.m */; };
 		3B4D0C861EF9FFE000F7846D /* ZKBasicDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0C851EF9FFE000F7846D /* ZKBasicDataTool.m */; };
 		3B4D0C921EFA020A00F7846D /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0C8D1EFA020A00F7846D /* NSObject+SBJSON.m */; };
 		3B4D0C931EFA020A00F7846D /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0C8F1EFA020A00F7846D /* NSString+SBJSON.m */; };
@@ -70,7 +74,6 @@
 		3B695B231F064BD6001B83A1 /* ZKMainTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B695B221F064BD6001B83A1 /* ZKMainTypeView.m */; };
 		3B695B261F0655F5001B83A1 /* ZKReportListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B695B251F0655F5001B83A1 /* ZKReportListView.m */; };
 		3B695B291F065640001B83A1 /* ZKInformationReportedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B695B281F065640001B83A1 /* ZKInformationReportedView.m */; };
-		3B695B2B1F065650001B83A1 /* ZKInformationReportedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B695B2A1F065650001B83A1 /* ZKInformationReportedView.xib */; };
 		3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */; };
 		3B69D3D21EFBB2FC0090D8CE /* ZKResourceChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3D11EFBB2FC0090D8CE /* ZKResourceChooseView.m */; };
 		3B69D3D41EFBB3C60090D8CE /* ZKResourceChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */; };
@@ -250,6 +253,13 @@
 		3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKStartAnimationViewController.m; sourceTree = "<group>"; };
 		3B20A0DB1EE6B360001155E4 /* ZKRegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegisteredViewController.h; sourceTree = "<group>"; };
 		3B20A0DC1EE6B360001155E4 /* ZKRegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegisteredViewController.m; sourceTree = "<group>"; };
+		3B492E9C1F077FE800F10391 /* ZKInformationReportedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInformationReportedView.xib; sourceTree = "<group>"; };
+		3B492E9E1F078A5500F10391 /* ZKInformationUploadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInformationUploadTool.h; sourceTree = "<group>"; };
+		3B492E9F1F078A5500F10391 /* ZKInformationUploadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInformationUploadTool.m; sourceTree = "<group>"; };
+		3B492EA21F07924B00F10391 /* TBChoosePhotosTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBChoosePhotosTool.h; sourceTree = "<group>"; };
+		3B492EA31F07924B00F10391 /* TBChoosePhotosTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBChoosePhotosTool.m; sourceTree = "<group>"; };
+		3B492EA51F07976900F10391 /* ZKInformationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInformationCollectionViewCell.h; sourceTree = "<group>"; };
+		3B492EA61F07976900F10391 /* ZKInformationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInformationCollectionViewCell.m; sourceTree = "<group>"; };
 		3B4D0C841EF9FFE000F7846D /* ZKBasicDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBasicDataTool.h; sourceTree = "<group>"; };
 		3B4D0C851EF9FFE000F7846D /* ZKBasicDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBasicDataTool.m; sourceTree = "<group>"; };
 		3B4D0C8B1EFA020A00F7846D /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -450,7 +460,6 @@
 		3B695B251F0655F5001B83A1 /* ZKReportListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKReportListView.m; sourceTree = "<group>"; };
 		3B695B271F065640001B83A1 /* ZKInformationReportedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInformationReportedView.h; sourceTree = "<group>"; };
 		3B695B281F065640001B83A1 /* ZKInformationReportedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInformationReportedView.m; sourceTree = "<group>"; };
-		3B695B2A1F065650001B83A1 /* ZKInformationReportedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInformationReportedView.xib; sourceTree = "<group>"; };
 		3B69D3CD1EFBAD540090D8CE /* ZKResourceStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKResourceStatViewController.h; sourceTree = "<group>"; };
 		3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKResourceStatViewController.m; sourceTree = "<group>"; };
 		3B69D3D01EFBB2FC0090D8CE /* ZKResourceChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKResourceChooseView.h; sourceTree = "<group>"; };
@@ -787,6 +796,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		3B492EA11F07923300F10391 /* 相册选择 */ = {
+			isa = PBXGroup;
+			children = (
+				3B492EA21F07924B00F10391 /* TBChoosePhotosTool.h */,
+				3B492EA31F07924B00F10391 /* TBChoosePhotosTool.m */,
+			);
+			path = "相册选择";
+			sourceTree = "<group>";
+		};
 		3B4D0C8A1EFA020300F7846D /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -1119,6 +1137,8 @@
 			children = (
 				3B695B1E1F064AA6001B83A1 /* ZKInformationCollectionMode.h */,
 				3B695B1F1F064AA6001B83A1 /* ZKInformationCollectionMode.m */,
+				3B492E9E1F078A5500F10391 /* ZKInformationUploadTool.h */,
+				3B492E9F1F078A5500F10391 /* ZKInformationUploadTool.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -1135,6 +1155,8 @@
 		3B695B191F0647FC001B83A1 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				3B492EA51F07976900F10391 /* ZKInformationCollectionViewCell.h */,
+				3B492EA61F07976900F10391 /* ZKInformationCollectionViewCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -1148,7 +1170,7 @@
 				3B695B251F0655F5001B83A1 /* ZKReportListView.m */,
 				3B695B271F065640001B83A1 /* ZKInformationReportedView.h */,
 				3B695B281F065640001B83A1 /* ZKInformationReportedView.m */,
-				3B695B2A1F065650001B83A1 /* ZKInformationReportedView.xib */,
+				3B492E9C1F077FE800F10391 /* ZKInformationReportedView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1548,6 +1570,7 @@
 		3BDB56591EB9C64D000C7CD2 /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				3B492EA11F07923300F10391 /* 相册选择 */,
 				3B4D0D311EFA24A600F7846D /* LDGProgressHUD */,
 				3B4D0D201EFA248300F7846D /* kxmovie */,
 				3B4D0D0C1EFA22E800F7846D /* WMPlayer */,
@@ -2108,7 +2131,7 @@
 				3BDB57B11EB9C856000C7CD2 /* banner_6@2x.png in Resources */,
 				3BDB57A91EB9C856000C7CD2 /* banner_2@2x.png in Resources */,
 				3BDB56CC1EB9C64D000C7CD2 /* ZYQAssetPicker.Bundle in Resources */,
-				3B695B2B1F065650001B83A1 /* ZKInformationReportedView.xib in Resources */,
+				3B492E9D1F077FE800F10391 /* ZKInformationReportedView.xib in Resources */,
 				3BDB57A51EB9C856000C7CD2 /* banner@2x.png in Resources */,
 				3BDB57B61EB9C856000C7CD2 /* cellErr@3x.png in Resources */,
 				3BDB57C91EB9C856000C7CD2 /* icon.png in Resources */,
@@ -2269,6 +2292,7 @@
 				3B6356031F0396C4005A36CB /* ZKMapTAnnotationView.m in Sources */,
 				3BDB56C81EB9C64D000C7CD2 /* UIView+SDExtension.m in Sources */,
 				3B64218B1EF7B31200D5FBBF /* ZKHomeContentView.m in Sources */,
+				3B492EA01F078A5500F10391 /* ZKInformationUploadTool.m in Sources */,
 				3B64218E1EF7B94C00D5FBBF /* ZKHomeBannerData.m in Sources */,
 				3BA0BBCF1EFCEBD900BD4503 /* ZKScenicResourceStatMode.m in Sources */,
 				3B4D0D1F1EFA22E800F7846D /* WMPlayer.m in Sources */,
@@ -2284,6 +2308,7 @@
 				3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */,
 				3BED98171F01F28600C08B0A /* ZKTourismDataBusMode.m in Sources */,
 				3B6421941EF7BB3B00D5FBBF /* ZKHomeImagesData.m in Sources */,
+				3B492EA71F07976900F10391 /* ZKInformationCollectionViewCell.m in Sources */,
 				3BED981F1F01F28600C08B0A /* ZKCustomCalloutView.m in Sources */,
 				3B6355FA1F035345005A36CB /* ZKTypeSelectionView.m in Sources */,
 				3BED98181F01F28600C08B0A /* ZKTourismDataTeamMode.m in Sources */,
@@ -2291,6 +2316,7 @@
 				3BED98191F01F28600C08B0A /* ZKElectronicLtineraryCell.m in Sources */,
 				3B695B231F064BD6001B83A1 /* ZKMainTypeView.m in Sources */,
 				3BDB56B21EB9C64D000C7CD2 /* UIScrollView+EmptyDataSet.m in Sources */,
+				3B492EA41F07924B00F10391 /* TBChoosePhotosTool.m in Sources */,
 				3B4D0D2E1EFA248300F7846D /* KxMovieDecoder.m in Sources */,
 				3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */,
 				3BDB56C71EB9C64D000C7CD2 /* SDCycleScrollView.m in Sources */,
@@ -2454,7 +2480,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					guangD,
+					yaAn,
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Emergency/Lib/FFmpeg-iOS/include";
 				INFOPLIST_FILE = Emergency/Info.plist;
@@ -2505,7 +2531,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					guangD,
+					yaAn,
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Emergency/Lib/FFmpeg-iOS/include";
 				INFOPLIST_FILE = Emergency/Info.plist;

@@ -32,6 +32,7 @@
         _contentScrpllView.contentSize   = CGSizeMake(_SCREEN_WIDTH*2, _SCREEN_HEIGHT -64-MainFilterHeight);
         _contentScrpllView.pagingEnabled = YES;
         _contentScrpllView.showsHorizontalScrollIndicator = NO;
+        _contentScrpllView.scrollEnabled = YES;
         _contentScrpllView.delegate      = self;
     }
     return _contentScrpllView;
@@ -53,10 +54,13 @@
     self.contentScrpllView.backgroundColor = [UIColor whiteColor];
     
     self.listView = [[ZKReportListView alloc] init];
-    self.listView.backgroundColor = [UIColor redColor];
+    self.listView.frame = CGRectMake(0, 0, _SCREEN_WIDTH, self.contentScrpllView.contentSize.height);
+    self.listView.userInteractionEnabled = YES;
     [self.contentScrpllView addSubview:self.listView];
     
     self.reportedView = [ZKInformationReportedView obtainReportedView];
+    self.reportedView.userInteractionEnabled = YES;
+    self.reportedView.frame = CGRectMake(_SCREEN_WIDTH, 0, _SCREEN_WIDTH, self.contentScrpllView.contentSize.height);
     [self.contentScrpllView addSubview:self.reportedView];
     
     YJWeakSelf
@@ -64,16 +68,6 @@
         make.left.right.bottom.equalTo(weakSelf.view);
         make.top.equalTo(weakSelf.mainTypeView.mas_bottom);
     }];
-    [self.listView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(weakSelf.contentScrpllView);
-        make.width.mas_equalTo(_SCREEN_WIDTH);
-        make.height.mas_equalTo(weakSelf.contentScrpllView.contentSize.height);
-    }];
-    [self.reportedView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.top.equalTo(weakSelf.contentScrpllView);
-        make.height.equalTo(weakSelf.listView.mas_height);
-    }];
-    
 }
 #pragma mark  ----UIScrollViewDelegate----
 //减速结束   停止

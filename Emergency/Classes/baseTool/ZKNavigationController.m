@@ -60,7 +60,9 @@
      UIViewController *vc = self.viewControllers.lastObject;
     if (self.childViewControllers.count == 1
         || [vc isKindOfClass:NSClassFromString(@"ZKBusTrajectoryViewController")]
-        ||[vc isKindOfClass:NSClassFromString(@"ZKElectronicMapViewController")]) {
+        || [vc isKindOfClass:NSClassFromString(@"ZKElectronicMapViewController")]
+        || [vc isKindOfClass:NSClassFromString(@"ZKInformationCollectionViewController")]
+        ) {
         // 表示用户在根控制器界面，就不需要触发滑动手势，
         return NO;
     }

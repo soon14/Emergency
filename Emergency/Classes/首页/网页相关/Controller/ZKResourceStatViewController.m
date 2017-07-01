@@ -122,7 +122,10 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
  */
 - (void)addRightBarButtonItem
 {
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem setRitWithTitel:@"" itemWithIcon:@"itemMap" target:self action:@selector(goMap)];
+    if (self.resourceStatType !=  ResourceStatTypeGuide)
+    {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem setRitWithTitel:@"" itemWithIcon:@"itemMap" target:self action:@selector(goMap)];
+    }
 }
 #pragma mark  ----super 方法----
 - (void)initData;

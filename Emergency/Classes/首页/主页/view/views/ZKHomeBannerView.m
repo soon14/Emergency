@@ -35,7 +35,7 @@
         _cycleScrollView.pageDotColor = [UIColor whiteColor];
         _cycleScrollView.titleLabelBackgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         _cycleScrollView.titleLabelTextColor =[UIColor whiteColor];
-        _cycleScrollView.titleLabelTextFont = [UIFont systemFontOfSize:10];
+        _cycleScrollView.titleLabelTextFont = [UIFont systemFontOfSize:13];
     }
     
     return _cycleScrollView;
@@ -81,7 +81,8 @@
         [self addSubview:self.cycleScrollView];
         self.cycleScrollView.imageURLStringsGroup = imageArray;
         self.cycleScrollView.titlesGroup = nameArray;
-        
+        self.cycleScrollView.showPageControl = imageArray.count < 30;
+        self.cycleScrollView.onlyDisplayText = imageArray.count > 30;
         [self setBannerFrame];
     }
 

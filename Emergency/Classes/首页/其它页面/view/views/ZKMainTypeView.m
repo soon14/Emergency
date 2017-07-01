@@ -8,33 +8,32 @@
 
 #import "ZKMainTypeView.h"
 
-#define selectFont [UIFont boldSystemFontOfSize:14]
-#define normalFont [UIFont systemFontOfSize:14]
+#define selectFont [UIFont boldSystemFontOfSize:16]
+#define normalFont [UIFont systemFontOfSize:16]
 
 @implementation ZKMainTypeView
 {
-    UIView *selectView;
+    UIView    *selectView;
     NSInteger itemCount;
-    
-    NSArray *array;
+    NSArray   *array;
 }
 
 -(id)initFrame:(CGRect)frame filters:(NSArray *)filters
 {
     self = [super initWithFrame:frame];
     if (self) {
-        array =filters;
+        array = filters;
         self.backgroundColor = [UIColor whiteColor];
         itemCount = filters.count;
         selectView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height-3, self.frame.size.width/itemCount, 3)];
         selectView.backgroundColor = CYBColorGreen;
          [self addSubview:selectView];
         
-        UIView *lin =[[UIView alloc]initWithFrame:CGRectMake(0, frame.size.height-1, frame.size.width, 1)];
+        UIView *lin = [[UIView alloc]initWithFrame:CGRectMake(0, frame.size.height-1, frame.size.width, 1)];
         lin.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self addSubview:lin];
         
-        for (NSInteger i=0; i<filters.count; i++) {
+        for (NSInteger i= 0; i<filters.count; i++) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width/filters.count*i, 0, frame.size.width/filters.count, frame.size.height)];
             [button setTitle:[filters objectAtIndex:i] forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

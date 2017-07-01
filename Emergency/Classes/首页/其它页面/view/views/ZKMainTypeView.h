@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define MainFilterHeight 36
+#define MainFilterHeight 40
 @protocol ZKMainTypeViewDelegate <NSObject>
 
 /**
