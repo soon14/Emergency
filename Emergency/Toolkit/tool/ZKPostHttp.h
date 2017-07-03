@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, ZKCacheType)
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-+ (void)uploadImage:(NSString *)url params:(NSMutableDictionary *)params Data:(id)imag success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
++ (void)uploadImage:(NSString *)url params:(NSMutableDictionary *)params imageData:(NSData *)imag success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 
 /**
  上传多张图片

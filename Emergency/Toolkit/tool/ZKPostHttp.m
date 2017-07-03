@@ -247,7 +247,7 @@ static char *NSErrorStatusCodeKey = "NSErrorStatusCodeKey";
 }
 
 
-+ (void)uploadImage:(NSString *)url params:(NSMutableDictionary *)params Data:(id)imag success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
++ (void)uploadImage:(NSString *)url params:(NSMutableDictionary *)params imageData:(NSData *)imag success:(void(^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer =[AFHTTPResponseSerializer serializer];

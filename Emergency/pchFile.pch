@@ -38,7 +38,7 @@
  弱引用
  */
 #define YJWeakSelf __weak typeof(self) weakSelf = self;
-
+#define WEAKSELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 //像素转大小
 #define pointFromPixel(px) px*1.15/3*(MainScreenW/414.0f) //px to pt
 #define fontFromPixel(px) px/2*(72/96.f) // font for px

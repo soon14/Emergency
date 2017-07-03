@@ -8,14 +8,23 @@
 static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollectionViewCellID";
 
 #import "ZKInformationReportedView.h"
-#import "ZKInformationCollectionViewCell.h"
-#import "ZKInformationUploadTool.h"
-#import "TBChoosePhotosTool.h"
+#import "ShootVideoViewController.h"
+#import "PlayVideoViewController.h"
+#import "ZKNavigationController.h"
 #import "IQTextView.h"
 #import "TBMoreReminderView.h"
+#import "ZKDataSelectBoxView.h"
+#import "ZKInformationCollectionViewCell.h"
+#import "D3RecordButton.h"
+#import "ZKLocation.h"
+#import "ZKInformationUploadTool.h"
+#import "TBChoosePhotosTool.h"
+#import "ZKBasicDataTool.h"
 
-@interface ZKInformationReportedView ()<UITextViewDelegate,TBChoosePhotosToolDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+
+@interface ZKInformationReportedView ()<UITextViewDelegate,TBChoosePhotosToolDelegate,UICollectionViewDataSource,UICollectionViewDelegate,ZKDataSelectBoxViewDelegate,D3RecordDelegate,AVAudioPlayerDelegate,ZKLocationDelegate,UIScrollViewDelegate>
 // 属性
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewsWidth;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;// 标题
 @property (weak, nonatomic) IBOutlet UITextField *scenicTextfield;// 景区
@@ -26,9 +35,12 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *audioHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *audioWidth;
-@property (weak, nonatomic) IBOutlet UIButton *audioButton;
+@property (weak, nonatomic) IBOutlet D3RecordButton *audioButton;
 @property (weak, nonatomic) IBOutlet UIButton *videoButton;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+//设置成属性
+@property (nonatomic, strong) ZKLocation * location;
+@property (strong, nonatomic) AVAudioPlayer *player;
 // 最大选择数
 @property (assign, nonatomic) NSInteger maxRow;
 // 横排数量
@@ -43,9 +55,21 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 @property (nonatomic, strong) ZKInformationUploadTool *uploadTool;
 // 相片选择工具
 @property (nonatomic, strong) TBChoosePhotosTool *photoTool;
+// 景区上报选择
+@property (nonatomic, strong) NSArray *scenicSpotArray;
+
 @end
 @implementation ZKInformationReportedView
-
+- (ZKLocation *)location {
+    
+    if (!_location) {
+        
+        _location = [[ZKLocation alloc] init];
+        
+        _location.delegate = self;
+    }
+    return _location;
+}
 - (TBChoosePhotosTool *)photoTool
 {
     if (!_photoTool)
@@ -66,6 +90,7 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    self.contentScrollView.delegate = self;
     self.scrollViewsWidth.constant  =_SCREEN_WIDTH;
     self.submitButton.layer.cornerRadius = 4;
     self.infoTextView.delegate = self;
@@ -76,6 +101,8 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     self.defaultName = @"tianjiaTP";
     self.cellSize = (_SCREEN_WIDTH - 8*(self.horizontalRow+1) - 36.5)/self.horizontalRow;
     self.audioHeight.constant = self.audioWidth.constant = self.cellSize;
+    // 录音按钮设置
+    [self.audioButton initRecord:self maxtime:120 title:@"松手取消录音"];
     
     UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc] init];
     [flowlayout setItemSize:CGSizeMake(self.cellSize, self.cellSize)];
@@ -93,6 +120,23 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     [self.photoCollectionView registerClass:[ZKInformationCollectionViewCell class] forCellWithReuseIdentifier:ZKInformationCollectionViewCellID];
     self.photoCollectionView.collectionViewLayout = flowlayout;
     [self reloadCollectionView];
+    [self obtainHotScenicSpotData];
+    [self startPositioning];
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [session setActive:YES error:nil];
+}
+
+/**
+ 获取景区类别选择数据
+ */
+- (void)obtainHotScenicSpotData
+{
+    YJWeakSelf
+    [[ZKBasicDataTool sharedManager] obtainHotScenicSpotData:^(NSArray *scenicSpotData) {
+        weakSelf.scenicSpotArray = scenicSpotData;
+    }];
 }
 /**
  获取 - ZKInformationReportedView
@@ -102,7 +146,7 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 + (ZKInformationReportedView *)obtainReportedView;
 {
     ZKInformationReportedView *view = [[NSBundle mainBundle] loadNibNamed:@"ZKInformationReportedView" owner:nil options:nil].lastObject;
-
+    
     view.clipsToBounds = YES;
     return view;
 }
@@ -129,7 +173,7 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 // 选择照片
 - (void)choosePhotos
 {
-   [self.photoTool showPhotosIndex:self.maxRow-self.uploadTool.dataArray.count];
+    [self.photoTool showPhotosIndex:self.maxRow-self.uploadTool.dataArray.count];
 }
 // 提示是否删除图片
 - (void)friendlyPromptIndex:(NSInteger)dex
@@ -143,26 +187,230 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     }];
     
 }
+/**
+ 更新音频按钮显示
+ */
+- (void)updataAudioButton
+{
+    NSString *imageName = self.uploadTool.audioData?@"voice_0.jpg":@"add_aud";
+    [self.audioButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+
+/**
+ 是否播放音频
+ 
+ @param state 状态
+ */
+- (void)whetherToPlayAudioState:(BOOL)state;
+{
+    [self.player stop];
+    self.player = nil;
+    self.player.delegate = nil;
+    
+    if (state == YES)
+    {
+        NSError *error;
+        [self objctDataState:YES];
+        
+        NSData *msData = self.uploadTool.audioData;
+        
+        if (msData.length < 100)
+        {
+            self.uploadTool.audioData = nil;
+            [self updataAudioButton];
+            [UIView addMJNotifierWithText:@"音频出错了！" dismissAutomatically:YES];
+        }
+        else
+        {
+            self.player = [[AVAudioPlayer alloc]initWithData:msData error:&error];
+            self.player.delegate = self;
+            [self.player prepareToPlay];
+            self.player.volume = 1.0f;
+            [self.player play];
+            hudShowLoading(@"正在播放");
+        }
+    }
+    
+}
+
+/**
+ 是否正在播放
+ 
+ @param state 状态
+ */
+- (void)objctDataState:(BOOL)state
+{
+    NSString *path = state ? @"voice_1.jpg":@"voice_0.jpg";
+    [self.audioButton setBackgroundImage:[UIImage imageNamed:path] forState:UIControlStateNormal];
+}
+/**
+ 弹出视频录制vc
+ */
+- (void)showVideoController
+{
+    __weak typeof(self)weeSelf = self;
+    
+    ShootVideoViewController *videoVC = [[ShootVideoViewController alloc]init];
+    videoVC.totalTime = 120.0f;
+    [videoVC  setVideoPathUrl:^(NSURL *url) {
+        
+        [weeSelf thumbnailImageForVideo:url];
+    }];
+    ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:videoVC];
+    [[ZKUtil getPresentedViewController] presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
+
+/**
+ 弹出视频播放vc
+ */
+- (void)showVideoPlayController
+{
+    PlayVideoViewController *paly = [[PlayVideoViewController alloc] init];
+    paly.videoURL = self.uploadTool.videoURL;
+    ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:paly];
+    [[ZKUtil getPresentedViewController] presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
+
+/**
+ 视频操作提示
+ */
+- (void)videoTipOperation
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"视频操作" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *ylAlert = [UIAlertAction actionWithTitle:@"预览视频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                  [self showVideoPlayController];
+                              }];
+    
+    UIAlertAction *psAler = [UIAlertAction actionWithTitle:@"重新拍摄" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self showVideoController];
+    }];
+    
+    UIAlertAction *deleAler = [UIAlertAction actionWithTitle:@"删除视频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        self.uploadTool.videoURL = nil;
+        [self updataVodeoButton];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取 消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        [alert dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+    
+    [alert addAction:ylAlert];
+    [alert addAction:psAler];
+    [alert addAction:deleAler];
+    [alert  addAction:cancel];
+    
+    [[ZKUtil getPresentedViewController] presentViewController:alert animated:YES completion:nil];
+}
+/**
+ 获取视频首帧图片
+ 
+ @param videoURL 视频地址
+ */
+- (void)thumbnailImageForVideo:(NSURL *)videoURL {
+    
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    NSParameterAssert(asset);
+    
+    AVAssetImageGenerator *assetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    assetImageGenerator.appliesPreferredTrackTransform =YES;        assetImageGenerator.apertureMode =AVAssetImageGeneratorApertureModeEncodedPixels;
+    
+    CGImageRef thumbnailImageRef = NULL;
+    
+    CFTimeInterval thumbnailImageTime = 0.0f;
+    
+    NSError *thumbnailImageGenerationError = nil;
+    
+    thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime,60) actualTime:NULL error:&thumbnailImageGenerationError];
+    
+    UIImage *thumbnailImage = thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef] :nil;
+    
+    [self.videoButton setBackgroundImage:thumbnailImage forState:UIControlStateNormal];
+    self.uploadTool.videoURL = videoURL;
+    [self updataVodeoButton];
+}
+
+/**
+ 更新视频按钮显示
+ */
+- (void)updataVodeoButton
+{
+    if (self.uploadTool.videoURL)
+    {
+        [self.videoButton setImage:[UIImage imageNamed:@"playButton"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.videoButton setImage:nil forState:UIControlStateNormal];
+        [self.videoButton setBackgroundImage:[UIImage imageNamed:@"add_ved"] forState:UIControlStateNormal];
+    }
+}
+
+/**
+ 开始定位
+ */
+- (void)startPositioning
+{
+    //开始更新定位
+    [self.location beginUpdatingLocation];
+}
 #pragma mark  ----按钮点击事件----
 /**
  景区数据选择
  */
 - (IBAction)scenicSpotDataSelection
 {
-    
+    [self endEditing:YES];
+    if (self.scenicSpotArray.count == 0)
+    {
+        [UIView addMJNotifierWithText:@"上报景区数据正在加载！" dismissAutomatically:YES];
+        [self obtainHotScenicSpotData];
+    }
+    else
+    {
+        ZKDataSelectBoxView *boxView = [[ZKDataSelectBoxView alloc] initShowPrompt:@"上报景区选择" data:self.scenicSpotArray cellNameKey:@"sname" selectName:self.scenicTextfield.text];
+        boxView.delegate = self;
+        [boxView show];
+    }
 }
-// 音频按钮
-- (IBAction)audioClick:(UIButton *)sender
-{
-}
+
 // 视频按钮
 - (IBAction)videoClick:(UIButton *)sender
 {
+     [self endEditing:YES];
+    if (self.uploadTool.videoURL == nil) {
+        
+        [self showVideoController];
+    }
+    else
+    {
+        [self videoTipOperation];
+        
+    }
 }
 // 提交上传
 - (IBAction)submitClick:(UIButton *)sender
 {
-    
+    [self endEditing:YES];
+    self.uploadTool.titleTextField = self.scenicTextfield.text;
+    self.uploadTool.nameTextfield = self.nameTextfield.text;
+    self.uploadTool.phoneTextfield = self.phoneTextfield.text;
+    self.uploadTool.infoText = self.infoTextView.text;
+    [self.uploadTool startUploadSuccess:^(BOOL success) {
+        
+        
+    }];
 }
 #pragma mark  ----UICollectionViewDataSource----
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -181,7 +429,7 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     
     ZKInformationCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ZKInformationCollectionViewCellID forIndexPath:indexPath];
     
-    if (indexPath.row<self.uploadTool.dataArray.count)
+    if (indexPath.row < self.uploadTool.dataArray.count)
     {
         [cell valueCellImage:self.uploadTool.dataArray[indexPath.row] showDelete:YES index:indexPath.row];
     }
@@ -212,6 +460,88 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
         [self choosePhotos];
     }
 }
+#pragma mark  ----UIScrollViewDelegate----
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self endEditing:YES];
+}
+#pragma mark  ----AVAudioPlayerDelegate----
+// 音频播放完成时
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)fla
+{
+    [self objctDataState:NO];
+    hudDismiss();
+}
+// 解码错误
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error{
+    hudDismiss();
+    [UIView addMJNotifierWithText:@"音频出错了！" dismissAutomatically:YES];
+    self.uploadTool.audioData = nil;
+    [self updataAudioButton];
+    
+}
+// 当音频播放过程中被中断时
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player{
+    
+    [player pause];
+    hudDismiss();
+}
+// 当中断结束时
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags{
+    
+    if (player != nil)
+    {
+        [player play];
+        hudDismiss();
+    }
+}
+
+#pragma mark  ----D3RecordDelegate----
+- (void)endRecord:(NSData *)voiceData;
+{
+    self.uploadTool.audioData = voiceData;
+    [self updataAudioButton];
+}
+- (BOOL)isStartVoice;
+{
+    if (self.uploadTool.audioData)
+    {
+        /** 测试  **/
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"音频操作" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *stAlert = [UIAlertAction actionWithTitle:@"试听音频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                                  {
+                                      [self whetherToPlayAudioState:YES];
+                                      
+                                  }];
+        
+        UIAlertAction *deleAler = [UIAlertAction actionWithTitle:@"删除音频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self whetherToPlayAudioState:NO];
+            self.uploadTool.audioData = nil;
+            [self updataAudioButton];
+        }];
+        
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取 消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+            [alert dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        }];
+        
+        [alert addAction:stAlert];
+        [alert addAction:deleAler];
+        [alert addAction:cancel];
+        
+        [[ZKUtil getPresentedViewController] presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 #pragma mark  ----TBChoosePhotosToolDelegate----
 - (void)choosePhotosArray:(NSArray<UIImage*>*)images;
@@ -221,6 +551,21 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
         [self.uploadTool.dataArray addObjectsFromArray:images];
         [self reloadCollectionView];
     }
+}
+
+#pragma mark  ----ZKDataSelectBoxViewDelegate----
+/**
+ 弹出框选中的数据
+ 
+ @param data 数据
+ */
+- (void)boxViewSelectedData:(NSDictionary *)data;
+{
+    NSString *resourcecode = [data valueForKey:@"resourcecode"];
+    NSString *name = [data valueForKey:@"sname"];
+    
+    self.scenicTextfield.text = name;
+    self.uploadTool.resourcecode = resourcecode;
 }
 #pragma mark  ----UITextViewDelegate----
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
@@ -250,9 +595,18 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     }
     else if (toBeString.length > number)
     {
-         [UIView addMJNotifierWithText:@"字数太多了" dismissAutomatically:YES];
+        [UIView addMJNotifierWithText:@"字数太多了" dismissAutomatically:YES];
         textView.text = [toBeString substringToIndex:number];
     }
 }
-
+#pragma mark  ----ZKLocationDelegate----
+- (void)locationDidEndUpdatingLocation:(Location *)location;
+{
+    self.uploadTool.latitude = location.latitude;
+    self.uploadTool.longitude = location.longitude;
+}
+- (void)dealloc
+{
+    [self whetherToPlayAudioState:NO];
+}
 @end

@@ -39,7 +39,7 @@
                                     <rect key="frame" x="30" y="26" width="289" height="38"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,7 +126,7 @@
                                     <rect key="frame" x="30" y="26" width="289" height="38"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,7 +164,7 @@
                                     <rect key="frame" x="30" y="26" width="289" height="38"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="send"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -205,7 +205,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入上报内容( 字数限制120)"/>
                                     </userDefinedRuntimeAttributes>
@@ -275,16 +275,13 @@
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoH-4P-agN">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoH-4P-agN" customClass="D3RecordButton">
                                     <rect key="frame" x="16" y="32" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="Us2-oZ-qxA"/>
                                         <constraint firstAttribute="width" constant="80" id="oQ7-VL-zma"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="add_aud"/>
-                                    <connections>
-                                        <action selector="audioClick:" destination="v7k-rn-ggi" eventType="touchUpInside" id="9Qd-Ub-CGz"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beg-cP-sot">
                                     <rect key="frame" x="116" y="32" width="80" height="80"/>
@@ -375,6 +372,7 @@
                 <outlet property="audioButton" destination="XoH-4P-agN" id="qoR-Uf-DE8"/>
                 <outlet property="audioHeight" destination="Us2-oZ-qxA" id="V07-l8-mYI"/>
                 <outlet property="audioWidth" destination="oQ7-VL-zma" id="gYa-EF-OlS"/>
+                <outlet property="contentScrollView" destination="Hc8-O6-gsK" id="wBy-Li-sXj"/>
                 <outlet property="infoTextView" destination="pUS-ON-agO" id="reW-gf-1zR"/>
                 <outlet property="nameTextfield" destination="uvk-7L-Bfl" id="yf8-5T-oX4"/>
                 <outlet property="phoneTextfield" destination="0jZ-a4-nJw" id="pYK-3g-Bon"/>

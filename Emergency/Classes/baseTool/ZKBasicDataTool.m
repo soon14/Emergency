@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, DictType) {
     NSArray *_city_0_array;
     NSArray *_city_1_array;
     NSArray *_monitoringArray;
+    NSArray *_scenicSpotArray;
     DictType postType;
     
 }
@@ -184,6 +185,30 @@ typedef NS_ENUM(NSInteger, DictType) {
          } failure:nil];
     }
     
+}
+/**
+ 热门景区数据
+ 
+ @param array 数据
+ */
+- (void)obtainHotScenicSpotData:(void(^)(NSArray *scenicSpotData))array;
+{
+    NSString *path = [NSString stringWithFormat:@"%@appScency/hotScencyList",POST_URL];
+    if (_scenicSpotArray.count > 0)
+    {
+        array(_scenicSpotArray);
+    }
+    else
+    {
+        [ZKPostHttp get:path params:nil success:^(id responseObj)
+         {
+             _scenicSpotArray = [responseObj valueForKey:@"data"];
+             array(_scenicSpotArray);
+             
+             
+         } failure:nil];
+    }
+
 }
 - (void)postDataType:(DictType)type success:(void(^)(NSArray *data))success
 {

@@ -66,10 +66,17 @@
 - (void)obtainCityTwo:(void(^)(NSArray *cityTwo))array;
 
 /**
- 分级城市选择
+ 乐山用 - 分级城市选择
 
  @param array 数据
  */
 - (void)obtainMonitringCityData:(void(^)(NSArray *cityData))array;
+
+/**
+ 热门景区数据
+
+ @param array 数据
+ */
+- (void)obtainHotScenicSpotData:(void(^)(NSArray *scenicSpotData))array;
 
 @end

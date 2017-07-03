@@ -244,6 +244,7 @@
 }
 -(void)disappear
 {
+    self.delegate = nil;
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 0;
     } completion:^(BOOL finished) {

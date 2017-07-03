@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0941791F09E1C000FDDED3 /* D3RecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B09416A1F09E1C000FDDED3 /* D3RecordButton.m */; };
+		3B09417A1F09E1C000FDDED3 /* mic_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B09416C1F09E1C000FDDED3 /* mic_0.png */; };
+		3B09417B1F09E1C000FDDED3 /* mic_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B09416D1F09E1C000FDDED3 /* mic_1.png */; };
+		3B09417C1F09E1C000FDDED3 /* mic_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B09416E1F09E1C000FDDED3 /* mic_2.png */; };
+		3B09417D1F09E1C000FDDED3 /* mic_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B09416F1F09E1C000FDDED3 /* mic_3.png */; };
+		3B09417E1F09E1C000FDDED3 /* mic_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0941701F09E1C000FDDED3 /* mic_4.png */; };
+		3B09417F1F09E1C000FDDED3 /* mic_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0941711F09E1C000FDDED3 /* mic_5.png */; };
+		3B0941801F09E1C000FDDED3 /* mic_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0941721F09E1C000FDDED3 /* mic_cancel.png */; };
+		3B0941811F09E1C000FDDED3 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0941741F09E1C000FDDED3 /* libmp3lame.a */; };
+		3B0941821F09E1C000FDDED3 /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941761F09E1C000FDDED3 /* Mp3Recorder.m */; };
+		3B0941831F09E1C000FDDED3 /* RecordHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941781F09E1C000FDDED3 /* RecordHUD.m */; };
+		3B0941891F09EDFF00FDDED3 /* ShootVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941861F09EDFF00FDDED3 /* ShootVideoViewController.m */; };
+		3B09418A1F09EDFF00FDDED3 /* PlayVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941881F09EDFF00FDDED3 /* PlayVideoViewController.m */; };
+		3B09418D1F09EE9500FDDED3 /* UIView+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B09418C1F09EE9500FDDED3 /* UIView+Tools.m */; };
+		3B0941B31F0A37E700FDDED3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941B21F0A37E700FDDED3 /* Location.m */; };
+		3B0941B61F0A381800FDDED3 /* ZKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941B51F0A381800FDDED3 /* ZKLocation.m */; };
+		3B0941B91F0A3CD400FDDED3 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941B81F0A3CD400FDDED3 /* WGS84TOGCJ02.m */; };
+		3B0941BE1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941BD1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m */; };
+		3B0941C41F0A4DB900FDDED3 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941C11F0A4DB900FDDED3 /* ASPopUpView.m */; };
+		3B0941C51F0A4DB900FDDED3 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0941C31F0A4DB900FDDED3 /* ASProgressPopUpView.m */; };
 		3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */; };
 		3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20A0DC1EE6B360001155E4 /* ZKRegisteredViewController.m */; };
 		3B492E9D1F077FE800F10391 /* ZKInformationReportedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B492E9C1F077FE800F10391 /* ZKInformationReportedView.xib */; };
@@ -249,6 +269,39 @@
 
 /* Begin PBXFileReference section */
 		252600C6CE1AB4064DE1F2AA /* Pods_Emergency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emergency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0941691F09E1C000FDDED3 /* D3RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3RecordButton.h; sourceTree = "<group>"; };
+		3B09416A1F09E1C000FDDED3 /* D3RecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3RecordButton.m; sourceTree = "<group>"; };
+		3B09416C1F09E1C000FDDED3 /* mic_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_0.png; sourceTree = "<group>"; };
+		3B09416D1F09E1C000FDDED3 /* mic_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_1.png; sourceTree = "<group>"; };
+		3B09416E1F09E1C000FDDED3 /* mic_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_2.png; sourceTree = "<group>"; };
+		3B09416F1F09E1C000FDDED3 /* mic_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_3.png; sourceTree = "<group>"; };
+		3B0941701F09E1C000FDDED3 /* mic_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_4.png; sourceTree = "<group>"; };
+		3B0941711F09E1C000FDDED3 /* mic_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_5.png; sourceTree = "<group>"; };
+		3B0941721F09E1C000FDDED3 /* mic_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_cancel.png; sourceTree = "<group>"; };
+		3B0941731F09E1C000FDDED3 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		3B0941741F09E1C000FDDED3 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		3B0941751F09E1C000FDDED3 /* Mp3Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mp3Recorder.h; sourceTree = "<group>"; };
+		3B0941761F09E1C000FDDED3 /* Mp3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mp3Recorder.m; sourceTree = "<group>"; };
+		3B0941771F09E1C000FDDED3 /* RecordHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordHUD.h; sourceTree = "<group>"; };
+		3B0941781F09E1C000FDDED3 /* RecordHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordHUD.m; sourceTree = "<group>"; };
+		3B0941851F09EDFF00FDDED3 /* ShootVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShootVideoViewController.h; sourceTree = "<group>"; };
+		3B0941861F09EDFF00FDDED3 /* ShootVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShootVideoViewController.m; sourceTree = "<group>"; };
+		3B0941871F09EDFF00FDDED3 /* PlayVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVideoViewController.h; sourceTree = "<group>"; };
+		3B0941881F09EDFF00FDDED3 /* PlayVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVideoViewController.m; sourceTree = "<group>"; };
+		3B09418B1F09EE9500FDDED3 /* UIView+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tools.h"; sourceTree = "<group>"; };
+		3B09418C1F09EE9500FDDED3 /* UIView+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tools.m"; sourceTree = "<group>"; };
+		3B0941B11F0A37E700FDDED3 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		3B0941B21F0A37E700FDDED3 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		3B0941B41F0A381800FDDED3 /* ZKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKLocation.h; sourceTree = "<group>"; };
+		3B0941B51F0A381800FDDED3 /* ZKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLocation.m; sourceTree = "<group>"; };
+		3B0941B71F0A3CD400FDDED3 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
+		3B0941B81F0A3CD400FDDED3 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
+		3B0941BC1F0A4D9E00FDDED3 /* TBUploadPromptHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBUploadPromptHUD.h; sourceTree = "<group>"; };
+		3B0941BD1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBUploadPromptHUD.m; sourceTree = "<group>"; };
+		3B0941C01F0A4DB900FDDED3 /* ASPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopUpView.h; sourceTree = "<group>"; };
+		3B0941C11F0A4DB900FDDED3 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
+		3B0941C21F0A4DB900FDDED3 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
+		3B0941C31F0A4DB900FDDED3 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
 		3B20A0D81EE67909001155E4 /* ZKStartAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKStartAnimationViewController.h; sourceTree = "<group>"; };
 		3B20A0D91EE67909001155E4 /* ZKStartAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKStartAnimationViewController.m; sourceTree = "<group>"; };
 		3B20A0DB1EE6B360001155E4 /* ZKRegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegisteredViewController.h; sourceTree = "<group>"; };
@@ -746,6 +799,7 @@
 				3B4D0D061EFA22D400F7846D /* libavdevice.a in Frameworks */,
 				3B4D0D0B1EFA22D400F7846D /* libswscale.a in Frameworks */,
 				3B4D0D081EFA22D400F7846D /* libavformat.a in Frameworks */,
+				3B0941811F09E1C000FDDED3 /* libmp3lame.a in Frameworks */,
 				3B4D0D0A1EFA22D400F7846D /* libswresample.a in Frameworks */,
 				3B4D0D051EFA22D400F7846D /* libavcodec.a in Frameworks */,
 			);
@@ -768,6 +822,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0941681F09E1C000FDDED3 /* D3RecordBtutton */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941691F09E1C000FDDED3 /* D3RecordButton.h */,
+				3B09416A1F09E1C000FDDED3 /* D3RecordButton.m */,
+				3B09416B1F09E1C000FDDED3 /* imgs */,
+				3B0941731F09E1C000FDDED3 /* lame.h */,
+				3B0941741F09E1C000FDDED3 /* libmp3lame.a */,
+				3B0941751F09E1C000FDDED3 /* Mp3Recorder.h */,
+				3B0941761F09E1C000FDDED3 /* Mp3Recorder.m */,
+				3B0941771F09E1C000FDDED3 /* RecordHUD.h */,
+				3B0941781F09E1C000FDDED3 /* RecordHUD.m */,
+			);
+			path = D3RecordBtutton;
+			sourceTree = "<group>";
+		};
+		3B09416B1F09E1C000FDDED3 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				3B09416C1F09E1C000FDDED3 /* mic_0.png */,
+				3B09416D1F09E1C000FDDED3 /* mic_1.png */,
+				3B09416E1F09E1C000FDDED3 /* mic_2.png */,
+				3B09416F1F09E1C000FDDED3 /* mic_3.png */,
+				3B0941701F09E1C000FDDED3 /* mic_4.png */,
+				3B0941711F09E1C000FDDED3 /* mic_5.png */,
+				3B0941721F09E1C000FDDED3 /* mic_cancel.png */,
+			);
+			path = imgs;
+			sourceTree = "<group>";
+		};
+		3B0941841F09EDF500FDDED3 /* 视频拍摄预览 */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941851F09EDFF00FDDED3 /* ShootVideoViewController.h */,
+				3B0941861F09EDFF00FDDED3 /* ShootVideoViewController.m */,
+				3B0941871F09EDFF00FDDED3 /* PlayVideoViewController.h */,
+				3B0941881F09EDFF00FDDED3 /* PlayVideoViewController.m */,
+				3B09418B1F09EE9500FDDED3 /* UIView+Tools.h */,
+				3B09418C1F09EE9500FDDED3 /* UIView+Tools.m */,
+			);
+			path = "视频拍摄预览";
+			sourceTree = "<group>";
+		};
+		3B0941B01F0A37DC00FDDED3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941B11F0A37E700FDDED3 /* Location.h */,
+				3B0941B21F0A37E700FDDED3 /* Location.m */,
+				3B0941B71F0A3CD400FDDED3 /* WGS84TOGCJ02.h */,
+				3B0941B81F0A3CD400FDDED3 /* WGS84TOGCJ02.m */,
+				3B0941B41F0A381800FDDED3 /* ZKLocation.h */,
+				3B0941B51F0A381800FDDED3 /* ZKLocation.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		3B0941BA1F0A4D8C00FDDED3 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941BB1F0A4D9000FDDED3 /* TBUploadPromptHUD */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		3B0941BB1F0A4D9000FDDED3 /* TBUploadPromptHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941BF1F0A4DB900FDDED3 /* ASProgressPopUpView */,
+				3B0941BC1F0A4D9E00FDDED3 /* TBUploadPromptHUD.h */,
+				3B0941BD1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m */,
+			);
+			path = TBUploadPromptHUD;
+			sourceTree = "<group>";
+		};
+		3B0941BF1F0A4DB900FDDED3 /* ASProgressPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				3B0941C01F0A4DB900FDDED3 /* ASPopUpView.h */,
+				3B0941C11F0A4DB900FDDED3 /* ASPopUpView.m */,
+				3B0941C21F0A4DB900FDDED3 /* ASProgressPopUpView.h */,
+				3B0941C31F0A4DB900FDDED3 /* ASProgressPopUpView.m */,
+			);
+			path = ASProgressPopUpView;
+			sourceTree = "<group>";
+		};
 		3B20A0D51EE67899001155E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1116,6 +1255,7 @@
 		3B695B151F0647FC001B83A1 /* 其它页面 */ = {
 			isa = PBXGroup;
 			children = (
+				3B0941BA1F0A4D8C00FDDED3 /* tool */,
 				3B695B161F0647FC001B83A1 /* Controller */,
 				3B695B171F0647FC001B83A1 /* mode */,
 				3B695B181F0647FC001B83A1 /* view */,
@@ -1570,6 +1710,9 @@
 		3BDB56591EB9C64D000C7CD2 /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				3B0941B01F0A37DC00FDDED3 /* Location */,
+				3B0941841F09EDF500FDDED3 /* 视频拍摄预览 */,
+				3B0941681F09E1C000FDDED3 /* D3RecordBtutton */,
 				3B492EA11F07923300F10391 /* 相册选择 */,
 				3B4D0D311EFA24A600F7846D /* LDGProgressHUD */,
 				3B4D0D201EFA248300F7846D /* kxmovie */,
@@ -2087,13 +2230,17 @@
 				3BDB57701EB9C69A000C7CD2 /* Default@2x.png in Resources */,
 				3B4D0D1C1EFA22E800F7846D /* FastForwardView.xib in Resources */,
 				3B6421801EF7790900D5FBBF /* ZKEmergencyAlertView.xib in Resources */,
+				3B09417A1F09E1C000FDDED3 /* mic_0.png in Resources */,
+				3B09417C1F09E1C000FDDED3 /* mic_2.png in Resources */,
 				3BDB57B81EB9C856000C7CD2 /* Clickfold_dims@3x.png in Resources */,
 				3BDB57B01EB9C856000C7CD2 /* banner_5@3x.png in Resources */,
 				3BDB57CB1EB9C856000C7CD2 /* icon_120x120.png in Resources */,
 				3BED98121F01F28600C08B0A /* ZKElectronicLtineraryViewController.xib in Resources */,
+				3B09417D1F09E1C000FDDED3 /* mic_3.png in Resources */,
 				3BDB56B71EB9C64D000C7CD2 /* MBProgressHUD.bundle in Resources */,
 				3BDB57AF1EB9C856000C7CD2 /* banner_5@2x.png in Resources */,
 				3BAA48141F04FBDE004AAB76 /* ZKICarouselHotelView.xib in Resources */,
+				3B09417B1F09E1C000FDDED3 /* mic_1.png in Resources */,
 				3BDB57B71EB9C856000C7CD2 /* Clickfold_dims@2x.png in Resources */,
 				3BDB57CA1EB9C856000C7CD2 /* icon@2x.png in Resources */,
 				3BDB57B31EB9C856000C7CD2 /* banner_7@2x.png in Resources */,
@@ -2103,8 +2250,10 @@
 				3BED981D1F01F28600C08B0A /* ZKTourismDataTeamCell.xib in Resources */,
 				3BDB57AC1EB9C856000C7CD2 /* banner_3@3x.png in Resources */,
 				3BDB57A41EB9C856000C7CD2 /* arrangeTime.png in Resources */,
+				3B09417F1F09E1C000FDDED3 /* mic_5.png in Resources */,
 				3BDB57721EB9C848000C7CD2 /* assets in Resources */,
 				3BDB57C51EB9C856000C7CD2 /* duy_add@2x.png in Resources */,
+				3B0941801F09E1C000FDDED3 /* mic_cancel.png in Resources */,
 				3BDB576A1EB9C67F000C7CD2 /* yjLeShan-Info.plist in Resources */,
 				3BDB57B21EB9C856000C7CD2 /* banner_6@3x.png in Resources */,
 				3BDB576E1EB9C69A000C7CD2 /* Default-568h@2x.png in Resources */,
@@ -2118,6 +2267,7 @@
 				3BDB57AD1EB9C856000C7CD2 /* banner_4@2x.png in Resources */,
 				3BDB57AB1EB9C856000C7CD2 /* banner_3@2x.png in Resources */,
 				3BDB57A21EB9C856000C7CD2 /* AboutUs@2x.png in Resources */,
+				3B09417E1F09E1C000FDDED3 /* mic_4.png in Resources */,
 				3BDB57C21EB9C856000C7CD2 /* duty_roster@3x.png in Resources */,
 				3B6421991EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.xib in Resources */,
 				3BDB57BC1EB9C856000C7CD2 /* Clickon_dims@3x.png in Resources */,
@@ -2213,7 +2363,9 @@
 				3B4D0D591EFA607200F7846D /* ZKTimeMonitoringMode.m in Sources */,
 				3B64217E1EF778F900D5FBBF /* ZKEmergencyAlertView.m in Sources */,
 				3BAA48121F04FBC5004AAB76 /* ZKICarouselBusView.m in Sources */,
+				3B0941C41F0A4DB900FDDED3 /* ASPopUpView.m in Sources */,
 				3BDB56541EB9C643000C7CD2 /* ZKBaseViewController.m in Sources */,
+				3B0941B31F0A37E700FDDED3 /* Location.m in Sources */,
 				3BDB56B61EB9C64D000C7CD2 /* MBProgressHUD+Add.m in Sources */,
 				3B4D0D5C1EFA61B200F7846D /* ZKMonitoringCollectionViewCell.m in Sources */,
 				3BDB56BC1EB9C64D000C7CD2 /* MJPhotoLoadingView.m in Sources */,
@@ -2235,11 +2387,16 @@
 				3BDB56551EB9C643000C7CD2 /* ZKNavigationController.m in Sources */,
 				3BDB56CD1EB9C64D000C7CD2 /* ZYQAssetPickerController.m in Sources */,
 				3B4D0D191EFA22E800F7846D /* BaseViewController.m in Sources */,
+				3B0941791F09E1C000FDDED3 /* D3RecordButton.m in Sources */,
 				3BDB56C51EB9C64D000C7CD2 /* TAPageControl.m in Sources */,
 				3B4D0C921EFA020A00F7846D /* NSObject+SBJSON.m in Sources */,
+				3B0941891F09EDFF00FDDED3 /* ShootVideoViewController.m in Sources */,
+				3B0941B91F0A3CD400FDDED3 /* WGS84TOGCJ02.m in Sources */,
 				3BED981C1F01F28600C08B0A /* ZKTourismDataTeamCell.m in Sources */,
+				3B09418D1F09EE9500FDDED3 /* UIView+Tools.m in Sources */,
 				3BED98281F02029800C08B0A /* TBBusAnnotation.m in Sources */,
 				3BDB56561EB9C643000C7CD2 /* ZKTableBaseViewController.m in Sources */,
+				3B0941C51F0A4DB900FDDED3 /* ASProgressPopUpView.m in Sources */,
 				3BED98151F01F28600C08B0A /* ZKElectronicLtineraryMode.m in Sources */,
 				3B6421881EF7B1FF00D5FBBF /* ZKHomeBaseData.m in Sources */,
 				3BDB56C91EB9C64D000C7CD2 /* HUD.m in Sources */,
@@ -2257,6 +2414,7 @@
 				3BDB56581EB9C643000C7CD2 /* ZKHomeViewController.m in Sources */,
 				3BA0BBF41EFD073C00BD4503 /* ZKScenicResourceStatCell.m in Sources */,
 				3BDB56CA1EB9C64D000C7CD2 /* ZKPostHttp.m in Sources */,
+				3B0941BE1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m in Sources */,
 				3BA0BBD21EFCEBEF00BD4503 /* ZKGuideResourceStatMode.m in Sources */,
 				3BDB56AC1EB9C64D000C7CD2 /* NSDictionary+FixedParams.m in Sources */,
 				3BAAEC521F0260D700B6F9B9 /* ZKElectronicMapViewController.m in Sources */,
@@ -2275,6 +2433,7 @@
 				3B6355F51F034BF0005A36CB /* ZKMapChooseView.m in Sources */,
 				3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */,
 				3BED98131F01F28600C08B0A /* ZKTourismDataViewController.m in Sources */,
+				3B09418A1F09EDFF00FDDED3 /* PlayVideoViewController.m in Sources */,
 				3BED981A1F01F28600C08B0A /* ZKTourismDataBusCell.m in Sources */,
 				3BDB56C41EB9C64D000C7CD2 /* TADotView.m in Sources */,
 				3BDB56C21EB9C64D000C7CD2 /* TAAbstractDotView.m in Sources */,
@@ -2307,6 +2466,7 @@
 				3B4D0D2C1EFA248300F7846D /* KxAudioManager.m in Sources */,
 				3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */,
 				3BED98171F01F28600C08B0A /* ZKTourismDataBusMode.m in Sources */,
+				3B0941821F09E1C000FDDED3 /* Mp3Recorder.m in Sources */,
 				3B6421941EF7BB3B00D5FBBF /* ZKHomeImagesData.m in Sources */,
 				3B492EA71F07976900F10391 /* ZKInformationCollectionViewCell.m in Sources */,
 				3BED981F1F01F28600C08B0A /* ZKCustomCalloutView.m in Sources */,
@@ -2319,8 +2479,10 @@
 				3B492EA41F07924B00F10391 /* TBChoosePhotosTool.m in Sources */,
 				3B4D0D2E1EFA248300F7846D /* KxMovieDecoder.m in Sources */,
 				3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */,
+				3B0941B61F0A381800FDDED3 /* ZKLocation.m in Sources */,
 				3BDB56C71EB9C64D000C7CD2 /* SDCycleScrollView.m in Sources */,
 				3B6421981EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.m in Sources */,
+				3B0941831F09E1C000FDDED3 /* RecordHUD.m in Sources */,
 				3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */,
 				3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */,
 				3BED98101F01F28600C08B0A /* ZKBusTrajectoryViewController.m in Sources */,
@@ -2490,6 +2652,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Emergency/Lib/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/Emergency/Lib",
+					"$(PROJECT_DIR)/Emergency/Toolkit/D3RecordBtutton",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2541,6 +2704,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Emergency/Lib/FFmpeg-iOS/lib",
 					"$(PROJECT_DIR)/Emergency/Lib",
+					"$(PROJECT_DIR)/Emergency/Toolkit/D3RecordBtutton",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

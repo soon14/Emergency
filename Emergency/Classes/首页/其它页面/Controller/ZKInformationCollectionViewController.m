@@ -70,6 +70,10 @@
     }];
 }
 #pragma mark  ----UIScrollViewDelegate----
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;
+{
+    [self.view endEditing:YES];
+}
 //减速结束   停止
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
