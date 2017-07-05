@@ -71,6 +71,13 @@
 		3B4D0D621EFA702400F7846D /* ZKDataSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D611EFA702400F7846D /* ZKDataSelectBoxView.m */; };
 		3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */; };
 		3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */; };
+		3B55D6561F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6541F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m */; };
+		3B55D6571F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55D6551F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib */; };
+		3B55D65B1F0C8B4000562E46 /* ZKRegionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6591F0C8B4000562E46 /* ZKRegionSelectViewController.m */; };
+		3B55D65C1F0C8B4000562E46 /* ZKRegionSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55D65A1F0C8B4000562E46 /* ZKRegionSelectViewController.xib */; };
+		3B55D65F1F0C8C6100562E46 /* UIView+ExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D65E1F0C8C6100562E46 /* UIView+ExclusiveTouch.m */; };
+		3B55D6621F0CB95B00562E46 /* ZKRegionSelectMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6611F0CB95B00562E46 /* ZKRegionSelectMode.m */; };
+		3B55D6651F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6641F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.m */; };
 		3B6355F21F03427F005A36CB /* ZKMapRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355F11F03427F005A36CB /* ZKMapRollingView.m */; };
 		3B6355F51F034BF0005A36CB /* ZKMapChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6355F41F034BF0005A36CB /* ZKMapChooseView.m */; };
 		3B6355F71F034C04005A36CB /* ZKMapChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6355F61F034C04005A36CB /* ZKMapChooseView.xib */; };
@@ -98,6 +105,28 @@
 		3B69D3D21EFBB2FC0090D8CE /* ZKResourceChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3D11EFBB2FC0090D8CE /* ZKResourceChooseView.m */; };
 		3B69D3D41EFBB3C60090D8CE /* ZKResourceChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */; };
 		3B69D3DA1EFBC4C00090D8CE /* TBTaskSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69D3D91EFBC4C00090D8CE /* TBTaskSearchView.m */; };
+		3B6EA4EA1F0B34C8004BBDCE /* ZKInformationDealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA4E81F0B34C8004BBDCE /* ZKInformationDealTableViewCell.m */; };
+		3B6EA4EB1F0B34C8004BBDCE /* ZKInformationDealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6EA4E91F0B34C8004BBDCE /* ZKInformationDealTableViewCell.xib */; };
+		3B6EA4EF1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA4ED1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.m */; };
+		3B6EA4F01F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6EA4EE1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.xib */; };
+		3B6EA4F31F0B362A004BBDCE /* ZKDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA4F21F0B362A004BBDCE /* ZKDealViewController.m */; };
+		3B6EA50F1F0B434B004BBDCE /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B6EA50A1F0B434B004BBDCE /* MBProgressHUD.bundle */; };
+		3B6EA5101F0B434B004BBDCE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA50C1F0B434B004BBDCE /* MBProgressHUD.m */; };
+		3B6EA5111F0B434B004BBDCE /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA50E1F0B434B004BBDCE /* MBProgressHUD+Add.m */; };
+		3B6EA53E1F0B45CD004BBDCE /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA52E1F0B45CD004BBDCE /* MJPhoto.m */; };
+		3B6EA53F1F0B45CD004BBDCE /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B6EA52F1F0B45CD004BBDCE /* MJPhotoBrowser.bundle */; };
+		3B6EA5401F0B45CD004BBDCE /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5311F0B45CD004BBDCE /* MJPhotoBrowser.m */; };
+		3B6EA5411F0B45CD004BBDCE /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5331F0B45CD004BBDCE /* MJPhotoLoadingView.m */; };
+		3B6EA5421F0B45CD004BBDCE /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5351F0B45CD004BBDCE /* MJPhotoProgressView.m */; };
+		3B6EA5431F0B45CD004BBDCE /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5371F0B45CD004BBDCE /* MJPhotoToolbar.m */; };
+		3B6EA5441F0B45CD004BBDCE /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5391F0B45CD004BBDCE /* MJPhotoView.m */; };
+		3B6EA5451F0B45CD004BBDCE /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA53B1F0B45CD004BBDCE /* SDWebImageManager+MJ.m */; };
+		3B6EA5461F0B45CD004BBDCE /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA53D1F0B45CD004BBDCE /* UIImageView+MJWebCache.m */; };
+		3B6EA5491F0B68D4004BBDCE /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5481F0B68D4004BBDCE /* AudioStreamer.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		3B6EA54D1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA54B1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.m */; };
+		3B6EA54E1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6EA54C1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.xib */; };
+		3B6EA5541F0B92AB004BBDCE /* ZKWeatherMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5531F0B92AB004BBDCE /* ZKWeatherMode.m */; };
+		3B6EA55A1F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EA5591F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.m */; };
 		3B77D6ED1EB32BB10099EA0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B77D6EC1EB32BB10099EA0E /* main.m */; };
 		3B77D6F01EB32BB10099EA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B77D6EF1EB32BB10099EA0E /* AppDelegate.m */; };
 		3B77D6F81EB32BB10099EA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B77D6F71EB32BB10099EA0E /* Assets.xcassets */; };
@@ -146,18 +175,6 @@
 		3BDB56B31EB9C64D000C7CD2 /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB566C1EB9C64D000C7CD2 /* MJDIYBackFooter.m */; };
 		3BDB56B41EB9C64D000C7CD2 /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB566E1EB9C64D000C7CD2 /* MJDIYHeader.m */; };
 		3BDB56B51EB9C64D000C7CD2 /* UIView+MJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56721EB9C64D000C7CD2 /* UIView+MJAlertView.m */; };
-		3BDB56B61EB9C64D000C7CD2 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56751EB9C64D000C7CD2 /* MBProgressHUD+Add.m */; };
-		3BDB56B71EB9C64D000C7CD2 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BDB56761EB9C64D000C7CD2 /* MBProgressHUD.bundle */; };
-		3BDB56B81EB9C64D000C7CD2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56781EB9C64D000C7CD2 /* MBProgressHUD.m */; };
-		3BDB56B91EB9C64D000C7CD2 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB567A1EB9C64D000C7CD2 /* MJPhoto.m */; };
-		3BDB56BA1EB9C64D000C7CD2 /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BDB567B1EB9C64D000C7CD2 /* MJPhotoBrowser.bundle */; };
-		3BDB56BB1EB9C64D000C7CD2 /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB567D1EB9C64D000C7CD2 /* MJPhotoBrowser.m */; };
-		3BDB56BC1EB9C64D000C7CD2 /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB567F1EB9C64D000C7CD2 /* MJPhotoLoadingView.m */; };
-		3BDB56BD1EB9C64D000C7CD2 /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56811EB9C64D000C7CD2 /* MJPhotoProgressView.m */; };
-		3BDB56BE1EB9C64D000C7CD2 /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56831EB9C64D000C7CD2 /* MJPhotoToolbar.m */; };
-		3BDB56BF1EB9C64D000C7CD2 /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56851EB9C64D000C7CD2 /* MJPhotoView.m */; };
-		3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56871EB9C64D000C7CD2 /* SDWebImageManager+MJ.m */; };
-		3BDB56C11EB9C64D000C7CD2 /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56891EB9C64D000C7CD2 /* UIImageView+MJWebCache.m */; };
 		3BDB56C21EB9C64D000C7CD2 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB568D1EB9C64D000C7CD2 /* TAAbstractDotView.m */; };
 		3BDB56C31EB9C64D000C7CD2 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB568F1EB9C64D000C7CD2 /* TAAnimatedDotView.m */; };
 		3BDB56C41EB9C64D000C7CD2 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB56911EB9C64D000C7CD2 /* TADotView.m */; };
@@ -471,6 +488,18 @@
 		3B4FDEA91EF91B3100AE5D12 /* ZKSystemSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSystemSetUpViewController.h; sourceTree = "<group>"; };
 		3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSystemSetUpViewController.m; sourceTree = "<group>"; };
 		3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKSystemSetUpViewController.xib; sourceTree = "<group>"; };
+		3B55D6531F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMeteorologicalTableViewCell.h; sourceTree = "<group>"; };
+		3B55D6541F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMeteorologicalTableViewCell.m; sourceTree = "<group>"; };
+		3B55D6551F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMeteorologicalTableViewCell.xib; sourceTree = "<group>"; };
+		3B55D6581F0C8B4000562E46 /* ZKRegionSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegionSelectViewController.h; sourceTree = "<group>"; };
+		3B55D6591F0C8B4000562E46 /* ZKRegionSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegionSelectViewController.m; sourceTree = "<group>"; };
+		3B55D65A1F0C8B4000562E46 /* ZKRegionSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKRegionSelectViewController.xib; sourceTree = "<group>"; };
+		3B55D65D1F0C8C6100562E46 /* UIView+ExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExclusiveTouch.h"; sourceTree = "<group>"; };
+		3B55D65E1F0C8C6100562E46 /* UIView+ExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ExclusiveTouch.m"; sourceTree = "<group>"; };
+		3B55D6601F0CB95B00562E46 /* ZKRegionSelectMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegionSelectMode.h; sourceTree = "<group>"; };
+		3B55D6611F0CB95B00562E46 /* ZKRegionSelectMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegionSelectMode.m; sourceTree = "<group>"; };
+		3B55D6631F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegionSelectCollectionViewCell.h; sourceTree = "<group>"; };
+		3B55D6641F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegionSelectCollectionViewCell.m; sourceTree = "<group>"; };
 		3B6355F01F03427F005A36CB /* ZKMapRollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMapRollingView.h; sourceTree = "<group>"; };
 		3B6355F11F03427F005A36CB /* ZKMapRollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMapRollingView.m; sourceTree = "<group>"; };
 		3B6355F31F034BF0005A36CB /* ZKMapChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMapChooseView.h; sourceTree = "<group>"; };
@@ -520,6 +549,45 @@
 		3B69D3D31EFBB3C60090D8CE /* ZKResourceChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKResourceChooseView.xib; sourceTree = "<group>"; };
 		3B69D3D81EFBC4C00090D8CE /* TBTaskSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTaskSearchView.h; sourceTree = "<group>"; };
 		3B69D3D91EFBC4C00090D8CE /* TBTaskSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTaskSearchView.m; sourceTree = "<group>"; };
+		3B6EA4E71F0B34C8004BBDCE /* ZKInformationDealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInformationDealTableViewCell.h; sourceTree = "<group>"; };
+		3B6EA4E81F0B34C8004BBDCE /* ZKInformationDealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInformationDealTableViewCell.m; sourceTree = "<group>"; };
+		3B6EA4E91F0B34C8004BBDCE /* ZKInformationDealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInformationDealTableViewCell.xib; sourceTree = "<group>"; };
+		3B6EA4EC1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInformationCollectionTableViewCell.h; sourceTree = "<group>"; };
+		3B6EA4ED1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInformationCollectionTableViewCell.m; sourceTree = "<group>"; };
+		3B6EA4EE1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInformationCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		3B6EA4F11F0B362A004BBDCE /* ZKDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKDealViewController.h; sourceTree = "<group>"; };
+		3B6EA4F21F0B362A004BBDCE /* ZKDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKDealViewController.m; sourceTree = "<group>"; };
+		3B6EA50A1F0B434B004BBDCE /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		3B6EA50B1F0B434B004BBDCE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		3B6EA50C1F0B434B004BBDCE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		3B6EA50D1F0B434B004BBDCE /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		3B6EA50E1F0B434B004BBDCE /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		3B6EA52D1F0B45CD004BBDCE /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		3B6EA52E1F0B45CD004BBDCE /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		3B6EA52F1F0B45CD004BBDCE /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		3B6EA5301F0B45CD004BBDCE /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		3B6EA5311F0B45CD004BBDCE /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		3B6EA5321F0B45CD004BBDCE /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		3B6EA5331F0B45CD004BBDCE /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		3B6EA5341F0B45CD004BBDCE /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		3B6EA5351F0B45CD004BBDCE /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		3B6EA5361F0B45CD004BBDCE /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		3B6EA5371F0B45CD004BBDCE /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		3B6EA5381F0B45CD004BBDCE /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		3B6EA5391F0B45CD004BBDCE /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
+		3B6EA53A1F0B45CD004BBDCE /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
+		3B6EA53B1F0B45CD004BBDCE /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
+		3B6EA53C1F0B45CD004BBDCE /* UIImageView+MJWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MJWebCache.h"; sourceTree = "<group>"; };
+		3B6EA53D1F0B45CD004BBDCE /* UIImageView+MJWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MJWebCache.m"; sourceTree = "<group>"; };
+		3B6EA5471F0B68D4004BBDCE /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		3B6EA5481F0B68D4004BBDCE /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		3B6EA54A1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMeteorologicalDataViewController.h; sourceTree = "<group>"; };
+		3B6EA54B1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMeteorologicalDataViewController.m; sourceTree = "<group>"; };
+		3B6EA54C1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMeteorologicalDataViewController.xib; sourceTree = "<group>"; };
+		3B6EA5521F0B92AB004BBDCE /* ZKWeatherMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKWeatherMode.h; sourceTree = "<group>"; };
+		3B6EA5531F0B92AB004BBDCE /* ZKWeatherMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKWeatherMode.m; sourceTree = "<group>"; };
+		3B6EA5581F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMeteorologicalESRootClass.h; sourceTree = "<group>"; };
+		3B6EA5591F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMeteorologicalESRootClass.m; sourceTree = "<group>"; };
 		3B77D6E81EB32BB10099EA0E /* Emergency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emergency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B77D6EC1EB32BB10099EA0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B77D6EE1EB32BB10099EA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -609,28 +677,6 @@
 		3BDB566F1EB9C64D000C7CD2 /* MJUpdateUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJUpdateUI.h; sourceTree = "<group>"; };
 		3BDB56711EB9C64D000C7CD2 /* UIView+MJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJAlertView.h"; sourceTree = "<group>"; };
 		3BDB56721EB9C64D000C7CD2 /* UIView+MJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJAlertView.m"; sourceTree = "<group>"; };
-		3BDB56741EB9C64D000C7CD2 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
-		3BDB56751EB9C64D000C7CD2 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
-		3BDB56761EB9C64D000C7CD2 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
-		3BDB56771EB9C64D000C7CD2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		3BDB56781EB9C64D000C7CD2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		3BDB56791EB9C64D000C7CD2 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
-		3BDB567A1EB9C64D000C7CD2 /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
-		3BDB567B1EB9C64D000C7CD2 /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
-		3BDB567C1EB9C64D000C7CD2 /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
-		3BDB567D1EB9C64D000C7CD2 /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
-		3BDB567E1EB9C64D000C7CD2 /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
-		3BDB567F1EB9C64D000C7CD2 /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
-		3BDB56801EB9C64D000C7CD2 /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
-		3BDB56811EB9C64D000C7CD2 /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
-		3BDB56821EB9C64D000C7CD2 /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
-		3BDB56831EB9C64D000C7CD2 /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
-		3BDB56841EB9C64D000C7CD2 /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
-		3BDB56851EB9C64D000C7CD2 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
-		3BDB56861EB9C64D000C7CD2 /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
-		3BDB56871EB9C64D000C7CD2 /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
-		3BDB56881EB9C64D000C7CD2 /* UIImageView+MJWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MJWebCache.h"; sourceTree = "<group>"; };
-		3BDB56891EB9C64D000C7CD2 /* UIImageView+MJWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MJWebCache.m"; sourceTree = "<group>"; };
 		3BDB568C1EB9C64D000C7CD2 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		3BDB568D1EB9C64D000C7CD2 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		3BDB568E1EB9C64D000C7CD2 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -825,6 +871,8 @@
 		3B0941681F09E1C000FDDED3 /* D3RecordBtutton */ = {
 			isa = PBXGroup;
 			children = (
+				3B6EA5471F0B68D4004BBDCE /* AudioStreamer.h */,
+				3B6EA5481F0B68D4004BBDCE /* AudioStreamer.m */,
 				3B0941691F09E1C000FDDED3 /* D3RecordButton.h */,
 				3B09416A1F09E1C000FDDED3 /* D3RecordButton.m */,
 				3B09416B1F09E1C000FDDED3 /* imgs */,
@@ -1268,6 +1316,14 @@
 			children = (
 				3B695B1B1F064806001B83A1 /* ZKInformationCollectionViewController.h */,
 				3B695B1C1F064806001B83A1 /* ZKInformationCollectionViewController.m */,
+				3B6EA54A1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.h */,
+				3B6EA54B1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.m */,
+				3B6EA54C1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.xib */,
+				3B55D6581F0C8B4000562E46 /* ZKRegionSelectViewController.h */,
+				3B55D6591F0C8B4000562E46 /* ZKRegionSelectViewController.m */,
+				3B55D65A1F0C8B4000562E46 /* ZKRegionSelectViewController.xib */,
+				3B6EA4F11F0B362A004BBDCE /* ZKDealViewController.h */,
+				3B6EA4F21F0B362A004BBDCE /* ZKDealViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1275,10 +1331,16 @@
 		3B695B171F0647FC001B83A1 /* mode */ = {
 			isa = PBXGroup;
 			children = (
-				3B695B1E1F064AA6001B83A1 /* ZKInformationCollectionMode.h */,
-				3B695B1F1F064AA6001B83A1 /* ZKInformationCollectionMode.m */,
 				3B492E9E1F078A5500F10391 /* ZKInformationUploadTool.h */,
 				3B492E9F1F078A5500F10391 /* ZKInformationUploadTool.m */,
+				3B695B1E1F064AA6001B83A1 /* ZKInformationCollectionMode.h */,
+				3B695B1F1F064AA6001B83A1 /* ZKInformationCollectionMode.m */,
+				3B6EA5521F0B92AB004BBDCE /* ZKWeatherMode.h */,
+				3B6EA5531F0B92AB004BBDCE /* ZKWeatherMode.m */,
+				3B6EA5581F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.h */,
+				3B6EA5591F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.m */,
+				3B55D6601F0CB95B00562E46 /* ZKRegionSelectMode.h */,
+				3B55D6611F0CB95B00562E46 /* ZKRegionSelectMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -1295,8 +1357,19 @@
 		3B695B191F0647FC001B83A1 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				3B6EA4EC1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.h */,
+				3B6EA4ED1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.m */,
+				3B6EA4EE1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.xib */,
+				3B6EA4E71F0B34C8004BBDCE /* ZKInformationDealTableViewCell.h */,
+				3B6EA4E81F0B34C8004BBDCE /* ZKInformationDealTableViewCell.m */,
+				3B6EA4E91F0B34C8004BBDCE /* ZKInformationDealTableViewCell.xib */,
 				3B492EA51F07976900F10391 /* ZKInformationCollectionViewCell.h */,
 				3B492EA61F07976900F10391 /* ZKInformationCollectionViewCell.m */,
+				3B55D6531F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.h */,
+				3B55D6541F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m */,
+				3B55D6551F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib */,
+				3B55D6631F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.h */,
+				3B55D6641F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -1313,6 +1386,42 @@
 				3B492E9C1F077FE800F10391 /* ZKInformationReportedView.xib */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		3B6EA5091F0B4342004BBDCE /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3B6EA50A1F0B434B004BBDCE /* MBProgressHUD.bundle */,
+				3B6EA50B1F0B434B004BBDCE /* MBProgressHUD.h */,
+				3B6EA50C1F0B434B004BBDCE /* MBProgressHUD.m */,
+				3B6EA50D1F0B434B004BBDCE /* MBProgressHUD+Add.h */,
+				3B6EA50E1F0B434B004BBDCE /* MBProgressHUD+Add.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		3B6EA5121F0B43D2004BBDCE /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3B6EA52D1F0B45CD004BBDCE /* MJPhoto.h */,
+				3B6EA52E1F0B45CD004BBDCE /* MJPhoto.m */,
+				3B6EA52F1F0B45CD004BBDCE /* MJPhotoBrowser.bundle */,
+				3B6EA5301F0B45CD004BBDCE /* MJPhotoBrowser.h */,
+				3B6EA5311F0B45CD004BBDCE /* MJPhotoBrowser.m */,
+				3B6EA5321F0B45CD004BBDCE /* MJPhotoLoadingView.h */,
+				3B6EA5331F0B45CD004BBDCE /* MJPhotoLoadingView.m */,
+				3B6EA5341F0B45CD004BBDCE /* MJPhotoProgressView.h */,
+				3B6EA5351F0B45CD004BBDCE /* MJPhotoProgressView.m */,
+				3B6EA5361F0B45CD004BBDCE /* MJPhotoToolbar.h */,
+				3B6EA5371F0B45CD004BBDCE /* MJPhotoToolbar.m */,
+				3B6EA5381F0B45CD004BBDCE /* MJPhotoView.h */,
+				3B6EA5391F0B45CD004BBDCE /* MJPhotoView.m */,
+				3B6EA53A1F0B45CD004BBDCE /* SDWebImageManager+MJ.h */,
+				3B6EA53B1F0B45CD004BBDCE /* SDWebImageManager+MJ.m */,
+				3B6EA53C1F0B45CD004BBDCE /* UIImageView+MJWebCache.h */,
+				3B6EA53D1F0B45CD004BBDCE /* UIImageView+MJWebCache.m */,
+			);
+			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		3B77D6DF1EB32BB10099EA0E = {
@@ -1710,6 +1819,8 @@
 		3BDB56591EB9C64D000C7CD2 /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				3B6EA5121F0B43D2004BBDCE /* MJPhotoBrowser */,
+				3B6EA5091F0B4342004BBDCE /* MBProgressHUD */,
 				3B0941B01F0A37DC00FDDED3 /* Location */,
 				3B0941841F09EDF500FDDED3 /* 视频拍摄预览 */,
 				3B0941681F09E1C000FDDED3 /* D3RecordBtutton */,
@@ -1722,7 +1833,6 @@
 				3BDB56671EB9C64D000C7CD2 /* DZNEmptyDataSet */,
 				3BDB566A1EB9C64D000C7CD2 /* mj_update */,
 				3BDB56701EB9C64D000C7CD2 /* MJAlertView */,
-				3BDB56731EB9C64D000C7CD2 /* MJPhoto */,
 				3BDB568A1EB9C64D000C7CD2 /* SDCycleScrollView */,
 				3BDB569A1EB9C64D000C7CD2 /* tool */,
 				3BDB56A11EB9C64D000C7CD2 /* ZYQAssetPickerController */,
@@ -1734,6 +1844,8 @@
 		3BDB565A1EB9C64D000C7CD2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3B55D65D1F0C8C6100562E46 /* UIView+ExclusiveTouch.h */,
+				3B55D65E1F0C8C6100562E46 /* UIView+ExclusiveTouch.m */,
 				3BDB565B1EB9C64D000C7CD2 /* NSDictionary+FixedParams.h */,
 				3BDB565C1EB9C64D000C7CD2 /* NSDictionary+FixedParams.m */,
 				3BDB565D1EB9C64D000C7CD2 /* UIBarButtonItem+Custom.h */,
@@ -1782,35 +1894,6 @@
 				3BDB56721EB9C64D000C7CD2 /* UIView+MJAlertView.m */,
 			);
 			path = MJAlertView;
-			sourceTree = "<group>";
-		};
-		3BDB56731EB9C64D000C7CD2 /* MJPhoto */ = {
-			isa = PBXGroup;
-			children = (
-				3BDB56741EB9C64D000C7CD2 /* MBProgressHUD+Add.h */,
-				3BDB56751EB9C64D000C7CD2 /* MBProgressHUD+Add.m */,
-				3BDB56761EB9C64D000C7CD2 /* MBProgressHUD.bundle */,
-				3BDB56771EB9C64D000C7CD2 /* MBProgressHUD.h */,
-				3BDB56781EB9C64D000C7CD2 /* MBProgressHUD.m */,
-				3BDB56791EB9C64D000C7CD2 /* MJPhoto.h */,
-				3BDB567A1EB9C64D000C7CD2 /* MJPhoto.m */,
-				3BDB567B1EB9C64D000C7CD2 /* MJPhotoBrowser.bundle */,
-				3BDB567C1EB9C64D000C7CD2 /* MJPhotoBrowser.h */,
-				3BDB567D1EB9C64D000C7CD2 /* MJPhotoBrowser.m */,
-				3BDB567E1EB9C64D000C7CD2 /* MJPhotoLoadingView.h */,
-				3BDB567F1EB9C64D000C7CD2 /* MJPhotoLoadingView.m */,
-				3BDB56801EB9C64D000C7CD2 /* MJPhotoProgressView.h */,
-				3BDB56811EB9C64D000C7CD2 /* MJPhotoProgressView.m */,
-				3BDB56821EB9C64D000C7CD2 /* MJPhotoToolbar.h */,
-				3BDB56831EB9C64D000C7CD2 /* MJPhotoToolbar.m */,
-				3BDB56841EB9C64D000C7CD2 /* MJPhotoView.h */,
-				3BDB56851EB9C64D000C7CD2 /* MJPhotoView.m */,
-				3BDB56861EB9C64D000C7CD2 /* SDWebImageManager+MJ.h */,
-				3BDB56871EB9C64D000C7CD2 /* SDWebImageManager+MJ.m */,
-				3BDB56881EB9C64D000C7CD2 /* UIImageView+MJWebCache.h */,
-				3BDB56891EB9C64D000C7CD2 /* UIImageView+MJWebCache.m */,
-			);
-			path = MJPhoto;
 			sourceTree = "<group>";
 		};
 		3BDB568A1EB9C64D000C7CD2 /* SDCycleScrollView */ = {
@@ -2204,6 +2287,7 @@
 				3B4D0D2D1EFA248300F7846D /* kxmovie.bundle in Resources */,
 				3BA0BBE61EFCF25300BD4503 /* ZKGuideResourceStatCell.xib in Resources */,
 				3B6355F71F034C04005A36CB /* ZKMapChooseView.xib in Resources */,
+				3B6EA4EB1F0B34C8004BBDCE /* ZKInformationDealTableViewCell.xib in Resources */,
 				3BDB57B51EB9C856000C7CD2 /* cellErr@2x.png in Resources */,
 				3B77D6FB1EB32BB10099EA0E /* LaunchScreen.storyboard in Resources */,
 				3BDB57C01EB9C856000C7CD2 /* duty_Packup@3x.png in Resources */,
@@ -2219,6 +2303,7 @@
 				3BDB57A81EB9C856000C7CD2 /* banner_1@3x.png in Resources */,
 				3BDB57B91EB9C856000C7CD2 /* Clickfold_show@2x.png in Resources */,
 				3BDB57BB1EB9C856000C7CD2 /* Clickon_dims@2x.png in Resources */,
+				3B6EA50F1F0B434B004BBDCE /* MBProgressHUD.bundle in Resources */,
 				3BDB57C41EB9C856000C7CD2 /* duty_show@3x.png in Resources */,
 				3BAA48181F04FBF7004AAB76 /* ZKICarouselScenicView.xib in Resources */,
 				3BDB57CD1EB9C856000C7CD2 /* noData@3x.png in Resources */,
@@ -2233,12 +2318,13 @@
 				3B09417A1F09E1C000FDDED3 /* mic_0.png in Resources */,
 				3B09417C1F09E1C000FDDED3 /* mic_2.png in Resources */,
 				3BDB57B81EB9C856000C7CD2 /* Clickfold_dims@3x.png in Resources */,
+				3B55D65C1F0C8B4000562E46 /* ZKRegionSelectViewController.xib in Resources */,
 				3BDB57B01EB9C856000C7CD2 /* banner_5@3x.png in Resources */,
 				3BDB57CB1EB9C856000C7CD2 /* icon_120x120.png in Resources */,
 				3BED98121F01F28600C08B0A /* ZKElectronicLtineraryViewController.xib in Resources */,
 				3B09417D1F09E1C000FDDED3 /* mic_3.png in Resources */,
-				3BDB56B71EB9C64D000C7CD2 /* MBProgressHUD.bundle in Resources */,
 				3BDB57AF1EB9C856000C7CD2 /* banner_5@2x.png in Resources */,
+				3B55D6571F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib in Resources */,
 				3BAA48141F04FBDE004AAB76 /* ZKICarouselHotelView.xib in Resources */,
 				3B09417B1F09E1C000FDDED3 /* mic_1.png in Resources */,
 				3BDB57B71EB9C856000C7CD2 /* Clickfold_dims@2x.png in Resources */,
@@ -2257,8 +2343,8 @@
 				3BDB576A1EB9C67F000C7CD2 /* yjLeShan-Info.plist in Resources */,
 				3BDB57B21EB9C856000C7CD2 /* banner_6@3x.png in Resources */,
 				3BDB576E1EB9C69A000C7CD2 /* Default-568h@2x.png in Resources */,
-				3BDB56BA1EB9C64D000C7CD2 /* MJPhotoBrowser.bundle in Resources */,
 				3BDB57BE1EB9C856000C7CD2 /* Clickon_show@3x.png in Resources */,
+				3B6EA4F01F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.xib in Resources */,
 				3BDB57CE1EB9C856000C7CD2 /* personnel_duty@2x.png in Resources */,
 				3BDB57C81EB9C856000C7CD2 /* epartment on_duty@3x.png in Resources */,
 				3BA0BBF51EFD073C00BD4503 /* ZKScenicResourceStatCell.xib in Resources */,
@@ -2267,6 +2353,7 @@
 				3BDB57AD1EB9C856000C7CD2 /* banner_4@2x.png in Resources */,
 				3BDB57AB1EB9C856000C7CD2 /* banner_3@2x.png in Resources */,
 				3BDB57A21EB9C856000C7CD2 /* AboutUs@2x.png in Resources */,
+				3B6EA54E1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.xib in Resources */,
 				3B09417E1F09E1C000FDDED3 /* mic_4.png in Resources */,
 				3BDB57C21EB9C856000C7CD2 /* duty_roster@3x.png in Resources */,
 				3B6421991EF7CD5E00D5FBBF /* ZKHomeCollectionViewCell.xib in Resources */,
@@ -2278,6 +2365,7 @@
 				3B64219E1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.xib in Resources */,
 				3BDB57B41EB9C856000C7CD2 /* banner_7@3x.png in Resources */,
 				3BDB57C11EB9C856000C7CD2 /* duty_roster@2x.png in Resources */,
+				3B6EA53F1F0B45CD004BBDCE /* MJPhotoBrowser.bundle in Resources */,
 				3BDB57B11EB9C856000C7CD2 /* banner_6@2x.png in Resources */,
 				3BDB57A91EB9C856000C7CD2 /* banner_2@2x.png in Resources */,
 				3BDB56CC1EB9C64D000C7CD2 /* ZYQAssetPicker.Bundle in Resources */,
@@ -2363,18 +2451,19 @@
 				3B4D0D591EFA607200F7846D /* ZKTimeMonitoringMode.m in Sources */,
 				3B64217E1EF778F900D5FBBF /* ZKEmergencyAlertView.m in Sources */,
 				3BAA48121F04FBC5004AAB76 /* ZKICarouselBusView.m in Sources */,
+				3B6EA5431F0B45CD004BBDCE /* MJPhotoToolbar.m in Sources */,
 				3B0941C41F0A4DB900FDDED3 /* ASPopUpView.m in Sources */,
 				3BDB56541EB9C643000C7CD2 /* ZKBaseViewController.m in Sources */,
 				3B0941B31F0A37E700FDDED3 /* Location.m in Sources */,
-				3BDB56B61EB9C64D000C7CD2 /* MBProgressHUD+Add.m in Sources */,
 				3B4D0D5C1EFA61B200F7846D /* ZKMonitoringCollectionViewCell.m in Sources */,
-				3BDB56BC1EB9C64D000C7CD2 /* MJPhotoLoadingView.m in Sources */,
+				3B6EA5461F0B45CD004BBDCE /* UIImageView+MJWebCache.m in Sources */,
 				3BDB56B31EB9C64D000C7CD2 /* MJDIYBackFooter.m in Sources */,
-				3BDB56BF1EB9C64D000C7CD2 /* MJPhotoView.m in Sources */,
 				3B77D6F01EB32BB10099EA0E /* AppDelegate.m in Sources */,
 				3BDB56D01EB9C64D000C7CD2 /* TBUpdateTooltipView.m in Sources */,
 				3BA0BBE51EFCF25300BD4503 /* ZKGuideResourceStatCell.m in Sources */,
+				3B6EA4F31F0B362A004BBDCE /* ZKDealViewController.m in Sources */,
 				3B4D0D1B1EFA22E800F7846D /* FastForwardView.m in Sources */,
+				3B6EA5411F0B45CD004BBDCE /* MJPhotoLoadingView.m in Sources */,
 				3B4D0D301EFA248300F7846D /* KxMovieViewController.m in Sources */,
 				3B4D0D561EFA590600F7846D /* ZKTextField.m in Sources */,
 				3B4D0D621EFA702400F7846D /* ZKDataSelectBoxView.m in Sources */,
@@ -2384,6 +2473,7 @@
 				3BDB56571EB9C643000C7CD2 /* ZKPersonalCenterViewController.m in Sources */,
 				3BDB56C31EB9C64D000C7CD2 /* TAAnimatedDotView.m in Sources */,
 				3BDB56531EB9C643000C7CD2 /* ZKBaseClassViewMode.m in Sources */,
+				3B6EA5111F0B434B004BBDCE /* MBProgressHUD+Add.m in Sources */,
 				3BDB56551EB9C643000C7CD2 /* ZKNavigationController.m in Sources */,
 				3BDB56CD1EB9C64D000C7CD2 /* ZYQAssetPickerController.m in Sources */,
 				3B4D0D191EFA22E800F7846D /* BaseViewController.m in Sources */,
@@ -2403,6 +2493,7 @@
 				3B6356001F0394AD005A36CB /* ZKElectronicMapAnnotation.m in Sources */,
 				3BED98111F01F28600C08B0A /* ZKElectronicLtineraryViewController.m in Sources */,
 				3BA0BBDB1EFCF23100BD4503 /* ZKTravelResourceStatCell.m in Sources */,
+				3B6EA54D1F0B7F63004BBDCE /* ZKMeteorologicalDataViewController.m in Sources */,
 				3BAA48061F04FAE1004AAB76 /* ZKICarouselBaseView.m in Sources */,
 				3BAA480C1F04FB46004AAB76 /* ZKICarouselTravelView.m in Sources */,
 				3BAA48091F04FB30004AAB76 /* ZKICarouselHotelView.m in Sources */,
@@ -2412,46 +2503,52 @@
 				3B4D0D521EFA44BB00F7846D /* ZKMonitoringViewController.m in Sources */,
 				3BDB56521EB9C643000C7CD2 /* MainTabBarController.m in Sources */,
 				3BDB56581EB9C643000C7CD2 /* ZKHomeViewController.m in Sources */,
+				3B6EA53E1F0B45CD004BBDCE /* MJPhoto.m in Sources */,
 				3BA0BBF41EFD073C00BD4503 /* ZKScenicResourceStatCell.m in Sources */,
+				3B6EA5541F0B92AB004BBDCE /* ZKWeatherMode.m in Sources */,
 				3BDB56CA1EB9C64D000C7CD2 /* ZKPostHttp.m in Sources */,
 				3B0941BE1F0A4D9E00FDDED3 /* TBUploadPromptHUD.m in Sources */,
 				3BA0BBD21EFCEBEF00BD4503 /* ZKGuideResourceStatMode.m in Sources */,
 				3BDB56AC1EB9C64D000C7CD2 /* NSDictionary+FixedParams.m in Sources */,
 				3BAAEC521F0260D700B6F9B9 /* ZKElectronicMapViewController.m in Sources */,
 				3BDB56CF1EB9C64D000C7CD2 /* TBSaveSuccessTipsView.m in Sources */,
-				3BDB56BD1EB9C64D000C7CD2 /* MJPhotoProgressView.m in Sources */,
 				3B695B201F064AA6001B83A1 /* ZKInformationCollectionMode.m in Sources */,
+				3B55D65F1F0C8C6100562E46 /* UIView+ExclusiveTouch.m in Sources */,
 				3BAA480F1F04FBB2004AAB76 /* ZKICarouselScenicView.m in Sources */,
 				3B4D0D1D1EFA22E800F7846D /* WMLightView.m in Sources */,
 				3B4D0D5F1EFA620900F7846D /* ZKTimeMonitoringReusableView.m in Sources */,
 				3BA0BBEF1EFD063900BD4503 /* ZKHotelResourceStatCell.m in Sources */,
 				3B695B291F065640001B83A1 /* ZKInformationReportedView.m in Sources */,
 				3B64219D1EF7DAC300D5FBBF /* ZKPersonalCenterTableViewCell.m in Sources */,
+				3B55D65B1F0C8B4000562E46 /* ZKRegionSelectViewController.m in Sources */,
 				3B4D0D4E1EFA441200F7846D /* ZKBaseWebViewController.m in Sources */,
-				3BDB56B91EB9C64D000C7CD2 /* MJPhoto.m in Sources */,
 				3B695B1D1F064806001B83A1 /* ZKInformationCollectionViewController.m in Sources */,
+				3B6EA5441F0B45CD004BBDCE /* MJPhotoView.m in Sources */,
 				3B6355F51F034BF0005A36CB /* ZKMapChooseView.m in Sources */,
 				3B69D3CF1EFBAD540090D8CE /* ZKResourceStatViewController.m in Sources */,
 				3BED98131F01F28600C08B0A /* ZKTourismDataViewController.m in Sources */,
 				3B09418A1F09EDFF00FDDED3 /* PlayVideoViewController.m in Sources */,
 				3BED981A1F01F28600C08B0A /* ZKTourismDataBusCell.m in Sources */,
+				3B6EA4EF1F0B359E004BBDCE /* ZKInformationCollectionTableViewCell.m in Sources */,
 				3BDB56C41EB9C64D000C7CD2 /* TADotView.m in Sources */,
+				3B6EA5101F0B434B004BBDCE /* MBProgressHUD.m in Sources */,
 				3BDB56C21EB9C64D000C7CD2 /* TAAbstractDotView.m in Sources */,
+				3B6EA4EA1F0B34C8004BBDCE /* ZKInformationDealTableViewCell.m in Sources */,
 				3B69D3D21EFBB2FC0090D8CE /* ZKResourceChooseView.m in Sources */,
 				3BDB56B51EB9C64D000C7CD2 /* UIView+MJAlertView.m in Sources */,
 				3B6421851EF7B18600D5FBBF /* ZKHomeBannerView.m in Sources */,
 				3BDB56C61EB9C64D000C7CD2 /* SDCollectionViewCell.m in Sources */,
 				3BDB56CE1EB9C64D000C7CD2 /* TBMoreReminderView.m in Sources */,
-				3BDB56BE1EB9C64D000C7CD2 /* MJPhotoToolbar.m in Sources */,
-				3BDB56BB1EB9C64D000C7CD2 /* MJPhotoBrowser.m in Sources */,
 				3BAAEC421F024DA600B6F9B9 /* ZKBusTrajectoryTableViewCell.m in Sources */,
+				3B6EA5421F0B45CD004BBDCE /* MJPhotoProgressView.m in Sources */,
 				3BED98141F01F28600C08B0A /* ZKBusTrajectoryMode.m in Sources */,
-				3BDB56B81EB9C64D000C7CD2 /* MBProgressHUD.m in Sources */,
 				3B4D0D2F1EFA248300F7846D /* KxMovieGLView.m in Sources */,
 				3B6356031F0396C4005A36CB /* ZKMapTAnnotationView.m in Sources */,
 				3BDB56C81EB9C64D000C7CD2 /* UIView+SDExtension.m in Sources */,
+				3B6EA5401F0B45CD004BBDCE /* MJPhotoBrowser.m in Sources */,
 				3B64218B1EF7B31200D5FBBF /* ZKHomeContentView.m in Sources */,
 				3B492EA01F078A5500F10391 /* ZKInformationUploadTool.m in Sources */,
+				3B55D6621F0CB95B00562E46 /* ZKRegionSelectMode.m in Sources */,
 				3B64218E1EF7B94C00D5FBBF /* ZKHomeBannerData.m in Sources */,
 				3BA0BBCF1EFCEBD900BD4503 /* ZKScenicResourceStatMode.m in Sources */,
 				3B4D0D1F1EFA22E800F7846D /* WMPlayer.m in Sources */,
@@ -2462,18 +2559,18 @@
 				3B69D3DA1EFBC4C00090D8CE /* TBTaskSearchView.m in Sources */,
 				3BA0BBC91EFCEB8E00BD4503 /* ZKHotelResourceStatMode.m in Sources */,
 				3BA0BBCC1EFCEBC000BD4503 /* ZKTravelResourceStatMode.m in Sources */,
-				3BDB56C11EB9C64D000C7CD2 /* UIImageView+MJWebCache.m in Sources */,
 				3B4D0D2C1EFA248300F7846D /* KxAudioManager.m in Sources */,
-				3BDB56C01EB9C64D000C7CD2 /* SDWebImageManager+MJ.m in Sources */,
 				3BED98171F01F28600C08B0A /* ZKTourismDataBusMode.m in Sources */,
 				3B0941821F09E1C000FDDED3 /* Mp3Recorder.m in Sources */,
 				3B6421941EF7BB3B00D5FBBF /* ZKHomeImagesData.m in Sources */,
+				3B55D6651F0CD30600562E46 /* ZKRegionSelectCollectionViewCell.m in Sources */,
 				3B492EA71F07976900F10391 /* ZKInformationCollectionViewCell.m in Sources */,
 				3BED981F1F01F28600C08B0A /* ZKCustomCalloutView.m in Sources */,
 				3B6355FA1F035345005A36CB /* ZKTypeSelectionView.m in Sources */,
 				3BED98181F01F28600C08B0A /* ZKTourismDataTeamMode.m in Sources */,
 				3B695B261F0655F5001B83A1 /* ZKReportListView.m in Sources */,
 				3BED98191F01F28600C08B0A /* ZKElectronicLtineraryCell.m in Sources */,
+				3B55D6561F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m in Sources */,
 				3B695B231F064BD6001B83A1 /* ZKMainTypeView.m in Sources */,
 				3BDB56B21EB9C64D000C7CD2 /* UIScrollView+EmptyDataSet.m in Sources */,
 				3B492EA41F07924B00F10391 /* TBChoosePhotosTool.m in Sources */,
@@ -2485,6 +2582,7 @@
 				3B0941831F09E1C000FDDED3 /* RecordHUD.m in Sources */,
 				3B20A0DA1EE67909001155E4 /* ZKStartAnimationViewController.m in Sources */,
 				3B20A0DE1EE6B360001155E4 /* ZKRegisteredViewController.m in Sources */,
+				3B6EA5451F0B45CD004BBDCE /* SDWebImageManager+MJ.m in Sources */,
 				3BED98101F01F28600C08B0A /* ZKBusTrajectoryViewController.m in Sources */,
 				3B4D0C941EFA020A00F7846D /* SBJSON.m in Sources */,
 				3B6355FD1F039185005A36CB /* ZKElectronicMapViewMode.m in Sources */,
@@ -2492,8 +2590,10 @@
 				3B4D0C861EF9FFE000F7846D /* ZKBasicDataTool.m in Sources */,
 				3B77D6ED1EB32BB10099EA0E /* main.m in Sources */,
 				3BDB56B11EB9C64D000C7CD2 /* UIWebView+TS_JavaScriptContext.m in Sources */,
+				3B6EA55A1F0B9E3C004BBDCE /* ZKMeteorologicalESRootClass.m in Sources */,
 				3BDB56AF1EB9C64D000C7CD2 /* UIImage+CircleImage.m in Sources */,
 				3BDB56B41EB9C64D000C7CD2 /* MJDIYHeader.m in Sources */,
+				3B6EA5491F0B68D4004BBDCE /* AudioStreamer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

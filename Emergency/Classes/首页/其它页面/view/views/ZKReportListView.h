@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZKReportListView : UIView
+/**
+ 更新列表
+ */
+- (void)updateTheList;
 
 @end

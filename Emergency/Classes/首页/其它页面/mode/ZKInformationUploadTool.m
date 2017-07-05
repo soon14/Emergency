@@ -107,13 +107,14 @@
     __block NSString *images = @"";
     __block NSString *video  = @"";
     __block NSString *audio  = @"";
-    weakSelf.isUpload = YES;
+    self.isUpload = YES;
     [self.uploadPromptHUD showViewCancelUpload:^{
         weakSelf.isUpload = NO;
         
     }];
     
     dispatch_group_t group = dispatch_group_create();
+    
     if (self.dataArray.count > 0)
     {
         // 图片上传
@@ -142,8 +143,9 @@
         // 视频上传
         dispatch_group_enter(group);
         NSData *videoData = [NSData dataWithContentsOfURL:self.videoURL];
-        [self updataFileData:videoData fileType:1 success:^(NSString *path) {
-            if (path.length == 0)
+        [self updataFileData:videoData fileType:1 success:^(NSString *path)
+        {
+            if (path.length > 0)
             {
                 video = path;
             }
@@ -157,7 +159,7 @@
         // 音频上传
         dispatch_group_enter(group);
         [self updataFileData:self.audioData fileType:2 success:^(NSString *path) {
-            if (path.length == 0)
+            if (path.length > 0)
             {
                 audio = path;
             }
@@ -204,17 +206,12 @@
 - (void)collectingInformationReport
 {
     [self hudProgress:0.8];
-    return;
     YJWeakSelf
     [ZKPostHttp post:@"appEmergency/saveEmergency" params:self.parameter success:^(id responseObj)
      {
          NSString *state = [responseObj valueForKey:@"state"];
          BOOL success = [state isEqualToString:@"success"];
-         if (weakSelf.isUploadSuccess)
-         {
-             weakSelf.isUploadSuccess(success);
-             
-         }
+
          if (success == YES)
          {
              [weakSelf hudShowMsg:@"上报成功"];
@@ -223,6 +220,16 @@
          {
              [weakSelf hudUploadErr];
          }
+         int64_t delayInSeconds = 0.6;
+         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+             
+             if (weakSelf.isUploadSuccess)
+             {
+                 weakSelf.isUploadSuccess(success);
+                 
+             }
+         });
          
      } failure:^(NSError *error) {
          

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZKInformationCollectionViewCellID" id="gTV-IL-0wX" customClass="ZKInformationCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="134"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="208" height="134"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mCP-9e-x1K">
+                        <rect key="frame" x="0.0" y="0.0" width="208" height="134"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="mCP-9e-x1K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jvg-yv-I7j"/>
+                <constraint firstItem="mCP-9e-x1K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fek-CH-VL1"/>
+                <constraint firstAttribute="bottom" secondItem="mCP-9e-x1K" secondAttribute="bottom" id="rje-du-qID"/>
+                <constraint firstAttribute="trailing" secondItem="mCP-9e-x1K" secondAttribute="trailing" id="t26-8N-kXl"/>
+            </constraints>
+            <size key="customSize" width="208" height="134"/>
+            <connections>
+                <outlet property="backimageView" destination="mCP-9e-x1K" id="8D3-fs-78d"/>
+            </connections>
+            <point key="canvasLocation" x="-7" y="98"/>
+        </collectionViewCell>
+    </objects>
+</document>

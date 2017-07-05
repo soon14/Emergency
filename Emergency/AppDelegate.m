@@ -14,7 +14,7 @@
 #import "ZKStartAnimationViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "UIImageView+WebCache.h"
-
+#import "UIView+ExclusiveTouch.h"
 
 @interface AppDelegate ()
 
@@ -101,6 +101,10 @@
     [keyboardManager setPlaceholderFont:[UIFont systemFontOfSize:14]];
     [keyboardManager setShouldResignOnTouchOutside:NO];
     [keyboardManager setToolbarTintColor:NAVIGATION_COLOR];
+    
+//    [[UIButton appearance] setExclusiveTouch:YES]; 
+    [[UITableViewCell appearance] setExclusiveTouch:YES];
+    [[UIView appearance] setYgExclusiveTouch:YES];
 }
 
 /**

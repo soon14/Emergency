@@ -6,6 +6,7 @@
 //  Copyright © 2017年 王小腊. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
 @interface ZKInformationReportedView : UIView
@@ -15,4 +16,9 @@
  @return ZKInformationReportedView
  */
 + (ZKInformationReportedView *)obtainReportedView;
+/**
+ 刷新列表
+ */
+@property (nonatomic, copy) void(^listTableViewUpdata)();
+
 @end

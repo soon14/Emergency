@@ -64,6 +64,11 @@
     [self.contentScrpllView addSubview:self.reportedView];
     
     YJWeakSelf
+    [self.reportedView setListTableViewUpdata:^{
+        [weakSelf selectTypeIndex:0];
+        [weakSelf.mainTypeView selectedCurrentItemIndex:0];
+        [weakSelf.listView updateTheList];
+    }];
     [self.contentScrpllView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(weakSelf.view);
         make.top.equalTo(weakSelf.mainTypeView.mas_bottom);

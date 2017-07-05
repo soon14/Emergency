@@ -69,8 +69,20 @@
 {
     self.searchBar.text = @"";
 }
+// 赋值搜索字段
+- (void)assignmentText:(NSString *)text;
+{
+    self.searchBar.text = text;
+}
 #pragma mark UISearchBarDelegate
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
+{
+    if (self.searchTextDidChange)
+    {
+        self.searchTextDidChange(searchBar.text);
+    }
+}
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 {
     [self endEditing:YES];

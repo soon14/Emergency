@@ -123,11 +123,7 @@
         }
         else
         {
-            NSString *url = obj;
-            if (![url containsString:IMAGE_URL]) {
-                url = [NSString stringWithFormat:@"%@%@",IMAGE_URL,url];
-            }
-            photo.url = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]; // 图片路径
+            photo.url = [NSURL URLWithString:[obj stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]; // 图片路径
         }
         [self.imageArray addObject:photo];
     }];
@@ -136,7 +132,6 @@
     MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
     browser.currentPhotoIndex = num; // 弹出相册时显示的第一张图片是？
     browser.photos = self.imageArray; // 设置所有的图片
-    browser.isDelete = YES;
     [browser show];
 }
 

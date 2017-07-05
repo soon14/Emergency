@@ -18,8 +18,15 @@
     // property 属性名称，oldValue 返回数据
     if ([property.name isEqualToString:@"image"])
     {
-        return [oldValue componentsSeparatedByString:@","];
-        
+        if (![oldValue isKindOfClass:[NSNull class]])
+        {
+          return [oldValue componentsSeparatedByString:@","];
+        }
+        else
+        {
+            return nil;
+        }
+
     }
     return oldValue;
 }

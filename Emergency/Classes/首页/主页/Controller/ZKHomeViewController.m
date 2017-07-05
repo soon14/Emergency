@@ -68,11 +68,11 @@
         /*  实时监控  */
         
 #if LeShan
-
+        
 #else
-
+        
 #endif
-    [self.navigationController pushViewController:[NSClassFromString(@"ZKMonitoringViewController") new] animated:YES];
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKMonitoringViewController") new] animated:YES];
         
     }else if ([className isEqualToString:@"运营商"]||[className isEqualToString:@"汇总大数据"]){
         /*  运营商  */
@@ -110,15 +110,13 @@
         ZKElectronicMapViewController *mavViewController = [[ZKElectronicMapViewController alloc] init];
         [mavViewController mapConfigurationType:ElectronicMapTypeNone dataDefaultData:nil];
         [self.navigationController pushViewController:mavViewController animated:YES];
-
+        
     }else if ([className isEqualToString:@"信息采集"]){
         /*  信息采集  */
-
         [self.navigationController pushViewController:[NSClassFromString(@"ZKInformationCollectionViewController") new] animated:YES];
     }else if ([className isEqualToString:@"气象数据"]){
         /* 气象数据   */
-        
-
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKMeteorologicalDataViewController") new] animated:YES];
         
     }else if ([className isEqualToString:@"环保数据"]){
         /* 环保数据   */
@@ -135,13 +133,13 @@
         [self.navigationController pushViewController:[NSClassFromString(@"ZKAttendantInformationViewController") new] animated:YES];
         
     }
-
+    
 }
 #pragma mark  ----html----
 
 /**
  web网页
-
+ 
  @param url 链接字段
  @param type 类型
  */
@@ -157,7 +155,7 @@
         str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         URL = [NSURL URLWithString:str];
     }
-
+    
     ZKBaseWebViewController *htmlController = [[ZKBaseWebViewController alloc] init];
     htmlController.pathUrl = URL;
     [self.navigationController pushViewController:htmlController animated:YES];
@@ -170,13 +168,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

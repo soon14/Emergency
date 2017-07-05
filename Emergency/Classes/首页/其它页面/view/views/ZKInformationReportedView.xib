@@ -308,7 +308,7 @@
                             <rect key="frame" x="0.0" y="692" width="327" height="120"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrD-zr-SRc">
-                                    <rect key="frame" x="40" y="18" width="247" height="44"/>
+                                    <rect key="frame" x="20" y="18" width="287" height="44"/>
                                     <color key="backgroundColor" red="0.06098368019" green="0.60554713010000005" blue="0.18594145770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="KJk-gY-V3h"/>
@@ -324,8 +324,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="hrD-zr-SRc" secondAttribute="trailing" constant="40" id="AK2-EM-eIC"/>
-                                <constraint firstItem="hrD-zr-SRc" firstAttribute="leading" secondItem="hq6-ov-smv" secondAttribute="leading" constant="40" id="KEU-aJ-IXY"/>
+                                <constraint firstAttribute="trailing" secondItem="hrD-zr-SRc" secondAttribute="trailing" constant="20" id="AK2-EM-eIC"/>
+                                <constraint firstItem="hrD-zr-SRc" firstAttribute="leading" secondItem="hq6-ov-smv" secondAttribute="leading" constant="20" id="KEU-aJ-IXY"/>
                                 <constraint firstAttribute="height" constant="120" id="hbP-S9-MBH"/>
                                 <constraint firstItem="hrD-zr-SRc" firstAttribute="centerY" secondItem="hq6-ov-smv" secondAttribute="centerY" constant="-20" id="uOL-20-Gkn"/>
                             </constraints>

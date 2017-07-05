@@ -53,12 +53,14 @@
     NSString *path = [kCachePath stringByAppendingPathComponent:fileName];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [data writeToFile:path atomically:YES];
+
     });
 }
 
 + (NSData *)getCacheFileName:(NSString *)fileName
 {
     NSString *path = [kCachePath stringByAppendingPathComponent:fileName];
+    
     return [[NSData alloc] initWithContentsOfFile:path];
 }
 

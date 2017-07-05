@@ -133,7 +133,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     //添加一个音频输入设备
     AVCaptureDevice *audioCaptureDevice=[[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] firstObject];
     
-    NSError *error=nil;
+    NSError *error = nil;
     //根据输入设备初始化设备输入对象，用于获得输入数据
     _captureDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:captureDevice error:&error];
 
@@ -145,7 +145,11 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     //将设备输入添加到会话中
     if ([_captureSession canAddInput:_captureDeviceInput]) {
         [_captureSession addInput:_captureDeviceInput];
-        [_captureSession addInput:audioCaptureDeviceInput];
+        if (audioCaptureDeviceInput)
+        {
+          [_captureSession addInput:audioCaptureDeviceInput];
+        }
+
         AVCaptureConnection *captureConnection=[_captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
         if ([captureConnection isVideoStabilizationSupported ]) {
             captureConnection.preferredVideoStabilizationMode=AVCaptureVideoStabilizationModeAuto;

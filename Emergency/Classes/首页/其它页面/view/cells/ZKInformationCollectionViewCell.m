@@ -6,6 +6,8 @@
 //  Copyright © 2017年 王小腊. All rights reserved.
 //
 
+NSString *const  ZKInformationCollectionViewCellID = @"ZKInformationCollectionViewCellID";
+
 #import "ZKInformationCollectionViewCell.h"
 
 @implementation ZKInformationCollectionViewCell
@@ -33,6 +35,7 @@
         [ritButton setImage:[UIImage imageNamed:@"task-shanchu"] forState:UIControlStateNormal];
         [ritButton addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:ritButton];
+        
         YJWeakSelf
         [ritButton mas_makeConstraints:^(MASConstraintMaker *make)
          {
@@ -40,6 +43,7 @@
              make.centerY.equalTo(weakSelf.backImageView.mas_top).offset(5);
              make.width.height.mas_equalTo(30);
          }];
+        
         
         [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(weakSelf.contentView);
@@ -57,11 +61,11 @@
     }
     else if ([image isKindOfClass:[NSString class]])
     {
-        [ZKUtil downloadImage:self.backImageView imageUrl:image duImageName:@"imageDefault.jpg"];
+        [ZKUtil downloadImage:self.backImageView imageUrl:image duImageName:@"cellErr"];
     }
     else
     {
-        self.backImageView.image = [UIImage imageNamed:@"productDefault.jpg"];
+        self.backImageView.image = [UIImage imageNamed:@"cellErr"];
     }
     
     ritButton.hidden = !show;

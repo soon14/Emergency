@@ -67,7 +67,17 @@
     //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
     [manager stopUpdatingLocation];
 }
-
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error;
+{
+    if (self.isLocatio == NO)
+    {
+        self.isLocatio = YES;
+        if ([self.delegate respondsToSelector:@selector(locationDidFailWithError)]) {
+            [self.delegate locationDidFailWithError];
+        }
+    }
+}
 #pragma mark - setter and getter
 - (CLLocationManager *)locationManager {
     

@@ -5,7 +5,7 @@
 //  Created by 王小腊 on 2017/6/30.
 //  Copyright © 2017年 王小腊. All rights reserved.
 //
-static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollectionViewCellID";
+
 
 #import "ZKInformationReportedView.h"
 #import "ShootVideoViewController.h"
@@ -196,7 +196,6 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     [self.audioButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
-
 /**
  是否播放音频
  
@@ -365,6 +364,51 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
     //开始更新定位
     [self.location beginUpdatingLocation];
 }
+#pragma mark - 清除documents中的视频文件
+-(void)clearMovieFromDoucments
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSArray *contents = [fileManager contentsOfDirectoryAtPath:documentsDirectory error:NULL];
+    NSEnumerator *e = [contents objectEnumerator];
+    NSString *filename;
+    while ((filename = [e nextObject]))
+    {
+        if ([filename isEqualToString:@"tmp.PNG"]) {
+            
+            [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:filename] error:NULL];
+            continue;
+        }
+        if ([[[filename pathExtension] lowercaseString] isEqualToString:@"mp4"]||
+            [[[filename pathExtension] lowercaseString] isEqualToString:@"mov"]||
+            [[[filename pathExtension] lowercaseString] isEqualToString:@"png"]) {
+            [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:filename] error:NULL];
+        }
+    }
+}
+/**
+ 清理数据
+ */
+- (void)cleanUpData
+{
+    self.titleTextField.text = @"";
+    self.scenicTextfield.text = @"";
+    self.nameTextfield.text = @"";
+    self.phoneTextfield.text = @"";
+    self.infoTextView.text = @"";
+    self.uploadTool = [[ZKInformationUploadTool alloc] init];
+    [self.photoCollectionView reloadData];
+    [self updataAudioButton];
+    [self updataVodeoButton];
+    [self startPositioning];
+    [self  clearMovieFromDoucments];
+    // 刷新右边列表
+    if (self.listTableViewUpdata)
+    {
+        self.listTableViewUpdata();
+    }
+}
 #pragma mark  ----按钮点击事件----
 /**
  景区数据选择
@@ -403,13 +447,16 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 - (IBAction)submitClick:(UIButton *)sender
 {
     [self endEditing:YES];
-    self.uploadTool.titleTextField = self.scenicTextfield.text;
+    self.uploadTool.titleTextField = self.titleTextField.text;
     self.uploadTool.nameTextfield = self.nameTextfield.text;
     self.uploadTool.phoneTextfield = self.phoneTextfield.text;
     self.uploadTool.infoText = self.infoTextView.text;
     [self.uploadTool startUploadSuccess:^(BOOL success) {
         
-        
+        if (success == YES)
+        {
+            [self cleanUpData];
+        }
     }];
 }
 #pragma mark  ----UICollectionViewDataSource----
@@ -463,7 +510,7 @@ static NSString *const ZKInformationCollectionViewCellID = @"ZKInformationCollec
 #pragma mark  ----UIScrollViewDelegate----
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self endEditing:YES];
+//    [self endEditing:YES];
 }
 #pragma mark  ----AVAudioPlayerDelegate----
 // 音频播放完成时

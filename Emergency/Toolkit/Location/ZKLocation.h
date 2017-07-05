@@ -21,4 +21,8 @@
 @protocol ZKLocationDelegate <NSObject>
 
 - (void)locationDidEndUpdatingLocation:(Location *)location;
+/**
+ 定位异常
+ */
+- (void)locationDidFailWithError;
 @end

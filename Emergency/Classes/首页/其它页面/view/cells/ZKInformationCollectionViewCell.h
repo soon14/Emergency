@@ -6,6 +6,8 @@
 //  Copyright © 2017年 王小腊. All rights reserved.
 //
 
+extern NSString *const  ZKInformationCollectionViewCellID;
+
 #import <UIKit/UIKit.h>
 
 @interface ZKInformationCollectionViewCell : UICollectionViewCell

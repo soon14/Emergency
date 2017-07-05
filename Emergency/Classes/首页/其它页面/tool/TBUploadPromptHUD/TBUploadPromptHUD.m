@@ -125,7 +125,7 @@
 }
 -(void)hideButtonClick{
     
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self.progressView hidePopUpViewAnimated:YES];
     } completion:^(BOOL finished) {
         
