@@ -18,6 +18,10 @@
 + (ZKBasicDataTool *)sharedManager;
 
 /**
+ 首页banner图片数组
+ */
+@property (nonatomic, strong) NSArray *homeScenicArray;
+/**
  票务类型
 
  @param array 数据

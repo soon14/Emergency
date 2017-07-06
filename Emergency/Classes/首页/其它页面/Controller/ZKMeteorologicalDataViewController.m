@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *selectButtonViewLayer;
 // 选择按钮
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *selectButtonHeight;
 // 天气图片
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 //温度
@@ -74,7 +75,17 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"气象数据";
     [self setUIview];
-    [self requestCitydata];
+    [self setData];
+    if (self.resourcecode.length  == 0)
+    {
+         [self requestCitydata];
+    }
+    else
+    {
+        self.selectButtonHeight.constant = 0.0f;
+        self.selectButton.hidden = YES;
+        [self requestWeatherDataIsCity:NO searchKey:self.resourcecode];
+    }
     
 }
 #pragma mark  ----设置----
@@ -111,7 +122,6 @@
         weakSelf.cityArray = [ZKWeatherMode mj_objectArrayWithKeyValuesArray:cityOne];
         if (weakSelf.cityArray.count > 0)
         {
-            [weakSelf setData];
             [weakSelf locan];
         }
         else

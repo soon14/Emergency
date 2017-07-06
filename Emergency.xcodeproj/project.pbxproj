@@ -71,6 +71,9 @@
 		3B4D0D621EFA702400F7846D /* ZKDataSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D0D611EFA702400F7846D /* ZKDataSelectBoxView.m */; };
 		3B4FDEAC1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */; };
 		3B4FDEAD1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */; };
+		3B54EACB1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B54EAC91F0DEB03003F09C1 /* ZKAttractionsDetailViewController.m */; };
+		3B54EACC1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B54EACA1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.xib */; };
+		3B54EACF1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B54EACE1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.m */; };
 		3B55D6561F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6541F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m */; };
 		3B55D6571F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55D6551F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib */; };
 		3B55D65B1F0C8B4000562E46 /* ZKRegionSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55D6591F0C8B4000562E46 /* ZKRegionSelectViewController.m */; };
@@ -488,6 +491,11 @@
 		3B4FDEA91EF91B3100AE5D12 /* ZKSystemSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSystemSetUpViewController.h; sourceTree = "<group>"; };
 		3B4FDEAA1EF91B3100AE5D12 /* ZKSystemSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSystemSetUpViewController.m; sourceTree = "<group>"; };
 		3B4FDEAB1EF91B3100AE5D12 /* ZKSystemSetUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKSystemSetUpViewController.xib; sourceTree = "<group>"; };
+		3B54EAC81F0DEB03003F09C1 /* ZKAttractionsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKAttractionsDetailViewController.h; sourceTree = "<group>"; };
+		3B54EAC91F0DEB03003F09C1 /* ZKAttractionsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKAttractionsDetailViewController.m; sourceTree = "<group>"; };
+		3B54EACA1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKAttractionsDetailViewController.xib; sourceTree = "<group>"; };
+		3B54EACD1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKAttractionsDetailViewMode.h; sourceTree = "<group>"; };
+		3B54EACE1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKAttractionsDetailViewMode.m; sourceTree = "<group>"; };
 		3B55D6531F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMeteorologicalTableViewCell.h; sourceTree = "<group>"; };
 		3B55D6541F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMeteorologicalTableViewCell.m; sourceTree = "<group>"; };
 		3B55D6551F0C7C9F00562E46 /* ZKMeteorologicalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMeteorologicalTableViewCell.xib; sourceTree = "<group>"; };
@@ -1241,6 +1249,9 @@
 				3B4D0D4B1EFA441200F7846D /* ZKBaseWebViewController.m */,
 				3B69D3CD1EFBAD540090D8CE /* ZKResourceStatViewController.h */,
 				3B69D3CE1EFBAD540090D8CE /* ZKResourceStatViewController.m */,
+				3B54EAC81F0DEB03003F09C1 /* ZKAttractionsDetailViewController.h */,
+				3B54EAC91F0DEB03003F09C1 /* ZKAttractionsDetailViewController.m */,
+				3B54EACA1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1256,6 +1267,8 @@
 				3BA0BBCE1EFCEBD900BD4503 /* ZKScenicResourceStatMode.m */,
 				3BA0BBD01EFCEBEF00BD4503 /* ZKGuideResourceStatMode.h */,
 				3BA0BBD11EFCEBEF00BD4503 /* ZKGuideResourceStatMode.m */,
+				3B54EACD1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.h */,
+				3B54EACE1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -2372,6 +2385,7 @@
 				3B492E9D1F077FE800F10391 /* ZKInformationReportedView.xib in Resources */,
 				3BDB57A51EB9C856000C7CD2 /* banner@2x.png in Resources */,
 				3BDB57B61EB9C856000C7CD2 /* cellErr@3x.png in Resources */,
+				3B54EACC1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.xib in Resources */,
 				3BDB57C91EB9C856000C7CD2 /* icon.png in Resources */,
 				3BDB57A31EB9C856000C7CD2 /* AboutUs@3x.png in Resources */,
 				3BDB57A61EB9C856000C7CD2 /* banner@3x.png in Resources */,
@@ -2468,8 +2482,10 @@
 				3B4D0D561EFA590600F7846D /* ZKTextField.m in Sources */,
 				3B4D0D621EFA702400F7846D /* ZKDataSelectBoxView.m in Sources */,
 				3BED982B1F02069B00C08B0A /* ZKBusTAnnotationView.m in Sources */,
+				3B54EACF1F0DECA0003F09C1 /* ZKAttractionsDetailViewMode.m in Sources */,
 				3B4D0C931EFA020A00F7846D /* NSString+SBJSON.m in Sources */,
 				3B4D0D1A1EFA22E800F7846D /* DetailViewController.m in Sources */,
+				3B54EACB1F0DEB03003F09C1 /* ZKAttractionsDetailViewController.m in Sources */,
 				3BDB56571EB9C643000C7CD2 /* ZKPersonalCenterViewController.m in Sources */,
 				3BDB56C31EB9C64D000C7CD2 /* TAAnimatedDotView.m in Sources */,
 				3BDB56531EB9C643000C7CD2 /* ZKBaseClassViewMode.m in Sources */,

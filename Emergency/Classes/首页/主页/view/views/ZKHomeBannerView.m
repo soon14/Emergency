@@ -7,6 +7,8 @@
 //
 
 #import "ZKHomeBannerView.h"
+#import "ZKAttractionsDetailViewController.h"
+#import "ZKBasicDataTool.h"
 #import "ZKHomeBaseData.h"
 #import "ZKHomeBannerData.h"
 #import "SDCycleScrollView.h"
@@ -66,6 +68,7 @@
 {
      self.bannerData = [ZKHomeBannerData mj_objectWithKeyValues:obj];
 
+    [ZKBasicDataTool sharedManager].homeScenicArray = self.bannerData.data;
     NSMutableArray *imageArray = [NSMutableArray arrayWithCapacity:self.bannerData.total];
     NSMutableArray *nameArray  = [NSMutableArray arrayWithCapacity:self.bannerData.total];
 
@@ -114,10 +117,13 @@
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
 {
-    if (index<self.bannerData.data.count)
+    if (index < self.bannerData.data.count)
     {
-//        ZKHomeImagesData *data = [self.bannerData.data objectAtIndex:index];
-   
+        ZKHomeImagesData *data = [self.bannerData.data objectAtIndex:index];
+        
+        ZKAttractionsDetailViewController *vc = [[ZKAttractionsDetailViewController alloc] init];
+        vc.resourcecode = data.resourcecode;
+        [[self.controller navigationController] pushViewController:vc animated:YES];
     }
 }
 @end

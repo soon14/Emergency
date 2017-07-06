@@ -240,7 +240,7 @@
     }
     else
     {
-        self.play = [[AVAudioPlayer alloc]initWithData:data error:&error];
+        self.play = [[AVAudioPlayer alloc] initWithData:data error:&error];
         self.play.delegate = self;
         [self.play prepareToPlay];
         self.play.volume = 1.0f;

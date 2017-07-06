@@ -9,6 +9,7 @@
 NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
 
 #import "ZKResourceStatViewController.h"
+#import "ZKAttractionsDetailViewController.h"
 #import "ZKResourceChooseView.h"
 #import "ZKElectronicMapViewController.h"
 
@@ -16,12 +17,14 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
 #import "ZKTravelResourceStatMode.h"
 #import "ZKScenicResourceStatMode.h"
 #import "ZKGuideResourceStatMode.h"
+#import "ZKHomeImagesData.h"
 
 #import "ZKHotelResourceStatCell.h"
 #import "ZKTravelResourceStatCell.h"
 #import "ZKScenicResourceStatCell.h"
 #import "ZKGuideResourceStatCell.h"
 
+#import "ZKBasicDataTool.h"
 #import "UIBarButtonItem+Custom.h"
 @interface ZKResourceStatViewController ()<ZKResourceChooseViewDelegate>
 
@@ -54,13 +57,49 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (self.roots.count > indexPath.row)
     {
-      [cell assignmentCellData:[self.roots objectAtIndex:indexPath.row]];
+        [cell assignmentCellData:[self.roots objectAtIndex:indexPath.row]];
     }
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.resourceStatType == ResourceStatTypeScenic)
+    {
+        ZKScenicResourceStatMode *list = [self.roots objectAtIndex:indexPath.row];
+        [self goScenicDetailViewControllerData:list];
+    }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
+}
+
+/**
+ 跳向景区详情
+ 
+ @param list 数据
+ */
+- (void)goScenicDetailViewControllerData:(ZKScenicResourceStatMode *)list
+{
+    __block BOOL isDetail = NO;
+    // 只有首页返回的景区才可以进入详情
+    [[ZKBasicDataTool sharedManager].homeScenicArray enumerateObjectsUsingBlock:^(ZKHomeImagesData *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([list.resourcecode isEqualToString:obj.resourcecode]) {
+            isDetail = YES;
+        }
+    }];
+    
+    if (isDetail == YES)
+    {
+        ZKAttractionsDetailViewController *vc = [[ZKAttractionsDetailViewController alloc] init];
+        vc.resourcecode = list.resourcecode;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        [UIView addMJNotifierWithText:@"暂没有该景区详情" dismissAutomatically:YES];
+    }
 }
 #pragma mark  ----数据配置----
 /**
@@ -84,7 +123,7 @@ NSString *const resourceCellIIdentifier = @"resourceCellIIdentifier";
     {
         [self addRightBarButtonItem];
     }
-
+    
 }
 
 /**

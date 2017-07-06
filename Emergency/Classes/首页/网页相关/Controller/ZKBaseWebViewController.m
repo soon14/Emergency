@@ -411,6 +411,8 @@
 #pragma mark  ----UIWebViewDelegate----
 - (void)webViewDidStartLoad:(UIWebView *)webView;
 {
+    NSLog(@" ====== %@",webView.request.URL);
+    
     [self.activityView startAnimating];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
@@ -421,6 +423,7 @@
     self.navigationItem.title = [self isChineseFirst:str]?str:[NSString stringWithFormat:@"%@门禁实时人数",self.htmlTitle];
     
 }
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
 {
     [self.activityView stopAnimating];

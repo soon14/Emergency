@@ -177,8 +177,6 @@ static NSMutableDictionary * gHistory;
     {
         _dispatchQueue = NULL;
     }
-    
-    LoggerStream(1, @"%@ dealloc", self);
 }
 
 - (void)loadView
@@ -192,15 +190,15 @@ static NSMutableDictionary * gHistory;
     _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _closeBtn.showsTouchWhenHighlighted = YES;
     [_closeBtn addTarget:self action:@selector(doneDidTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [_closeBtn setImage:[UIImage imageNamed:@"palye_close"] forState:UIControlStateNormal];
-    [_closeBtn setImage:[UIImage imageNamed:@"palye_close"] forState:UIControlStateSelected];
+    [_closeBtn setImage:[UIImage imageNamed:@"palye_close_1"] forState:UIControlStateNormal];
+    [_closeBtn setImage:[UIImage imageNamed:@"palye_close_1"] forState:UIControlStateSelected];
     _closeBtn.layer.cornerRadius = 30/2;
     [self.view addSubview:_closeBtn];
     
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.right.mas_equalTo(-40);
-        make.top.equalTo(self.view).with.offset(40);
+        make.right.mas_equalTo(-20);
+        make.top.equalTo(self.view).with.offset(20);
         make.width.height.mas_equalTo(36);
         
         

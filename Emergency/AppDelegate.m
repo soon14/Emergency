@@ -105,6 +105,7 @@
 //    [[UIButton appearance] setExclusiveTouch:YES]; 
     [[UITableViewCell appearance] setExclusiveTouch:YES];
     [[UIView appearance] setYgExclusiveTouch:YES];
+
 }
 
 /**

@@ -652,6 +652,13 @@
     self.uploadTool.latitude = location.latitude;
     self.uploadTool.longitude = location.longitude;
 }
+/**
+ 定位异常
+ */
+- (void)locationDidFailWithError;
+{
+    [UIView addMJNotifierWithText:@"定位异常，请打开定位功能。" dismissAutomatically:YES];
+}
 - (void)dealloc
 {
     [self whetherToPlayAudioState:NO];

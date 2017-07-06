@@ -33,7 +33,7 @@
     [self addSubview:bottomView];
     
     contenLabel = [[UILabel alloc] init];
-    contenLabel.font = [UIFont systemFontOfSize:14];
+    contenLabel.font = [UIFont systemFontOfSize:13];
     contenLabel.textColor = CYBColorGreen;
     [self addSubview:contenLabel];
     

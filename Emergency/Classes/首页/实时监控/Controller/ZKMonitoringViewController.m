@@ -185,6 +185,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
     
     self.cityChooseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.cityChooseButton setTitle:@"不限" forState:UIControlStateNormal];
+    self.cityChooseButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.cityChooseButton addTarget:self action:@selector(cityChooseClick:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:self.cityChooseButton];
     
@@ -193,6 +194,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
     
     self.levelChooseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.levelChooseButton setTitle:@"不限" forState:UIControlStateNormal];
+    self.levelChooseButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.levelChooseButton addTarget:self action:@selector(levelChooseClick:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:self.levelChooseButton];
     
@@ -230,7 +232,7 @@ typedef NS_ENUM(NSInteger,SelectedButtonType) {
     YJWeakSelf
     [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(weakSelf.view);
-        make.height.equalTo(@70);
+        make.height.equalTo(@60);
     }];
     [self.cityChooseButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(headerView.mas_left).offset(16);
